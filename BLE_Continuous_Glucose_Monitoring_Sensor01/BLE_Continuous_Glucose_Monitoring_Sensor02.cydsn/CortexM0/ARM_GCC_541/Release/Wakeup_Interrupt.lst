@@ -1,0 +1,2449 @@
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Wakeup_Interrupt.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Wakeup_Interrupt_Interrupt,"ax",%progbits
+  20              		.align	1
+  21              		.global	Wakeup_Interrupt_Interrupt
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	Wakeup_Interrupt_Interrupt, %function
+  25              	Wakeup_Interrupt_Interrupt:
+  26              	.LFB5:
+  27              		.file 1 "Generated_Source\\PSoC4\\Wakeup_Interrupt.c"
+   1:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * File Name: Wakeup_Interrupt.c  
+   3:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Version 1.71
+   4:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+   5:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  Description:
+   6:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   API for controlling the state of an interrupt.
+   7:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+   8:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+   9:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  Note:
+  10:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  11:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+  12:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+  17:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  18:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  19:Generated_Source\PSoC4/Wakeup_Interrupt.c **** #include <cydevice_trm.h>
+  20:Generated_Source\PSoC4/Wakeup_Interrupt.c **** #include <CyLib.h>
+  21:Generated_Source\PSoC4/Wakeup_Interrupt.c **** #include <Wakeup_Interrupt.h>
+  22:Generated_Source\PSoC4/Wakeup_Interrupt.c **** #include "cyapicallbacks.h"
+  23:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  24:Generated_Source\PSoC4/Wakeup_Interrupt.c **** #if !defined(Wakeup_Interrupt__REMOVED) /* Check for removal by optimization */
+  25:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  26:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+  27:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  Place your includes, defines and code here 
+  28:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************/
+  29:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /* `#START Wakeup_Interrupt_intc` */
+  30:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 2
+
+
+  31:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /* `#END` */
+  32:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  33:Generated_Source\PSoC4/Wakeup_Interrupt.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
+  34:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  35:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /* Declared in startup, used to set unused interrupts to. */
+  36:Generated_Source\PSoC4/Wakeup_Interrupt.c **** CY_ISR_PROTO(IntDefaultHandler);
+  37:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  38:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  39:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+  40:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_Start
+  41:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+  42:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  43:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+  44:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  45:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  46:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  47:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  interrupt controller.
+  48:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  49:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:  
+  50:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+  51:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  52:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+  53:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+  54:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  55:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+  56:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_Start(void)
+  57:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+  58:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* For all we know the interrupt is active. */
+  59:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_Disable();
+  60:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  61:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Set the ISR to point to the Wakeup_Interrupt Interrupt. */
+  62:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_SetVector(&Wakeup_Interrupt_Interrupt);
+  63:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  64:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Set the priority. */
+  65:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_SetPriority((uint8)Wakeup_Interrupt_INTC_PRIOR_NUMBER);
+  66:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  67:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Enable it. */
+  68:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_Enable();
+  69:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+  70:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  71:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  72:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+  73:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_StartEx
+  74:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+  75:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  76:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+  77:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  78:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  79:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+  80:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  the interrupt to the interrupt controller.
+  81:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  
+  82:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+  83:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  used to provide consistent definition across compilers:
+  84:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  
+  85:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *  Function definition example:
+  86:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   CY_ISR(MyISR)
+  87:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   {
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 3
+
+
+  88:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   }
+  89:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Function prototype example:
+  90:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   CY_ISR_PROTO(MyISR);
+  91:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  92:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:  
+  93:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  94:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  95:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+  96:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+  97:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+  98:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+  99:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_StartEx(cyisraddress address)
+ 100:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 101:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* For all we know the interrupt is active. */
+ 102:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_Disable();
+ 103:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 104:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Set the ISR to point to the Wakeup_Interrupt Interrupt. */
+ 105:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_SetVector(address);
+ 106:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 107:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Set the priority. */
+ 108:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_SetPriority((uint8)Wakeup_Interrupt_INTC_PRIOR_NUMBER);
+ 109:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 110:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Enable it. */
+ 111:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_Enable();
+ 112:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 113:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 114:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 115:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 116:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_Stop
+ 117:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 118:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 119:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 120:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Disables and removes the interrupt.
+ 121:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 122:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:  
+ 123:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 124:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 125:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 126:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 127:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 128:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 129:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_Stop(void)
+ 130:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 131:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Disable this interrupt. */
+ 132:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_Disable();
+ 133:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 134:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Set the ISR to point to the passive one. */
+ 135:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     Wakeup_Interrupt_SetVector(&IntDefaultHandler);
+ 136:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 137:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 138:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 139:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 140:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_Interrupt
+ 141:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 142:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 143:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 144:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   The default Interrupt Service Routine for Wakeup_Interrupt.
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 4
+
+
+ 145:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 146:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Add custom code between the START and END comments to keep the next version
+ 147:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   of this file from over-writing your code.
+ 148:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 149:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Note You may use either the default ISR by using this API, or you may define
+ 150:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   your own separate ISR through ISR_StartEx().
+ 151:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 152:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:  
+ 153:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 154:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 155:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 156:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 157:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 158:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 159:Generated_Source\PSoC4/Wakeup_Interrupt.c **** CY_ISR(Wakeup_Interrupt_Interrupt)
+ 160:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+  28              		.loc 1 160 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+ 161:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     #ifdef Wakeup_Interrupt_INTERRUPT_INTERRUPT_CALLBACK
+ 162:Generated_Source\PSoC4/Wakeup_Interrupt.c ****         Wakeup_Interrupt_Interrupt_InterruptCallback();
+ 163:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     #endif /* Wakeup_Interrupt_INTERRUPT_INTERRUPT_CALLBACK */ 
+ 164:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 165:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /*  Place your Interrupt code here. */
+ 166:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* `#START Wakeup_Interrupt_Interrupt` */
+ 167:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 168:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* `#END` */
+ 169:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+  33              		.loc 1 169 0
+  34              		@ sp needed
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE5:
+  38              		.size	Wakeup_Interrupt_Interrupt, .-Wakeup_Interrupt_Interrupt
+  39              		.section	.text.Wakeup_Interrupt_Stop,"ax",%progbits
+  40              		.align	1
+  41              		.global	Wakeup_Interrupt_Stop
+  42              		.code	16
+  43              		.thumb_func
+  44              		.type	Wakeup_Interrupt_Stop, %function
+  45              	Wakeup_Interrupt_Stop:
+  46              	.LFB4:
+ 130:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Disable this interrupt. */
+  47              		.loc 1 130 0
+  48              		.cfi_startproc
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51              		@ link register save eliminated.
+  52              	.LBB18:
+  53              	.LBB19:
+ 170:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 171:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 172:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 173:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_SetVector
+ 174:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 5
+
+
+ 175:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 176:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 177:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Change the ISR vector for the Interrupt. Note calling Wakeup_Interrupt_Start
+ 178:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   will override any effect this method would have had. To set the vector 
+ 179:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   before the component has been started use Wakeup_Interrupt_StartEx instead.
+ 180:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * 
+ 181:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ 182:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   used to provide consistent definition across compilers:
+ 183:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 184:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Function definition example:
+ 185:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   CY_ISR(MyISR)
+ 186:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   {
+ 187:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   }
+ 188:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 189:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Function prototype example:
+ 190:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *     CY_ISR_PROTO(MyISR);
+ 191:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 192:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 193:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 194:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 195:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 196:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 197:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 198:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 199:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_SetVector(cyisraddress address)
+ 200:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 201:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     CyRamVectors[CYINT_IRQ_BASE + Wakeup_Interrupt__INTC_NUMBER] = address;
+ 202:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 203:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 204:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 205:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 206:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_GetVector
+ 207:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 208:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 209:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 210:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 211:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 212:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 213:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 214:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 215:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 216:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Address of the ISR in the interrupt vector table.
+ 217:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 218:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 219:Generated_Source\PSoC4/Wakeup_Interrupt.c **** cyisraddress Wakeup_Interrupt_GetVector(void)
+ 220:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 221:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     return CyRamVectors[CYINT_IRQ_BASE + Wakeup_Interrupt__INTC_NUMBER];
+ 222:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 223:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 224:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 225:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 226:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_SetPriority
+ 227:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 228:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 229:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 230:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Sets the Priority of the Interrupt. 
+ 231:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 6
+
+
+ 232:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Note calling Wakeup_Interrupt_Start or Wakeup_Interrupt_StartEx will 
+ 233:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   override any effect this API would have had. This API should only be called
+ 234:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   after Wakeup_Interrupt_Start or Wakeup_Interrupt_StartEx has been called. 
+ 235:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 236:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Interrupt Editor.
+ 237:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 238:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
+ 239:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 240:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 241:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 242:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 243:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *             PSoC 4: Priority is from 0 to 3.
+ 244:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 245:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 246:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 247:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 248:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 249:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_SetPriority(uint8 priority)
+ 250:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 251:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 	uint8 interruptState;
+ 252:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     uint32 priorityOffset = ((Wakeup_Interrupt__INTC_NUMBER % 4u) * 8u) + 6u;
+ 253:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     
+ 254:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 	interruptState = CyEnterCriticalSection();
+ 255:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     *Wakeup_Interrupt_INTC_PRIOR = (*Wakeup_Interrupt_INTC_PRIOR & (uint32)(~(uint32)Wakeup_Interru
+ 256:Generated_Source\PSoC4/Wakeup_Interrupt.c ****                                     ((uint32)priority << priorityOffset);
+ 257:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 	CyExitCriticalSection(interruptState);
+ 258:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 259:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 260:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 261:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 262:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_GetPriority
+ 263:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 264:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 265:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 266:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Gets the Priority of the Interrupt.
+ 267:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 268:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 269:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 270:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 271:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 272:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Priority of the interrupt, 0 being the highest priority
+ 273:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 274:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *    PSoC 4: Priority is from 0 to 3.
+ 275:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 276:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 277:Generated_Source\PSoC4/Wakeup_Interrupt.c **** uint8 Wakeup_Interrupt_GetPriority(void)
+ 278:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 279:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     uint32 priority;
+ 280:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 	uint32 priorityOffset = ((Wakeup_Interrupt__INTC_NUMBER % 4u) * 8u) + 6u;
+ 281:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 282:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     priority = (*Wakeup_Interrupt_INTC_PRIOR & Wakeup_Interrupt__INTC_PRIOR_MASK) >> priorityOffset
+ 283:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 284:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     return (uint8)priority;
+ 285:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 286:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 287:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 288:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 7
+
+
+ 289:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_Enable
+ 290:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 291:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 292:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 293:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ 294:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ 295:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   function, which sets the vector and the priority, has been called.
+ 296:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 297:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 298:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 299:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 300:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 301:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 302:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 303:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 304:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_Enable(void)
+ 305:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 306:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Enable the general interrupt. */
+ 307:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     *Wakeup_Interrupt_INTC_SET_EN = Wakeup_Interrupt__INTC_MASK;
+ 308:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 309:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 310:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 311:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 312:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_GetState
+ 313:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 314:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 315:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 316:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 317:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 318:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 319:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 320:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 321:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 322:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   1 if enabled, 0 if disabled.
+ 323:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 324:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 325:Generated_Source\PSoC4/Wakeup_Interrupt.c **** uint8 Wakeup_Interrupt_GetState(void)
+ 326:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 327:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Get the state of the general interrupt. */
+ 328:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     return ((*Wakeup_Interrupt_INTC_SET_EN & (uint32)Wakeup_Interrupt__INTC_MASK) != 0u) ? 1u:0u;
+ 329:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 330:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 331:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 332:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 333:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_Disable
+ 334:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 335:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 336:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 337:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Disables the Interrupt in the interrupt controller.
+ 338:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 339:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 340:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 341:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 342:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 343:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 344:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 345:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 8
+
+
+ 346:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_Disable(void)
+ 347:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 348:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Disable the general interrupt. */
+ 349:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     *Wakeup_Interrupt_INTC_CLR_EN = Wakeup_Interrupt__INTC_MASK;
+  54              		.loc 1 349 0
+  55 0000 0422     		movs	r2, #4
+  56 0002 034B     		ldr	r3, .L3
+  57              	.LBE19:
+  58              	.LBE18:
+ 136:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  59              		.loc 1 136 0
+  60              		@ sp needed
+  61              	.LBB21:
+  62              	.LBB20:
+  63              		.loc 1 349 0
+  64 0004 1A60     		str	r2, [r3]
+  65              	.LVL0:
+  66              	.LBE20:
+  67              	.LBE21:
+  68              	.LBB22:
+  69              	.LBB23:
+ 201:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+  70              		.loc 1 201 0
+  71 0006 034A     		ldr	r2, .L3+4
+  72 0008 034B     		ldr	r3, .L3+8
+  73 000a 9A64     		str	r2, [r3, #72]
+  74              	.LVL1:
+  75              	.LBE23:
+  76              	.LBE22:
+ 136:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+  77              		.loc 1 136 0
+  78 000c 7047     		bx	lr
+  79              	.L4:
+  80 000e C046     		.align	2
+  81              	.L3:
+  82 0010 80E100E0 		.word	-536813184
+  83 0014 00000000 		.word	IntDefaultHandler
+  84 0018 00000000 		.word	CyRamVectors
+  85              		.cfi_endproc
+  86              	.LFE4:
+  87              		.size	Wakeup_Interrupt_Stop, .-Wakeup_Interrupt_Stop
+  88              		.section	.text.Wakeup_Interrupt_SetVector,"ax",%progbits
+  89              		.align	1
+  90              		.global	Wakeup_Interrupt_SetVector
+  91              		.code	16
+  92              		.thumb_func
+  93              		.type	Wakeup_Interrupt_SetVector, %function
+  94              	Wakeup_Interrupt_SetVector:
+  95              	.LFB6:
+ 200:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     CyRamVectors[CYINT_IRQ_BASE + Wakeup_Interrupt__INTC_NUMBER] = address;
+  96              		.loc 1 200 0
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100              		@ link register save eliminated.
+ 101              	.LVL2:
+ 201:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 9
+
+
+ 102              		.loc 1 201 0
+ 103 0000 014B     		ldr	r3, .L6
+ 202:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 104              		.loc 1 202 0
+ 105              		@ sp needed
+ 201:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 106              		.loc 1 201 0
+ 107 0002 9864     		str	r0, [r3, #72]
+ 202:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 108              		.loc 1 202 0
+ 109 0004 7047     		bx	lr
+ 110              	.L7:
+ 111 0006 C046     		.align	2
+ 112              	.L6:
+ 113 0008 00000000 		.word	CyRamVectors
+ 114              		.cfi_endproc
+ 115              	.LFE6:
+ 116              		.size	Wakeup_Interrupt_SetVector, .-Wakeup_Interrupt_SetVector
+ 117              		.section	.text.Wakeup_Interrupt_GetVector,"ax",%progbits
+ 118              		.align	1
+ 119              		.global	Wakeup_Interrupt_GetVector
+ 120              		.code	16
+ 121              		.thumb_func
+ 122              		.type	Wakeup_Interrupt_GetVector, %function
+ 123              	Wakeup_Interrupt_GetVector:
+ 124              	.LFB7:
+ 220:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     return CyRamVectors[CYINT_IRQ_BASE + Wakeup_Interrupt__INTC_NUMBER];
+ 125              		.loc 1 220 0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129              		@ link register save eliminated.
+ 221:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 130              		.loc 1 221 0
+ 131 0000 014B     		ldr	r3, .L9
+ 222:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 132              		.loc 1 222 0
+ 133              		@ sp needed
+ 221:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 134              		.loc 1 221 0
+ 135 0002 986C     		ldr	r0, [r3, #72]
+ 222:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 136              		.loc 1 222 0
+ 137 0004 7047     		bx	lr
+ 138              	.L10:
+ 139 0006 C046     		.align	2
+ 140              	.L9:
+ 141 0008 00000000 		.word	CyRamVectors
+ 142              		.cfi_endproc
+ 143              	.LFE7:
+ 144              		.size	Wakeup_Interrupt_GetVector, .-Wakeup_Interrupt_GetVector
+ 145              		.section	.text.Wakeup_Interrupt_SetPriority,"ax",%progbits
+ 146              		.align	1
+ 147              		.global	Wakeup_Interrupt_SetPriority
+ 148              		.code	16
+ 149              		.thumb_func
+ 150              		.type	Wakeup_Interrupt_SetPriority, %function
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 10
+
+
+ 151              	Wakeup_Interrupt_SetPriority:
+ 152              	.LFB8:
+ 250:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 	uint8 interruptState;
+ 153              		.loc 1 250 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              	.LVL3:
+ 158 0000 10B5     		push	{r4, lr}
+ 159              		.cfi_def_cfa_offset 8
+ 160              		.cfi_offset 4, -8
+ 161              		.cfi_offset 14, -4
+ 250:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 	uint8 interruptState;
+ 162              		.loc 1 250 0
+ 163 0002 0400     		movs	r4, r0
+ 254:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     *Wakeup_Interrupt_INTC_PRIOR = (*Wakeup_Interrupt_INTC_PRIOR & (uint32)(~(uint32)Wakeup_Interru
+ 164              		.loc 1 254 0
+ 165 0004 FFF7FEFF 		bl	CyEnterCriticalSection
+ 166              	.LVL4:
+ 255:Generated_Source\PSoC4/Wakeup_Interrupt.c ****                                     ((uint32)priority << priorityOffset);
+ 167              		.loc 1 255 0
+ 168 0008 044A     		ldr	r2, .L12
+ 169 000a 054B     		ldr	r3, .L12+4
+ 170 000c 1168     		ldr	r1, [r2]
+ 171 000e A405     		lsls	r4, r4, #22
+ 172 0010 0B40     		ands	r3, r1
+ 173 0012 1C43     		orrs	r4, r3
+ 174 0014 1460     		str	r4, [r2]
+ 257:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 175              		.loc 1 257 0
+ 176 0016 FFF7FEFF 		bl	CyExitCriticalSection
+ 177              	.LVL5:
+ 258:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 178              		.loc 1 258 0
+ 179              		@ sp needed
+ 180 001a 10BD     		pop	{r4, pc}
+ 181              	.L13:
+ 182              		.align	2
+ 183              	.L12:
+ 184 001c 00E400E0 		.word	-536812544
+ 185 0020 FFFF3FFF 		.word	-12582913
+ 186              		.cfi_endproc
+ 187              	.LFE8:
+ 188              		.size	Wakeup_Interrupt_SetPriority, .-Wakeup_Interrupt_SetPriority
+ 189              		.section	.text.Wakeup_Interrupt_Start,"ax",%progbits
+ 190              		.align	1
+ 191              		.global	Wakeup_Interrupt_Start
+ 192              		.code	16
+ 193              		.thumb_func
+ 194              		.type	Wakeup_Interrupt_Start, %function
+ 195              	Wakeup_Interrupt_Start:
+ 196              	.LFB2:
+  57:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* For all we know the interrupt is active. */
+ 197              		.loc 1 57 0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 11
+
+
+ 201 0000 10B5     		push	{r4, lr}
+ 202              		.cfi_def_cfa_offset 8
+ 203              		.cfi_offset 4, -8
+ 204              		.cfi_offset 14, -4
+ 205              	.LBB24:
+ 206              	.LBB25:
+ 207              		.loc 1 349 0
+ 208 0002 0424     		movs	r4, #4
+ 209 0004 054B     		ldr	r3, .L15
+ 210              	.LBE25:
+ 211              	.LBE24:
+ 212              	.LBB27:
+ 213              	.LBB28:
+ 201:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 214              		.loc 1 201 0
+ 215 0006 064A     		ldr	r2, .L15+4
+ 216              	.LBE28:
+ 217              	.LBE27:
+ 218              	.LBB31:
+ 219              	.LBB26:
+ 220              		.loc 1 349 0
+ 221 0008 1C60     		str	r4, [r3]
+ 222              	.LVL6:
+ 223              	.LBE26:
+ 224              	.LBE31:
+ 225              	.LBB32:
+ 226              	.LBB29:
+ 201:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 227              		.loc 1 201 0
+ 228 000a 064B     		ldr	r3, .L15+8
+ 229              	.LBE29:
+ 230              	.LBE32:
+  65:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 231              		.loc 1 65 0
+ 232 000c 0320     		movs	r0, #3
+ 233              	.LBB33:
+ 234              	.LBB30:
+ 201:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 235              		.loc 1 201 0
+ 236 000e 9A64     		str	r2, [r3, #72]
+ 237              	.LVL7:
+ 238              	.LBE30:
+ 239              	.LBE33:
+  65:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 240              		.loc 1 65 0
+ 241 0010 FFF7FEFF 		bl	Wakeup_Interrupt_SetPriority
+ 242              	.LVL8:
+ 243              	.LBB34:
+ 244              	.LBB35:
+ 307:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 245              		.loc 1 307 0
+ 246 0014 044B     		ldr	r3, .L15+12
+ 247              	.LBE35:
+ 248              	.LBE34:
+  69:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 249              		.loc 1 69 0
+ 250              		@ sp needed
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 12
+
+
+ 251              	.LBB37:
+ 252              	.LBB36:
+ 307:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 253              		.loc 1 307 0
+ 254 0016 1C60     		str	r4, [r3]
+ 255              	.LBE36:
+ 256              	.LBE37:
+  69:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 257              		.loc 1 69 0
+ 258 0018 10BD     		pop	{r4, pc}
+ 259              	.L16:
+ 260 001a C046     		.align	2
+ 261              	.L15:
+ 262 001c 80E100E0 		.word	-536813184
+ 263 0020 00000000 		.word	Wakeup_Interrupt_Interrupt
+ 264 0024 00000000 		.word	CyRamVectors
+ 265 0028 00E100E0 		.word	-536813312
+ 266              		.cfi_endproc
+ 267              	.LFE2:
+ 268              		.size	Wakeup_Interrupt_Start, .-Wakeup_Interrupt_Start
+ 269              		.section	.text.Wakeup_Interrupt_StartEx,"ax",%progbits
+ 270              		.align	1
+ 271              		.global	Wakeup_Interrupt_StartEx
+ 272              		.code	16
+ 273              		.thumb_func
+ 274              		.type	Wakeup_Interrupt_StartEx, %function
+ 275              	Wakeup_Interrupt_StartEx:
+ 276              	.LFB3:
+ 100:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* For all we know the interrupt is active. */
+ 277              		.loc 1 100 0
+ 278              		.cfi_startproc
+ 279              		@ args = 0, pretend = 0, frame = 0
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+ 281              	.LVL9:
+ 282 0000 10B5     		push	{r4, lr}
+ 283              		.cfi_def_cfa_offset 8
+ 284              		.cfi_offset 4, -8
+ 285              		.cfi_offset 14, -4
+ 286              	.LBB38:
+ 287              	.LBB39:
+ 288              		.loc 1 349 0
+ 289 0002 0424     		movs	r4, #4
+ 290 0004 044B     		ldr	r3, .L18
+ 291              	.LBE39:
+ 292              	.LBE38:
+ 112:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 293              		.loc 1 112 0
+ 294              		@ sp needed
+ 295              	.LBB41:
+ 296              	.LBB40:
+ 297              		.loc 1 349 0
+ 298 0006 1C60     		str	r4, [r3]
+ 299              	.LVL10:
+ 300              	.LBE40:
+ 301              	.LBE41:
+ 302              	.LBB42:
+ 303              	.LBB43:
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 13
+
+
+ 201:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 304              		.loc 1 201 0
+ 305 0008 044B     		ldr	r3, .L18+4
+ 306 000a 9864     		str	r0, [r3, #72]
+ 307              	.LVL11:
+ 308              	.LBE43:
+ 309              	.LBE42:
+ 108:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 310              		.loc 1 108 0
+ 311 000c 0320     		movs	r0, #3
+ 312              	.LVL12:
+ 313 000e FFF7FEFF 		bl	Wakeup_Interrupt_SetPriority
+ 314              	.LVL13:
+ 315              	.LBB44:
+ 316              	.LBB45:
+ 307:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 317              		.loc 1 307 0
+ 318 0012 034B     		ldr	r3, .L18+8
+ 319 0014 1C60     		str	r4, [r3]
+ 320              	.LBE45:
+ 321              	.LBE44:
+ 112:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 322              		.loc 1 112 0
+ 323 0016 10BD     		pop	{r4, pc}
+ 324              	.L19:
+ 325              		.align	2
+ 326              	.L18:
+ 327 0018 80E100E0 		.word	-536813184
+ 328 001c 00000000 		.word	CyRamVectors
+ 329 0020 00E100E0 		.word	-536813312
+ 330              		.cfi_endproc
+ 331              	.LFE3:
+ 332              		.size	Wakeup_Interrupt_StartEx, .-Wakeup_Interrupt_StartEx
+ 333              		.section	.text.Wakeup_Interrupt_GetPriority,"ax",%progbits
+ 334              		.align	1
+ 335              		.global	Wakeup_Interrupt_GetPriority
+ 336              		.code	16
+ 337              		.thumb_func
+ 338              		.type	Wakeup_Interrupt_GetPriority, %function
+ 339              	Wakeup_Interrupt_GetPriority:
+ 340              	.LFB9:
+ 278:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     uint32 priority;
+ 341              		.loc 1 278 0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 0
+ 344              		@ frame_needed = 0, uses_anonymous_args = 0
+ 345              		@ link register save eliminated.
+ 346              	.LVL14:
+ 282:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 347              		.loc 1 282 0
+ 348 0000 024B     		ldr	r3, .L21
+ 285:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 349              		.loc 1 285 0
+ 350              		@ sp needed
+ 282:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 351              		.loc 1 282 0
+ 352 0002 1868     		ldr	r0, [r3]
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 14
+
+
+ 353              	.LVL15:
+ 284:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 354              		.loc 1 284 0
+ 355 0004 0002     		lsls	r0, r0, #8
+ 356              	.LVL16:
+ 357 0006 800F     		lsrs	r0, r0, #30
+ 285:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 358              		.loc 1 285 0
+ 359 0008 7047     		bx	lr
+ 360              	.L22:
+ 361 000a C046     		.align	2
+ 362              	.L21:
+ 363 000c 00E400E0 		.word	-536812544
+ 364              		.cfi_endproc
+ 365              	.LFE9:
+ 366              		.size	Wakeup_Interrupt_GetPriority, .-Wakeup_Interrupt_GetPriority
+ 367              		.section	.text.Wakeup_Interrupt_Enable,"ax",%progbits
+ 368              		.align	1
+ 369              		.global	Wakeup_Interrupt_Enable
+ 370              		.code	16
+ 371              		.thumb_func
+ 372              		.type	Wakeup_Interrupt_Enable, %function
+ 373              	Wakeup_Interrupt_Enable:
+ 374              	.LFB10:
+ 305:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Enable the general interrupt. */
+ 375              		.loc 1 305 0
+ 376              		.cfi_startproc
+ 377              		@ args = 0, pretend = 0, frame = 0
+ 378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 379              		@ link register save eliminated.
+ 307:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 380              		.loc 1 307 0
+ 381 0000 0422     		movs	r2, #4
+ 382 0002 014B     		ldr	r3, .L24
+ 308:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 383              		.loc 1 308 0
+ 384              		@ sp needed
+ 307:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 385              		.loc 1 307 0
+ 386 0004 1A60     		str	r2, [r3]
+ 308:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 387              		.loc 1 308 0
+ 388 0006 7047     		bx	lr
+ 389              	.L25:
+ 390              		.align	2
+ 391              	.L24:
+ 392 0008 00E100E0 		.word	-536813312
+ 393              		.cfi_endproc
+ 394              	.LFE10:
+ 395              		.size	Wakeup_Interrupt_Enable, .-Wakeup_Interrupt_Enable
+ 396              		.section	.text.Wakeup_Interrupt_GetState,"ax",%progbits
+ 397              		.align	1
+ 398              		.global	Wakeup_Interrupt_GetState
+ 399              		.code	16
+ 400              		.thumb_func
+ 401              		.type	Wakeup_Interrupt_GetState, %function
+ 402              	Wakeup_Interrupt_GetState:
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 15
+
+
+ 403              	.LFB11:
+ 326:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Get the state of the general interrupt. */
+ 404              		.loc 1 326 0
+ 405              		.cfi_startproc
+ 406              		@ args = 0, pretend = 0, frame = 0
+ 407              		@ frame_needed = 0, uses_anonymous_args = 0
+ 408              		@ link register save eliminated.
+ 328:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 409              		.loc 1 328 0
+ 410 0000 024B     		ldr	r3, .L27
+ 329:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 411              		.loc 1 329 0
+ 412              		@ sp needed
+ 328:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 413              		.loc 1 328 0
+ 414 0002 1868     		ldr	r0, [r3]
+ 415 0004 4007     		lsls	r0, r0, #29
+ 416 0006 C00F     		lsrs	r0, r0, #31
+ 329:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 417              		.loc 1 329 0
+ 418 0008 7047     		bx	lr
+ 419              	.L28:
+ 420 000a C046     		.align	2
+ 421              	.L27:
+ 422 000c 00E100E0 		.word	-536813312
+ 423              		.cfi_endproc
+ 424              	.LFE11:
+ 425              		.size	Wakeup_Interrupt_GetState, .-Wakeup_Interrupt_GetState
+ 426              		.section	.text.Wakeup_Interrupt_Disable,"ax",%progbits
+ 427              		.align	1
+ 428              		.global	Wakeup_Interrupt_Disable
+ 429              		.code	16
+ 430              		.thumb_func
+ 431              		.type	Wakeup_Interrupt_Disable, %function
+ 432              	Wakeup_Interrupt_Disable:
+ 433              	.LFB12:
+ 347:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     /* Disable the general interrupt. */
+ 434              		.loc 1 347 0
+ 435              		.cfi_startproc
+ 436              		@ args = 0, pretend = 0, frame = 0
+ 437              		@ frame_needed = 0, uses_anonymous_args = 0
+ 438              		@ link register save eliminated.
+ 439              		.loc 1 349 0
+ 440 0000 0422     		movs	r2, #4
+ 441 0002 014B     		ldr	r3, .L30
+ 350:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 442              		.loc 1 350 0
+ 443              		@ sp needed
+ 349:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 444              		.loc 1 349 0
+ 445 0004 1A60     		str	r2, [r3]
+ 446              		.loc 1 350 0
+ 447 0006 7047     		bx	lr
+ 448              	.L31:
+ 449              		.align	2
+ 450              	.L30:
+ 451 0008 80E100E0 		.word	-536813184
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 16
+
+
+ 452              		.cfi_endproc
+ 453              	.LFE12:
+ 454              		.size	Wakeup_Interrupt_Disable, .-Wakeup_Interrupt_Disable
+ 455              		.section	.text.Wakeup_Interrupt_SetPending,"ax",%progbits
+ 456              		.align	1
+ 457              		.global	Wakeup_Interrupt_SetPending
+ 458              		.code	16
+ 459              		.thumb_func
+ 460              		.type	Wakeup_Interrupt_SetPending, %function
+ 461              	Wakeup_Interrupt_SetPending:
+ 462              	.LFB13:
+ 351:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 352:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 353:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 354:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_SetPending
+ 355:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 356:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 357:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 358:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 359:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   generating the interrupt.
+ 360:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 361:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 362:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 363:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 364:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 365:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 366:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 367:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Side Effects:
+ 368:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 369:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 370:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   interrupts).
+ 371:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 372:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 373:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_SetPending(void)
+ 374:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 463              		.loc 1 374 0
+ 464              		.cfi_startproc
+ 465              		@ args = 0, pretend = 0, frame = 0
+ 466              		@ frame_needed = 0, uses_anonymous_args = 0
+ 467              		@ link register save eliminated.
+ 375:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     *Wakeup_Interrupt_INTC_SET_PD = Wakeup_Interrupt__INTC_MASK;
+ 468              		.loc 1 375 0
+ 469 0000 0422     		movs	r2, #4
+ 470 0002 014B     		ldr	r3, .L33
+ 376:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 471              		.loc 1 376 0
+ 472              		@ sp needed
+ 375:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     *Wakeup_Interrupt_INTC_SET_PD = Wakeup_Interrupt__INTC_MASK;
+ 473              		.loc 1 375 0
+ 474 0004 1A60     		str	r2, [r3]
+ 475              		.loc 1 376 0
+ 476 0006 7047     		bx	lr
+ 477              	.L34:
+ 478              		.align	2
+ 479              	.L33:
+ 480 0008 00E200E0 		.word	-536813056
+ 481              		.cfi_endproc
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 17
+
+
+ 482              	.LFE13:
+ 483              		.size	Wakeup_Interrupt_SetPending, .-Wakeup_Interrupt_SetPending
+ 484              		.section	.text.Wakeup_Interrupt_ClearPending,"ax",%progbits
+ 485              		.align	1
+ 486              		.global	Wakeup_Interrupt_ClearPending
+ 487              		.code	16
+ 488              		.thumb_func
+ 489              		.type	Wakeup_Interrupt_ClearPending, %function
+ 490              	Wakeup_Interrupt_ClearPending:
+ 491              	.LFB14:
+ 377:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 378:Generated_Source\PSoC4/Wakeup_Interrupt.c **** 
+ 379:Generated_Source\PSoC4/Wakeup_Interrupt.c **** /*******************************************************************************
+ 380:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Function Name: Wakeup_Interrupt_ClearPending
+ 381:Generated_Source\PSoC4/Wakeup_Interrupt.c **** ********************************************************************************
+ 382:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 383:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Summary:
+ 384:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Clears a pending interrupt in the interrupt controller.
+ 385:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 386:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 387:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 388:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ 389:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 390:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 391:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Parameters:
+ 392:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 393:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 394:Generated_Source\PSoC4/Wakeup_Interrupt.c **** * Return:
+ 395:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *   None
+ 396:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *
+ 397:Generated_Source\PSoC4/Wakeup_Interrupt.c **** *******************************************************************************/
+ 398:Generated_Source\PSoC4/Wakeup_Interrupt.c **** void Wakeup_Interrupt_ClearPending(void)
+ 399:Generated_Source\PSoC4/Wakeup_Interrupt.c **** {
+ 492              		.loc 1 399 0
+ 493              		.cfi_startproc
+ 494              		@ args = 0, pretend = 0, frame = 0
+ 495              		@ frame_needed = 0, uses_anonymous_args = 0
+ 496              		@ link register save eliminated.
+ 400:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     *Wakeup_Interrupt_INTC_CLR_PD = Wakeup_Interrupt__INTC_MASK;
+ 497              		.loc 1 400 0
+ 498 0000 0422     		movs	r2, #4
+ 499 0002 014B     		ldr	r3, .L36
+ 401:Generated_Source\PSoC4/Wakeup_Interrupt.c **** }
+ 500              		.loc 1 401 0
+ 501              		@ sp needed
+ 400:Generated_Source\PSoC4/Wakeup_Interrupt.c ****     *Wakeup_Interrupt_INTC_CLR_PD = Wakeup_Interrupt__INTC_MASK;
+ 502              		.loc 1 400 0
+ 503 0004 1A60     		str	r2, [r3]
+ 504              		.loc 1 401 0
+ 505 0006 7047     		bx	lr
+ 506              	.L37:
+ 507              		.align	2
+ 508              	.L36:
+ 509 0008 80E200E0 		.word	-536812928
+ 510              		.cfi_endproc
+ 511              	.LFE14:
+ 512              		.size	Wakeup_Interrupt_ClearPending, .-Wakeup_Interrupt_ClearPending
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 18
+
+
+ 513              		.text
+ 514              	.Letext0:
+ 515              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 516              		.file 3 "Generated_Source\\PSoC4/CyLib.h"
+ 517              		.section	.debug_info,"",%progbits
+ 518              	.Ldebug_info0:
+ 519 0000 4E030000 		.4byte	0x34e
+ 520 0004 0400     		.2byte	0x4
+ 521 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 522 000a 04       		.byte	0x4
+ 523 000b 01       		.uleb128 0x1
+ 524 000c 3F030000 		.4byte	.LASF35
+ 525 0010 0C       		.byte	0xc
+ 526 0011 4F010000 		.4byte	.LASF36
+ 527 0015 A4010000 		.4byte	.LASF37
+ 528 0019 80000000 		.4byte	.Ldebug_ranges0+0x80
+ 529 001d 00000000 		.4byte	0
+ 530 0021 00000000 		.4byte	.Ldebug_line0
+ 531 0025 02       		.uleb128 0x2
+ 532 0026 01       		.byte	0x1
+ 533 0027 06       		.byte	0x6
+ 534 0028 33030000 		.4byte	.LASF0
+ 535 002c 02       		.uleb128 0x2
+ 536 002d 01       		.byte	0x1
+ 537 002e 08       		.byte	0x8
+ 538 002f CA000000 		.4byte	.LASF1
+ 539 0033 02       		.uleb128 0x2
+ 540 0034 02       		.byte	0x2
+ 541 0035 05       		.byte	0x5
+ 542 0036 CA020000 		.4byte	.LASF2
+ 543 003a 02       		.uleb128 0x2
+ 544 003b 02       		.byte	0x2
+ 545 003c 07       		.byte	0x7
+ 546 003d 6A000000 		.4byte	.LASF3
+ 547 0041 02       		.uleb128 0x2
+ 548 0042 04       		.byte	0x4
+ 549 0043 05       		.byte	0x5
+ 550 0044 E9020000 		.4byte	.LASF4
+ 551 0048 02       		.uleb128 0x2
+ 552 0049 04       		.byte	0x4
+ 553 004a 07       		.byte	0x7
+ 554 004b E7000000 		.4byte	.LASF5
+ 555 004f 02       		.uleb128 0x2
+ 556 0050 08       		.byte	0x8
+ 557 0051 05       		.byte	0x5
+ 558 0052 6D020000 		.4byte	.LASF6
+ 559 0056 02       		.uleb128 0x2
+ 560 0057 08       		.byte	0x8
+ 561 0058 07       		.byte	0x7
+ 562 0059 B3000000 		.4byte	.LASF7
+ 563 005d 03       		.uleb128 0x3
+ 564 005e 04       		.byte	0x4
+ 565 005f 05       		.byte	0x5
+ 566 0060 696E7400 		.ascii	"int\000"
+ 567 0064 02       		.uleb128 0x2
+ 568 0065 04       		.byte	0x4
+ 569 0066 07       		.byte	0x7
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 19
+
+
+ 570 0067 42010000 		.4byte	.LASF8
+ 571 006b 04       		.uleb128 0x4
+ 572 006c D4020000 		.4byte	.LASF9
+ 573 0070 02       		.byte	0x2
+ 574 0071 FC01     		.2byte	0x1fc
+ 575 0073 2C000000 		.4byte	0x2c
+ 576 0077 04       		.uleb128 0x4
+ 577 0078 24010000 		.4byte	.LASF10
+ 578 007c 02       		.byte	0x2
+ 579 007d FE01     		.2byte	0x1fe
+ 580 007f 48000000 		.4byte	0x48
+ 581 0083 02       		.uleb128 0x2
+ 582 0084 04       		.byte	0x4
+ 583 0085 04       		.byte	0x4
+ 584 0086 AD000000 		.4byte	.LASF11
+ 585 008a 02       		.uleb128 0x2
+ 586 008b 08       		.byte	0x8
+ 587 008c 04       		.byte	0x4
+ 588 008d 1D010000 		.4byte	.LASF12
+ 589 0091 02       		.uleb128 0x2
+ 590 0092 01       		.byte	0x1
+ 591 0093 08       		.byte	0x8
+ 592 0094 F2020000 		.4byte	.LASF13
+ 593 0098 04       		.uleb128 0x4
+ 594 0099 00000000 		.4byte	.LASF14
+ 595 009d 02       		.byte	0x2
+ 596 009e A802     		.2byte	0x2a8
+ 597 00a0 A4000000 		.4byte	0xa4
+ 598 00a4 05       		.uleb128 0x5
+ 599 00a5 77000000 		.4byte	0x77
+ 600 00a9 04       		.uleb128 0x4
+ 601 00aa 97010000 		.4byte	.LASF15
+ 602 00ae 02       		.byte	0x2
+ 603 00af B802     		.2byte	0x2b8
+ 604 00b1 B5000000 		.4byte	0xb5
+ 605 00b5 06       		.uleb128 0x6
+ 606 00b6 04       		.byte	0x4
+ 607 00b7 BB000000 		.4byte	0xbb
+ 608 00bb 07       		.uleb128 0x7
+ 609 00bc 02       		.uleb128 0x2
+ 610 00bd 08       		.byte	0x8
+ 611 00be 04       		.byte	0x4
+ 612 00bf 10030000 		.4byte	.LASF16
+ 613 00c3 02       		.uleb128 0x2
+ 614 00c4 04       		.byte	0x4
+ 615 00c5 07       		.byte	0x7
+ 616 00c6 64020000 		.4byte	.LASF17
+ 617 00ca 08       		.uleb128 0x8
+ 618 00cb 2F020000 		.4byte	.LASF18
+ 619 00cf 01       		.byte	0x1
+ 620 00d0 3001     		.2byte	0x130
+ 621 00d2 01       		.byte	0x1
+ 622 00d3 09       		.uleb128 0x9
+ 623 00d4 F9000000 		.4byte	.LASF38
+ 624 00d8 01       		.byte	0x1
+ 625 00d9 C7       		.byte	0xc7
+ 626 00da 01       		.byte	0x1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 20
+
+
+ 627 00db EB000000 		.4byte	0xeb
+ 628 00df 0A       		.uleb128 0xa
+ 629 00e0 79010000 		.4byte	.LASF27
+ 630 00e4 01       		.byte	0x1
+ 631 00e5 C7       		.byte	0xc7
+ 632 00e6 A9000000 		.4byte	0xa9
+ 633 00ea 00       		.byte	0
+ 634 00eb 08       		.uleb128 0x8
+ 635 00ec F7020000 		.4byte	.LASF19
+ 636 00f0 01       		.byte	0x1
+ 637 00f1 5A01     		.2byte	0x15a
+ 638 00f3 01       		.byte	0x1
+ 639 00f4 0B       		.uleb128 0xb
+ 640 00f5 AF020000 		.4byte	.LASF30
+ 641 00f9 01       		.byte	0x1
+ 642 00fa 9F       		.byte	0x9f
+ 643 00fb 00000000 		.4byte	.LFB5
+ 644 00ff 02000000 		.4byte	.LFE5-.LFB5
+ 645 0103 01       		.uleb128 0x1
+ 646 0104 9C       		.byte	0x9c
+ 647 0105 0C       		.uleb128 0xc
+ 648 0106 97000000 		.4byte	.LASF20
+ 649 010a 01       		.byte	0x1
+ 650 010b 81       		.byte	0x81
+ 651 010c 00000000 		.4byte	.LFB4
+ 652 0110 1C000000 		.4byte	.LFE4-.LFB4
+ 653 0114 01       		.uleb128 0x1
+ 654 0115 9C       		.byte	0x9c
+ 655 0116 3F010000 		.4byte	0x13f
+ 656 011a 0D       		.uleb128 0xd
+ 657 011b EB000000 		.4byte	0xeb
+ 658 011f 00000000 		.4byte	.LBB18
+ 659 0123 00000000 		.4byte	.Ldebug_ranges0+0
+ 660 0127 01       		.byte	0x1
+ 661 0128 84       		.byte	0x84
+ 662 0129 0E       		.uleb128 0xe
+ 663 012a D3000000 		.4byte	0xd3
+ 664 012e 06000000 		.4byte	.LBB22
+ 665 0132 06000000 		.4byte	.LBE22-.LBB22
+ 666 0136 01       		.byte	0x1
+ 667 0137 87       		.byte	0x87
+ 668 0138 0F       		.uleb128 0xf
+ 669 0139 DF000000 		.4byte	0xdf
+ 670 013d 00       		.byte	0
+ 671 013e 00       		.byte	0
+ 672 013f 10       		.uleb128 0x10
+ 673 0140 D3000000 		.4byte	0xd3
+ 674 0144 00000000 		.4byte	.LFB6
+ 675 0148 0C000000 		.4byte	.LFE6-.LFB6
+ 676 014c 01       		.uleb128 0x1
+ 677 014d 9C       		.byte	0x9c
+ 678 014e 5A010000 		.4byte	0x15a
+ 679 0152 11       		.uleb128 0x11
+ 680 0153 DF000000 		.4byte	0xdf
+ 681 0157 01       		.uleb128 0x1
+ 682 0158 50       		.byte	0x50
+ 683 0159 00       		.byte	0
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 21
+
+
+ 684 015a 12       		.uleb128 0x12
+ 685 015b 94020000 		.4byte	.LASF28
+ 686 015f 01       		.byte	0x1
+ 687 0160 DB       		.byte	0xdb
+ 688 0161 A9000000 		.4byte	0xa9
+ 689 0165 00000000 		.4byte	.LFB7
+ 690 0169 0C000000 		.4byte	.LFE7-.LFB7
+ 691 016d 01       		.uleb128 0x1
+ 692 016e 9C       		.byte	0x9c
+ 693 016f 0C       		.uleb128 0xc
+ 694 0170 06000000 		.4byte	.LASF21
+ 695 0174 01       		.byte	0x1
+ 696 0175 F9       		.byte	0xf9
+ 697 0176 00000000 		.4byte	.LFB8
+ 698 017a 24000000 		.4byte	.LFE8-.LFB8
+ 699 017e 01       		.uleb128 0x1
+ 700 017f 9C       		.byte	0x9c
+ 701 0180 C1010000 		.4byte	0x1c1
+ 702 0184 13       		.uleb128 0x13
+ 703 0185 14010000 		.4byte	.LASF26
+ 704 0189 01       		.byte	0x1
+ 705 018a F9       		.byte	0xf9
+ 706 018b 6B000000 		.4byte	0x6b
+ 707 018f 00000000 		.4byte	.LLST0
+ 708 0193 14       		.uleb128 0x14
+ 709 0194 D8000000 		.4byte	.LASF22
+ 710 0198 01       		.byte	0x1
+ 711 0199 FB       		.byte	0xfb
+ 712 019a 6B000000 		.4byte	0x6b
+ 713 019e 21000000 		.4byte	.LLST1
+ 714 01a2 15       		.uleb128 0x15
+ 715 01a3 DA020000 		.4byte	.LASF23
+ 716 01a7 01       		.byte	0x1
+ 717 01a8 FC       		.byte	0xfc
+ 718 01a9 77000000 		.4byte	0x77
+ 719 01ad 16       		.byte	0x16
+ 720 01ae 16       		.uleb128 0x16
+ 721 01af 08000000 		.4byte	.LVL4
+ 722 01b3 3B030000 		.4byte	0x33b
+ 723 01b7 16       		.uleb128 0x16
+ 724 01b8 1A000000 		.4byte	.LVL5
+ 725 01bc 46030000 		.4byte	0x346
+ 726 01c0 00       		.byte	0
+ 727 01c1 0C       		.uleb128 0xc
+ 728 01c2 1C030000 		.4byte	.LASF24
+ 729 01c6 01       		.byte	0x1
+ 730 01c7 38       		.byte	0x38
+ 731 01c8 00000000 		.4byte	.LFB2
+ 732 01cc 2C000000 		.4byte	.LFE2-.LFB2
+ 733 01d0 01       		.uleb128 0x1
+ 734 01d1 9C       		.byte	0x9c
+ 735 01d2 21020000 		.4byte	0x221
+ 736 01d6 0D       		.uleb128 0xd
+ 737 01d7 EB000000 		.4byte	0xeb
+ 738 01db 02000000 		.4byte	.LBB24
+ 739 01df 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 740 01e3 01       		.byte	0x1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 22
+
+
+ 741 01e4 3B       		.byte	0x3b
+ 742 01e5 17       		.uleb128 0x17
+ 743 01e6 D3000000 		.4byte	0xd3
+ 744 01ea 06000000 		.4byte	.LBB27
+ 745 01ee 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 746 01f2 01       		.byte	0x1
+ 747 01f3 3E       		.byte	0x3e
+ 748 01f4 02020000 		.4byte	0x202
+ 749 01f8 18       		.uleb128 0x18
+ 750 01f9 DF000000 		.4byte	0xdf
+ 751 01fd 34000000 		.4byte	.LLST2
+ 752 0201 00       		.byte	0
+ 753 0202 0D       		.uleb128 0xd
+ 754 0203 CA000000 		.4byte	0xca
+ 755 0207 14000000 		.4byte	.LBB34
+ 756 020b 50000000 		.4byte	.Ldebug_ranges0+0x50
+ 757 020f 01       		.byte	0x1
+ 758 0210 44       		.byte	0x44
+ 759 0211 19       		.uleb128 0x19
+ 760 0212 14000000 		.4byte	.LVL8
+ 761 0216 6F010000 		.4byte	0x16f
+ 762 021a 1A       		.uleb128 0x1a
+ 763 021b 01       		.uleb128 0x1
+ 764 021c 50       		.byte	0x50
+ 765 021d 01       		.uleb128 0x1
+ 766 021e 33       		.byte	0x33
+ 767 021f 00       		.byte	0
+ 768 0220 00       		.byte	0
+ 769 0221 0C       		.uleb128 0xc
+ 770 0222 7B020000 		.4byte	.LASF25
+ 771 0226 01       		.byte	0x1
+ 772 0227 63       		.byte	0x63
+ 773 0228 00000000 		.4byte	.LFB3
+ 774 022c 24000000 		.4byte	.LFE3-.LFB3
+ 775 0230 01       		.uleb128 0x1
+ 776 0231 9C       		.byte	0x9c
+ 777 0232 90020000 		.4byte	0x290
+ 778 0236 13       		.uleb128 0x13
+ 779 0237 79010000 		.4byte	.LASF27
+ 780 023b 01       		.byte	0x1
+ 781 023c 63       		.byte	0x63
+ 782 023d A9000000 		.4byte	0xa9
+ 783 0241 4C000000 		.4byte	.LLST3
+ 784 0245 0D       		.uleb128 0xd
+ 785 0246 EB000000 		.4byte	0xeb
+ 786 024a 02000000 		.4byte	.LBB38
+ 787 024e 68000000 		.4byte	.Ldebug_ranges0+0x68
+ 788 0252 01       		.byte	0x1
+ 789 0253 66       		.byte	0x66
+ 790 0254 1B       		.uleb128 0x1b
+ 791 0255 D3000000 		.4byte	0xd3
+ 792 0259 08000000 		.4byte	.LBB42
+ 793 025d 04000000 		.4byte	.LBE42-.LBB42
+ 794 0261 01       		.byte	0x1
+ 795 0262 69       		.byte	0x69
+ 796 0263 71020000 		.4byte	0x271
+ 797 0267 18       		.uleb128 0x18
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 23
+
+
+ 798 0268 DF000000 		.4byte	0xdf
+ 799 026c 7A000000 		.4byte	.LLST4
+ 800 0270 00       		.byte	0
+ 801 0271 1C       		.uleb128 0x1c
+ 802 0272 CA000000 		.4byte	0xca
+ 803 0276 12000000 		.4byte	.LBB44
+ 804 027a 04000000 		.4byte	.LBE44-.LBB44
+ 805 027e 01       		.byte	0x1
+ 806 027f 6F       		.byte	0x6f
+ 807 0280 19       		.uleb128 0x19
+ 808 0281 12000000 		.4byte	.LVL13
+ 809 0285 6F010000 		.4byte	0x16f
+ 810 0289 1A       		.uleb128 0x1a
+ 811 028a 01       		.uleb128 0x1
+ 812 028b 50       		.byte	0x50
+ 813 028c 01       		.uleb128 0x1
+ 814 028d 33       		.byte	0x33
+ 815 028e 00       		.byte	0
+ 816 028f 00       		.byte	0
+ 817 0290 1D       		.uleb128 0x1d
+ 818 0291 47020000 		.4byte	.LASF39
+ 819 0295 01       		.byte	0x1
+ 820 0296 1501     		.2byte	0x115
+ 821 0298 6B000000 		.4byte	0x6b
+ 822 029c 00000000 		.4byte	.LFB9
+ 823 02a0 10000000 		.4byte	.LFE9-.LFB9
+ 824 02a4 01       		.uleb128 0x1
+ 825 02a5 9C       		.byte	0x9c
+ 826 02a6 C8020000 		.4byte	0x2c8
+ 827 02aa 1E       		.uleb128 0x1e
+ 828 02ab 14010000 		.4byte	.LASF26
+ 829 02af 01       		.byte	0x1
+ 830 02b0 1701     		.2byte	0x117
+ 831 02b2 77000000 		.4byte	0x77
+ 832 02b6 8D000000 		.4byte	.LLST5
+ 833 02ba 1F       		.uleb128 0x1f
+ 834 02bb DA020000 		.4byte	.LASF23
+ 835 02bf 01       		.byte	0x1
+ 836 02c0 1801     		.2byte	0x118
+ 837 02c2 77000000 		.4byte	0x77
+ 838 02c6 16       		.byte	0x16
+ 839 02c7 00       		.byte	0
+ 840 02c8 20       		.uleb128 0x20
+ 841 02c9 CA000000 		.4byte	0xca
+ 842 02cd 00000000 		.4byte	.LFB10
+ 843 02d1 0C000000 		.4byte	.LFE10-.LFB10
+ 844 02d5 01       		.uleb128 0x1
+ 845 02d6 9C       		.byte	0x9c
+ 846 02d7 21       		.uleb128 0x21
+ 847 02d8 7D000000 		.4byte	.LASF29
+ 848 02dc 01       		.byte	0x1
+ 849 02dd 4501     		.2byte	0x145
+ 850 02df 6B000000 		.4byte	0x6b
+ 851 02e3 00000000 		.4byte	.LFB11
+ 852 02e7 10000000 		.4byte	.LFE11-.LFB11
+ 853 02eb 01       		.uleb128 0x1
+ 854 02ec 9C       		.byte	0x9c
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 24
+
+
+ 855 02ed 20       		.uleb128 0x20
+ 856 02ee EB000000 		.4byte	0xeb
+ 857 02f2 00000000 		.4byte	.LFB12
+ 858 02f6 0C000000 		.4byte	.LFE12-.LFB12
+ 859 02fa 01       		.uleb128 0x1
+ 860 02fb 9C       		.byte	0x9c
+ 861 02fc 22       		.uleb128 0x22
+ 862 02fd 30000000 		.4byte	.LASF31
+ 863 0301 01       		.byte	0x1
+ 864 0302 7501     		.2byte	0x175
+ 865 0304 00000000 		.4byte	.LFB13
+ 866 0308 0C000000 		.4byte	.LFE13-.LFB13
+ 867 030c 01       		.uleb128 0x1
+ 868 030d 9C       		.byte	0x9c
+ 869 030e 22       		.uleb128 0x22
+ 870 030f 4C000000 		.4byte	.LASF32
+ 871 0313 01       		.byte	0x1
+ 872 0314 8E01     		.2byte	0x18e
+ 873 0316 00000000 		.4byte	.LFB14
+ 874 031a 0C000000 		.4byte	.LFE14-.LFB14
+ 875 031e 01       		.uleb128 0x1
+ 876 031f 9C       		.byte	0x9c
+ 877 0320 23       		.uleb128 0x23
+ 878 0321 A9000000 		.4byte	0xa9
+ 879 0325 30030000 		.4byte	0x330
+ 880 0329 24       		.uleb128 0x24
+ 881 032a C3000000 		.4byte	0xc3
+ 882 032e 2F       		.byte	0x2f
+ 883 032f 00       		.byte	0
+ 884 0330 25       		.uleb128 0x25
+ 885 0331 23000000 		.4byte	.LASF40
+ 886 0335 01       		.byte	0x1
+ 887 0336 21       		.byte	0x21
+ 888 0337 20030000 		.4byte	0x320
+ 889 033b 26       		.uleb128 0x26
+ 890 033c 2B010000 		.4byte	.LASF33
+ 891 0340 2B010000 		.4byte	.LASF33
+ 892 0344 03       		.byte	0x3
+ 893 0345 F8       		.byte	0xf8
+ 894 0346 26       		.uleb128 0x26
+ 895 0347 81010000 		.4byte	.LASF34
+ 896 034b 81010000 		.4byte	.LASF34
+ 897 034f 03       		.byte	0x3
+ 898 0350 F9       		.byte	0xf9
+ 899 0351 00       		.byte	0
+ 900              		.section	.debug_abbrev,"",%progbits
+ 901              	.Ldebug_abbrev0:
+ 902 0000 01       		.uleb128 0x1
+ 903 0001 11       		.uleb128 0x11
+ 904 0002 01       		.byte	0x1
+ 905 0003 25       		.uleb128 0x25
+ 906 0004 0E       		.uleb128 0xe
+ 907 0005 13       		.uleb128 0x13
+ 908 0006 0B       		.uleb128 0xb
+ 909 0007 03       		.uleb128 0x3
+ 910 0008 0E       		.uleb128 0xe
+ 911 0009 1B       		.uleb128 0x1b
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 25
+
+
+ 912 000a 0E       		.uleb128 0xe
+ 913 000b 55       		.uleb128 0x55
+ 914 000c 17       		.uleb128 0x17
+ 915 000d 11       		.uleb128 0x11
+ 916 000e 01       		.uleb128 0x1
+ 917 000f 10       		.uleb128 0x10
+ 918 0010 17       		.uleb128 0x17
+ 919 0011 00       		.byte	0
+ 920 0012 00       		.byte	0
+ 921 0013 02       		.uleb128 0x2
+ 922 0014 24       		.uleb128 0x24
+ 923 0015 00       		.byte	0
+ 924 0016 0B       		.uleb128 0xb
+ 925 0017 0B       		.uleb128 0xb
+ 926 0018 3E       		.uleb128 0x3e
+ 927 0019 0B       		.uleb128 0xb
+ 928 001a 03       		.uleb128 0x3
+ 929 001b 0E       		.uleb128 0xe
+ 930 001c 00       		.byte	0
+ 931 001d 00       		.byte	0
+ 932 001e 03       		.uleb128 0x3
+ 933 001f 24       		.uleb128 0x24
+ 934 0020 00       		.byte	0
+ 935 0021 0B       		.uleb128 0xb
+ 936 0022 0B       		.uleb128 0xb
+ 937 0023 3E       		.uleb128 0x3e
+ 938 0024 0B       		.uleb128 0xb
+ 939 0025 03       		.uleb128 0x3
+ 940 0026 08       		.uleb128 0x8
+ 941 0027 00       		.byte	0
+ 942 0028 00       		.byte	0
+ 943 0029 04       		.uleb128 0x4
+ 944 002a 16       		.uleb128 0x16
+ 945 002b 00       		.byte	0
+ 946 002c 03       		.uleb128 0x3
+ 947 002d 0E       		.uleb128 0xe
+ 948 002e 3A       		.uleb128 0x3a
+ 949 002f 0B       		.uleb128 0xb
+ 950 0030 3B       		.uleb128 0x3b
+ 951 0031 05       		.uleb128 0x5
+ 952 0032 49       		.uleb128 0x49
+ 953 0033 13       		.uleb128 0x13
+ 954 0034 00       		.byte	0
+ 955 0035 00       		.byte	0
+ 956 0036 05       		.uleb128 0x5
+ 957 0037 35       		.uleb128 0x35
+ 958 0038 00       		.byte	0
+ 959 0039 49       		.uleb128 0x49
+ 960 003a 13       		.uleb128 0x13
+ 961 003b 00       		.byte	0
+ 962 003c 00       		.byte	0
+ 963 003d 06       		.uleb128 0x6
+ 964 003e 0F       		.uleb128 0xf
+ 965 003f 00       		.byte	0
+ 966 0040 0B       		.uleb128 0xb
+ 967 0041 0B       		.uleb128 0xb
+ 968 0042 49       		.uleb128 0x49
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 26
+
+
+ 969 0043 13       		.uleb128 0x13
+ 970 0044 00       		.byte	0
+ 971 0045 00       		.byte	0
+ 972 0046 07       		.uleb128 0x7
+ 973 0047 15       		.uleb128 0x15
+ 974 0048 00       		.byte	0
+ 975 0049 27       		.uleb128 0x27
+ 976 004a 19       		.uleb128 0x19
+ 977 004b 00       		.byte	0
+ 978 004c 00       		.byte	0
+ 979 004d 08       		.uleb128 0x8
+ 980 004e 2E       		.uleb128 0x2e
+ 981 004f 00       		.byte	0
+ 982 0050 3F       		.uleb128 0x3f
+ 983 0051 19       		.uleb128 0x19
+ 984 0052 03       		.uleb128 0x3
+ 985 0053 0E       		.uleb128 0xe
+ 986 0054 3A       		.uleb128 0x3a
+ 987 0055 0B       		.uleb128 0xb
+ 988 0056 3B       		.uleb128 0x3b
+ 989 0057 05       		.uleb128 0x5
+ 990 0058 27       		.uleb128 0x27
+ 991 0059 19       		.uleb128 0x19
+ 992 005a 20       		.uleb128 0x20
+ 993 005b 0B       		.uleb128 0xb
+ 994 005c 00       		.byte	0
+ 995 005d 00       		.byte	0
+ 996 005e 09       		.uleb128 0x9
+ 997 005f 2E       		.uleb128 0x2e
+ 998 0060 01       		.byte	0x1
+ 999 0061 3F       		.uleb128 0x3f
+ 1000 0062 19       		.uleb128 0x19
+ 1001 0063 03       		.uleb128 0x3
+ 1002 0064 0E       		.uleb128 0xe
+ 1003 0065 3A       		.uleb128 0x3a
+ 1004 0066 0B       		.uleb128 0xb
+ 1005 0067 3B       		.uleb128 0x3b
+ 1006 0068 0B       		.uleb128 0xb
+ 1007 0069 27       		.uleb128 0x27
+ 1008 006a 19       		.uleb128 0x19
+ 1009 006b 20       		.uleb128 0x20
+ 1010 006c 0B       		.uleb128 0xb
+ 1011 006d 01       		.uleb128 0x1
+ 1012 006e 13       		.uleb128 0x13
+ 1013 006f 00       		.byte	0
+ 1014 0070 00       		.byte	0
+ 1015 0071 0A       		.uleb128 0xa
+ 1016 0072 05       		.uleb128 0x5
+ 1017 0073 00       		.byte	0
+ 1018 0074 03       		.uleb128 0x3
+ 1019 0075 0E       		.uleb128 0xe
+ 1020 0076 3A       		.uleb128 0x3a
+ 1021 0077 0B       		.uleb128 0xb
+ 1022 0078 3B       		.uleb128 0x3b
+ 1023 0079 0B       		.uleb128 0xb
+ 1024 007a 49       		.uleb128 0x49
+ 1025 007b 13       		.uleb128 0x13
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 27
+
+
+ 1026 007c 00       		.byte	0
+ 1027 007d 00       		.byte	0
+ 1028 007e 0B       		.uleb128 0xb
+ 1029 007f 2E       		.uleb128 0x2e
+ 1030 0080 00       		.byte	0
+ 1031 0081 3F       		.uleb128 0x3f
+ 1032 0082 19       		.uleb128 0x19
+ 1033 0083 03       		.uleb128 0x3
+ 1034 0084 0E       		.uleb128 0xe
+ 1035 0085 3A       		.uleb128 0x3a
+ 1036 0086 0B       		.uleb128 0xb
+ 1037 0087 3B       		.uleb128 0x3b
+ 1038 0088 0B       		.uleb128 0xb
+ 1039 0089 27       		.uleb128 0x27
+ 1040 008a 19       		.uleb128 0x19
+ 1041 008b 11       		.uleb128 0x11
+ 1042 008c 01       		.uleb128 0x1
+ 1043 008d 12       		.uleb128 0x12
+ 1044 008e 06       		.uleb128 0x6
+ 1045 008f 40       		.uleb128 0x40
+ 1046 0090 18       		.uleb128 0x18
+ 1047 0091 9742     		.uleb128 0x2117
+ 1048 0093 19       		.uleb128 0x19
+ 1049 0094 00       		.byte	0
+ 1050 0095 00       		.byte	0
+ 1051 0096 0C       		.uleb128 0xc
+ 1052 0097 2E       		.uleb128 0x2e
+ 1053 0098 01       		.byte	0x1
+ 1054 0099 3F       		.uleb128 0x3f
+ 1055 009a 19       		.uleb128 0x19
+ 1056 009b 03       		.uleb128 0x3
+ 1057 009c 0E       		.uleb128 0xe
+ 1058 009d 3A       		.uleb128 0x3a
+ 1059 009e 0B       		.uleb128 0xb
+ 1060 009f 3B       		.uleb128 0x3b
+ 1061 00a0 0B       		.uleb128 0xb
+ 1062 00a1 27       		.uleb128 0x27
+ 1063 00a2 19       		.uleb128 0x19
+ 1064 00a3 11       		.uleb128 0x11
+ 1065 00a4 01       		.uleb128 0x1
+ 1066 00a5 12       		.uleb128 0x12
+ 1067 00a6 06       		.uleb128 0x6
+ 1068 00a7 40       		.uleb128 0x40
+ 1069 00a8 18       		.uleb128 0x18
+ 1070 00a9 9742     		.uleb128 0x2117
+ 1071 00ab 19       		.uleb128 0x19
+ 1072 00ac 01       		.uleb128 0x1
+ 1073 00ad 13       		.uleb128 0x13
+ 1074 00ae 00       		.byte	0
+ 1075 00af 00       		.byte	0
+ 1076 00b0 0D       		.uleb128 0xd
+ 1077 00b1 1D       		.uleb128 0x1d
+ 1078 00b2 00       		.byte	0
+ 1079 00b3 31       		.uleb128 0x31
+ 1080 00b4 13       		.uleb128 0x13
+ 1081 00b5 52       		.uleb128 0x52
+ 1082 00b6 01       		.uleb128 0x1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 28
+
+
+ 1083 00b7 55       		.uleb128 0x55
+ 1084 00b8 17       		.uleb128 0x17
+ 1085 00b9 58       		.uleb128 0x58
+ 1086 00ba 0B       		.uleb128 0xb
+ 1087 00bb 59       		.uleb128 0x59
+ 1088 00bc 0B       		.uleb128 0xb
+ 1089 00bd 00       		.byte	0
+ 1090 00be 00       		.byte	0
+ 1091 00bf 0E       		.uleb128 0xe
+ 1092 00c0 1D       		.uleb128 0x1d
+ 1093 00c1 01       		.byte	0x1
+ 1094 00c2 31       		.uleb128 0x31
+ 1095 00c3 13       		.uleb128 0x13
+ 1096 00c4 11       		.uleb128 0x11
+ 1097 00c5 01       		.uleb128 0x1
+ 1098 00c6 12       		.uleb128 0x12
+ 1099 00c7 06       		.uleb128 0x6
+ 1100 00c8 58       		.uleb128 0x58
+ 1101 00c9 0B       		.uleb128 0xb
+ 1102 00ca 59       		.uleb128 0x59
+ 1103 00cb 0B       		.uleb128 0xb
+ 1104 00cc 00       		.byte	0
+ 1105 00cd 00       		.byte	0
+ 1106 00ce 0F       		.uleb128 0xf
+ 1107 00cf 05       		.uleb128 0x5
+ 1108 00d0 00       		.byte	0
+ 1109 00d1 31       		.uleb128 0x31
+ 1110 00d2 13       		.uleb128 0x13
+ 1111 00d3 00       		.byte	0
+ 1112 00d4 00       		.byte	0
+ 1113 00d5 10       		.uleb128 0x10
+ 1114 00d6 2E       		.uleb128 0x2e
+ 1115 00d7 01       		.byte	0x1
+ 1116 00d8 31       		.uleb128 0x31
+ 1117 00d9 13       		.uleb128 0x13
+ 1118 00da 11       		.uleb128 0x11
+ 1119 00db 01       		.uleb128 0x1
+ 1120 00dc 12       		.uleb128 0x12
+ 1121 00dd 06       		.uleb128 0x6
+ 1122 00de 40       		.uleb128 0x40
+ 1123 00df 18       		.uleb128 0x18
+ 1124 00e0 9742     		.uleb128 0x2117
+ 1125 00e2 19       		.uleb128 0x19
+ 1126 00e3 01       		.uleb128 0x1
+ 1127 00e4 13       		.uleb128 0x13
+ 1128 00e5 00       		.byte	0
+ 1129 00e6 00       		.byte	0
+ 1130 00e7 11       		.uleb128 0x11
+ 1131 00e8 05       		.uleb128 0x5
+ 1132 00e9 00       		.byte	0
+ 1133 00ea 31       		.uleb128 0x31
+ 1134 00eb 13       		.uleb128 0x13
+ 1135 00ec 02       		.uleb128 0x2
+ 1136 00ed 18       		.uleb128 0x18
+ 1137 00ee 00       		.byte	0
+ 1138 00ef 00       		.byte	0
+ 1139 00f0 12       		.uleb128 0x12
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 29
+
+
+ 1140 00f1 2E       		.uleb128 0x2e
+ 1141 00f2 00       		.byte	0
+ 1142 00f3 3F       		.uleb128 0x3f
+ 1143 00f4 19       		.uleb128 0x19
+ 1144 00f5 03       		.uleb128 0x3
+ 1145 00f6 0E       		.uleb128 0xe
+ 1146 00f7 3A       		.uleb128 0x3a
+ 1147 00f8 0B       		.uleb128 0xb
+ 1148 00f9 3B       		.uleb128 0x3b
+ 1149 00fa 0B       		.uleb128 0xb
+ 1150 00fb 27       		.uleb128 0x27
+ 1151 00fc 19       		.uleb128 0x19
+ 1152 00fd 49       		.uleb128 0x49
+ 1153 00fe 13       		.uleb128 0x13
+ 1154 00ff 11       		.uleb128 0x11
+ 1155 0100 01       		.uleb128 0x1
+ 1156 0101 12       		.uleb128 0x12
+ 1157 0102 06       		.uleb128 0x6
+ 1158 0103 40       		.uleb128 0x40
+ 1159 0104 18       		.uleb128 0x18
+ 1160 0105 9742     		.uleb128 0x2117
+ 1161 0107 19       		.uleb128 0x19
+ 1162 0108 00       		.byte	0
+ 1163 0109 00       		.byte	0
+ 1164 010a 13       		.uleb128 0x13
+ 1165 010b 05       		.uleb128 0x5
+ 1166 010c 00       		.byte	0
+ 1167 010d 03       		.uleb128 0x3
+ 1168 010e 0E       		.uleb128 0xe
+ 1169 010f 3A       		.uleb128 0x3a
+ 1170 0110 0B       		.uleb128 0xb
+ 1171 0111 3B       		.uleb128 0x3b
+ 1172 0112 0B       		.uleb128 0xb
+ 1173 0113 49       		.uleb128 0x49
+ 1174 0114 13       		.uleb128 0x13
+ 1175 0115 02       		.uleb128 0x2
+ 1176 0116 17       		.uleb128 0x17
+ 1177 0117 00       		.byte	0
+ 1178 0118 00       		.byte	0
+ 1179 0119 14       		.uleb128 0x14
+ 1180 011a 34       		.uleb128 0x34
+ 1181 011b 00       		.byte	0
+ 1182 011c 03       		.uleb128 0x3
+ 1183 011d 0E       		.uleb128 0xe
+ 1184 011e 3A       		.uleb128 0x3a
+ 1185 011f 0B       		.uleb128 0xb
+ 1186 0120 3B       		.uleb128 0x3b
+ 1187 0121 0B       		.uleb128 0xb
+ 1188 0122 49       		.uleb128 0x49
+ 1189 0123 13       		.uleb128 0x13
+ 1190 0124 02       		.uleb128 0x2
+ 1191 0125 17       		.uleb128 0x17
+ 1192 0126 00       		.byte	0
+ 1193 0127 00       		.byte	0
+ 1194 0128 15       		.uleb128 0x15
+ 1195 0129 34       		.uleb128 0x34
+ 1196 012a 00       		.byte	0
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 30
+
+
+ 1197 012b 03       		.uleb128 0x3
+ 1198 012c 0E       		.uleb128 0xe
+ 1199 012d 3A       		.uleb128 0x3a
+ 1200 012e 0B       		.uleb128 0xb
+ 1201 012f 3B       		.uleb128 0x3b
+ 1202 0130 0B       		.uleb128 0xb
+ 1203 0131 49       		.uleb128 0x49
+ 1204 0132 13       		.uleb128 0x13
+ 1205 0133 1C       		.uleb128 0x1c
+ 1206 0134 0B       		.uleb128 0xb
+ 1207 0135 00       		.byte	0
+ 1208 0136 00       		.byte	0
+ 1209 0137 16       		.uleb128 0x16
+ 1210 0138 898201   		.uleb128 0x4109
+ 1211 013b 00       		.byte	0
+ 1212 013c 11       		.uleb128 0x11
+ 1213 013d 01       		.uleb128 0x1
+ 1214 013e 31       		.uleb128 0x31
+ 1215 013f 13       		.uleb128 0x13
+ 1216 0140 00       		.byte	0
+ 1217 0141 00       		.byte	0
+ 1218 0142 17       		.uleb128 0x17
+ 1219 0143 1D       		.uleb128 0x1d
+ 1220 0144 01       		.byte	0x1
+ 1221 0145 31       		.uleb128 0x31
+ 1222 0146 13       		.uleb128 0x13
+ 1223 0147 52       		.uleb128 0x52
+ 1224 0148 01       		.uleb128 0x1
+ 1225 0149 55       		.uleb128 0x55
+ 1226 014a 17       		.uleb128 0x17
+ 1227 014b 58       		.uleb128 0x58
+ 1228 014c 0B       		.uleb128 0xb
+ 1229 014d 59       		.uleb128 0x59
+ 1230 014e 0B       		.uleb128 0xb
+ 1231 014f 01       		.uleb128 0x1
+ 1232 0150 13       		.uleb128 0x13
+ 1233 0151 00       		.byte	0
+ 1234 0152 00       		.byte	0
+ 1235 0153 18       		.uleb128 0x18
+ 1236 0154 05       		.uleb128 0x5
+ 1237 0155 00       		.byte	0
+ 1238 0156 31       		.uleb128 0x31
+ 1239 0157 13       		.uleb128 0x13
+ 1240 0158 02       		.uleb128 0x2
+ 1241 0159 17       		.uleb128 0x17
+ 1242 015a 00       		.byte	0
+ 1243 015b 00       		.byte	0
+ 1244 015c 19       		.uleb128 0x19
+ 1245 015d 898201   		.uleb128 0x4109
+ 1246 0160 01       		.byte	0x1
+ 1247 0161 11       		.uleb128 0x11
+ 1248 0162 01       		.uleb128 0x1
+ 1249 0163 31       		.uleb128 0x31
+ 1250 0164 13       		.uleb128 0x13
+ 1251 0165 00       		.byte	0
+ 1252 0166 00       		.byte	0
+ 1253 0167 1A       		.uleb128 0x1a
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 31
+
+
+ 1254 0168 8A8201   		.uleb128 0x410a
+ 1255 016b 00       		.byte	0
+ 1256 016c 02       		.uleb128 0x2
+ 1257 016d 18       		.uleb128 0x18
+ 1258 016e 9142     		.uleb128 0x2111
+ 1259 0170 18       		.uleb128 0x18
+ 1260 0171 00       		.byte	0
+ 1261 0172 00       		.byte	0
+ 1262 0173 1B       		.uleb128 0x1b
+ 1263 0174 1D       		.uleb128 0x1d
+ 1264 0175 01       		.byte	0x1
+ 1265 0176 31       		.uleb128 0x31
+ 1266 0177 13       		.uleb128 0x13
+ 1267 0178 11       		.uleb128 0x11
+ 1268 0179 01       		.uleb128 0x1
+ 1269 017a 12       		.uleb128 0x12
+ 1270 017b 06       		.uleb128 0x6
+ 1271 017c 58       		.uleb128 0x58
+ 1272 017d 0B       		.uleb128 0xb
+ 1273 017e 59       		.uleb128 0x59
+ 1274 017f 0B       		.uleb128 0xb
+ 1275 0180 01       		.uleb128 0x1
+ 1276 0181 13       		.uleb128 0x13
+ 1277 0182 00       		.byte	0
+ 1278 0183 00       		.byte	0
+ 1279 0184 1C       		.uleb128 0x1c
+ 1280 0185 1D       		.uleb128 0x1d
+ 1281 0186 00       		.byte	0
+ 1282 0187 31       		.uleb128 0x31
+ 1283 0188 13       		.uleb128 0x13
+ 1284 0189 11       		.uleb128 0x11
+ 1285 018a 01       		.uleb128 0x1
+ 1286 018b 12       		.uleb128 0x12
+ 1287 018c 06       		.uleb128 0x6
+ 1288 018d 58       		.uleb128 0x58
+ 1289 018e 0B       		.uleb128 0xb
+ 1290 018f 59       		.uleb128 0x59
+ 1291 0190 0B       		.uleb128 0xb
+ 1292 0191 00       		.byte	0
+ 1293 0192 00       		.byte	0
+ 1294 0193 1D       		.uleb128 0x1d
+ 1295 0194 2E       		.uleb128 0x2e
+ 1296 0195 01       		.byte	0x1
+ 1297 0196 3F       		.uleb128 0x3f
+ 1298 0197 19       		.uleb128 0x19
+ 1299 0198 03       		.uleb128 0x3
+ 1300 0199 0E       		.uleb128 0xe
+ 1301 019a 3A       		.uleb128 0x3a
+ 1302 019b 0B       		.uleb128 0xb
+ 1303 019c 3B       		.uleb128 0x3b
+ 1304 019d 05       		.uleb128 0x5
+ 1305 019e 27       		.uleb128 0x27
+ 1306 019f 19       		.uleb128 0x19
+ 1307 01a0 49       		.uleb128 0x49
+ 1308 01a1 13       		.uleb128 0x13
+ 1309 01a2 11       		.uleb128 0x11
+ 1310 01a3 01       		.uleb128 0x1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 32
+
+
+ 1311 01a4 12       		.uleb128 0x12
+ 1312 01a5 06       		.uleb128 0x6
+ 1313 01a6 40       		.uleb128 0x40
+ 1314 01a7 18       		.uleb128 0x18
+ 1315 01a8 9742     		.uleb128 0x2117
+ 1316 01aa 19       		.uleb128 0x19
+ 1317 01ab 01       		.uleb128 0x1
+ 1318 01ac 13       		.uleb128 0x13
+ 1319 01ad 00       		.byte	0
+ 1320 01ae 00       		.byte	0
+ 1321 01af 1E       		.uleb128 0x1e
+ 1322 01b0 34       		.uleb128 0x34
+ 1323 01b1 00       		.byte	0
+ 1324 01b2 03       		.uleb128 0x3
+ 1325 01b3 0E       		.uleb128 0xe
+ 1326 01b4 3A       		.uleb128 0x3a
+ 1327 01b5 0B       		.uleb128 0xb
+ 1328 01b6 3B       		.uleb128 0x3b
+ 1329 01b7 05       		.uleb128 0x5
+ 1330 01b8 49       		.uleb128 0x49
+ 1331 01b9 13       		.uleb128 0x13
+ 1332 01ba 02       		.uleb128 0x2
+ 1333 01bb 17       		.uleb128 0x17
+ 1334 01bc 00       		.byte	0
+ 1335 01bd 00       		.byte	0
+ 1336 01be 1F       		.uleb128 0x1f
+ 1337 01bf 34       		.uleb128 0x34
+ 1338 01c0 00       		.byte	0
+ 1339 01c1 03       		.uleb128 0x3
+ 1340 01c2 0E       		.uleb128 0xe
+ 1341 01c3 3A       		.uleb128 0x3a
+ 1342 01c4 0B       		.uleb128 0xb
+ 1343 01c5 3B       		.uleb128 0x3b
+ 1344 01c6 05       		.uleb128 0x5
+ 1345 01c7 49       		.uleb128 0x49
+ 1346 01c8 13       		.uleb128 0x13
+ 1347 01c9 1C       		.uleb128 0x1c
+ 1348 01ca 0B       		.uleb128 0xb
+ 1349 01cb 00       		.byte	0
+ 1350 01cc 00       		.byte	0
+ 1351 01cd 20       		.uleb128 0x20
+ 1352 01ce 2E       		.uleb128 0x2e
+ 1353 01cf 00       		.byte	0
+ 1354 01d0 31       		.uleb128 0x31
+ 1355 01d1 13       		.uleb128 0x13
+ 1356 01d2 11       		.uleb128 0x11
+ 1357 01d3 01       		.uleb128 0x1
+ 1358 01d4 12       		.uleb128 0x12
+ 1359 01d5 06       		.uleb128 0x6
+ 1360 01d6 40       		.uleb128 0x40
+ 1361 01d7 18       		.uleb128 0x18
+ 1362 01d8 9742     		.uleb128 0x2117
+ 1363 01da 19       		.uleb128 0x19
+ 1364 01db 00       		.byte	0
+ 1365 01dc 00       		.byte	0
+ 1366 01dd 21       		.uleb128 0x21
+ 1367 01de 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 33
+
+
+ 1368 01df 00       		.byte	0
+ 1369 01e0 3F       		.uleb128 0x3f
+ 1370 01e1 19       		.uleb128 0x19
+ 1371 01e2 03       		.uleb128 0x3
+ 1372 01e3 0E       		.uleb128 0xe
+ 1373 01e4 3A       		.uleb128 0x3a
+ 1374 01e5 0B       		.uleb128 0xb
+ 1375 01e6 3B       		.uleb128 0x3b
+ 1376 01e7 05       		.uleb128 0x5
+ 1377 01e8 27       		.uleb128 0x27
+ 1378 01e9 19       		.uleb128 0x19
+ 1379 01ea 49       		.uleb128 0x49
+ 1380 01eb 13       		.uleb128 0x13
+ 1381 01ec 11       		.uleb128 0x11
+ 1382 01ed 01       		.uleb128 0x1
+ 1383 01ee 12       		.uleb128 0x12
+ 1384 01ef 06       		.uleb128 0x6
+ 1385 01f0 40       		.uleb128 0x40
+ 1386 01f1 18       		.uleb128 0x18
+ 1387 01f2 9742     		.uleb128 0x2117
+ 1388 01f4 19       		.uleb128 0x19
+ 1389 01f5 00       		.byte	0
+ 1390 01f6 00       		.byte	0
+ 1391 01f7 22       		.uleb128 0x22
+ 1392 01f8 2E       		.uleb128 0x2e
+ 1393 01f9 00       		.byte	0
+ 1394 01fa 3F       		.uleb128 0x3f
+ 1395 01fb 19       		.uleb128 0x19
+ 1396 01fc 03       		.uleb128 0x3
+ 1397 01fd 0E       		.uleb128 0xe
+ 1398 01fe 3A       		.uleb128 0x3a
+ 1399 01ff 0B       		.uleb128 0xb
+ 1400 0200 3B       		.uleb128 0x3b
+ 1401 0201 05       		.uleb128 0x5
+ 1402 0202 27       		.uleb128 0x27
+ 1403 0203 19       		.uleb128 0x19
+ 1404 0204 11       		.uleb128 0x11
+ 1405 0205 01       		.uleb128 0x1
+ 1406 0206 12       		.uleb128 0x12
+ 1407 0207 06       		.uleb128 0x6
+ 1408 0208 40       		.uleb128 0x40
+ 1409 0209 18       		.uleb128 0x18
+ 1410 020a 9742     		.uleb128 0x2117
+ 1411 020c 19       		.uleb128 0x19
+ 1412 020d 00       		.byte	0
+ 1413 020e 00       		.byte	0
+ 1414 020f 23       		.uleb128 0x23
+ 1415 0210 01       		.uleb128 0x1
+ 1416 0211 01       		.byte	0x1
+ 1417 0212 49       		.uleb128 0x49
+ 1418 0213 13       		.uleb128 0x13
+ 1419 0214 01       		.uleb128 0x1
+ 1420 0215 13       		.uleb128 0x13
+ 1421 0216 00       		.byte	0
+ 1422 0217 00       		.byte	0
+ 1423 0218 24       		.uleb128 0x24
+ 1424 0219 21       		.uleb128 0x21
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 34
+
+
+ 1425 021a 00       		.byte	0
+ 1426 021b 49       		.uleb128 0x49
+ 1427 021c 13       		.uleb128 0x13
+ 1428 021d 2F       		.uleb128 0x2f
+ 1429 021e 0B       		.uleb128 0xb
+ 1430 021f 00       		.byte	0
+ 1431 0220 00       		.byte	0
+ 1432 0221 25       		.uleb128 0x25
+ 1433 0222 34       		.uleb128 0x34
+ 1434 0223 00       		.byte	0
+ 1435 0224 03       		.uleb128 0x3
+ 1436 0225 0E       		.uleb128 0xe
+ 1437 0226 3A       		.uleb128 0x3a
+ 1438 0227 0B       		.uleb128 0xb
+ 1439 0228 3B       		.uleb128 0x3b
+ 1440 0229 0B       		.uleb128 0xb
+ 1441 022a 49       		.uleb128 0x49
+ 1442 022b 13       		.uleb128 0x13
+ 1443 022c 3F       		.uleb128 0x3f
+ 1444 022d 19       		.uleb128 0x19
+ 1445 022e 3C       		.uleb128 0x3c
+ 1446 022f 19       		.uleb128 0x19
+ 1447 0230 00       		.byte	0
+ 1448 0231 00       		.byte	0
+ 1449 0232 26       		.uleb128 0x26
+ 1450 0233 2E       		.uleb128 0x2e
+ 1451 0234 00       		.byte	0
+ 1452 0235 3F       		.uleb128 0x3f
+ 1453 0236 19       		.uleb128 0x19
+ 1454 0237 3C       		.uleb128 0x3c
+ 1455 0238 19       		.uleb128 0x19
+ 1456 0239 6E       		.uleb128 0x6e
+ 1457 023a 0E       		.uleb128 0xe
+ 1458 023b 03       		.uleb128 0x3
+ 1459 023c 0E       		.uleb128 0xe
+ 1460 023d 3A       		.uleb128 0x3a
+ 1461 023e 0B       		.uleb128 0xb
+ 1462 023f 3B       		.uleb128 0x3b
+ 1463 0240 0B       		.uleb128 0xb
+ 1464 0241 00       		.byte	0
+ 1465 0242 00       		.byte	0
+ 1466 0243 00       		.byte	0
+ 1467              		.section	.debug_loc,"",%progbits
+ 1468              	.Ldebug_loc0:
+ 1469              	.LLST0:
+ 1470 0000 00000000 		.4byte	.LVL3
+ 1471 0004 07000000 		.4byte	.LVL4-1
+ 1472 0008 0100     		.2byte	0x1
+ 1473 000a 50       		.byte	0x50
+ 1474 000b 07000000 		.4byte	.LVL4-1
+ 1475 000f 24000000 		.4byte	.LFE8
+ 1476 0013 0400     		.2byte	0x4
+ 1477 0015 F3       		.byte	0xf3
+ 1478 0016 01       		.uleb128 0x1
+ 1479 0017 50       		.byte	0x50
+ 1480 0018 9F       		.byte	0x9f
+ 1481 0019 00000000 		.4byte	0
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 35
+
+
+ 1482 001d 00000000 		.4byte	0
+ 1483              	.LLST1:
+ 1484 0021 08000000 		.4byte	.LVL4
+ 1485 0025 19000000 		.4byte	.LVL5-1
+ 1486 0029 0100     		.2byte	0x1
+ 1487 002b 50       		.byte	0x50
+ 1488 002c 00000000 		.4byte	0
+ 1489 0030 00000000 		.4byte	0
+ 1490              	.LLST2:
+ 1491 0034 0A000000 		.4byte	.LVL6
+ 1492 0038 10000000 		.4byte	.LVL7
+ 1493 003c 0600     		.2byte	0x6
+ 1494 003e 03       		.byte	0x3
+ 1495 003f 00000000 		.4byte	Wakeup_Interrupt_Interrupt
+ 1496 0043 9F       		.byte	0x9f
+ 1497 0044 00000000 		.4byte	0
+ 1498 0048 00000000 		.4byte	0
+ 1499              	.LLST3:
+ 1500 004c 00000000 		.4byte	.LVL9
+ 1501 0050 0E000000 		.4byte	.LVL12
+ 1502 0054 0100     		.2byte	0x1
+ 1503 0056 50       		.byte	0x50
+ 1504 0057 0E000000 		.4byte	.LVL12
+ 1505 005b 11000000 		.4byte	.LVL13-1
+ 1506 005f 0300     		.2byte	0x3
+ 1507 0061 73       		.byte	0x73
+ 1508 0062 C800     		.sleb128 72
+ 1509 0064 11000000 		.4byte	.LVL13-1
+ 1510 0068 24000000 		.4byte	.LFE3
+ 1511 006c 0400     		.2byte	0x4
+ 1512 006e F3       		.byte	0xf3
+ 1513 006f 01       		.uleb128 0x1
+ 1514 0070 50       		.byte	0x50
+ 1515 0071 9F       		.byte	0x9f
+ 1516 0072 00000000 		.4byte	0
+ 1517 0076 00000000 		.4byte	0
+ 1518              	.LLST4:
+ 1519 007a 08000000 		.4byte	.LVL10
+ 1520 007e 0C000000 		.4byte	.LVL11
+ 1521 0082 0100     		.2byte	0x1
+ 1522 0084 50       		.byte	0x50
+ 1523 0085 00000000 		.4byte	0
+ 1524 0089 00000000 		.4byte	0
+ 1525              	.LLST5:
+ 1526 008d 04000000 		.4byte	.LVL15
+ 1527 0091 06000000 		.4byte	.LVL16
+ 1528 0095 0700     		.2byte	0x7
+ 1529 0097 70       		.byte	0x70
+ 1530 0098 00       		.sleb128 0
+ 1531 0099 46       		.byte	0x46
+ 1532 009a 25       		.byte	0x25
+ 1533 009b 33       		.byte	0x33
+ 1534 009c 1A       		.byte	0x1a
+ 1535 009d 9F       		.byte	0x9f
+ 1536 009e 00000000 		.4byte	0
+ 1537 00a2 00000000 		.4byte	0
+ 1538              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 36
+
+
+ 1539 0000 7C000000 		.4byte	0x7c
+ 1540 0004 0200     		.2byte	0x2
+ 1541 0006 00000000 		.4byte	.Ldebug_info0
+ 1542 000a 04       		.byte	0x4
+ 1543 000b 00       		.byte	0
+ 1544 000c 0000     		.2byte	0
+ 1545 000e 0000     		.2byte	0
+ 1546 0010 00000000 		.4byte	.LFB5
+ 1547 0014 02000000 		.4byte	.LFE5-.LFB5
+ 1548 0018 00000000 		.4byte	.LFB4
+ 1549 001c 1C000000 		.4byte	.LFE4-.LFB4
+ 1550 0020 00000000 		.4byte	.LFB6
+ 1551 0024 0C000000 		.4byte	.LFE6-.LFB6
+ 1552 0028 00000000 		.4byte	.LFB7
+ 1553 002c 0C000000 		.4byte	.LFE7-.LFB7
+ 1554 0030 00000000 		.4byte	.LFB8
+ 1555 0034 24000000 		.4byte	.LFE8-.LFB8
+ 1556 0038 00000000 		.4byte	.LFB2
+ 1557 003c 2C000000 		.4byte	.LFE2-.LFB2
+ 1558 0040 00000000 		.4byte	.LFB3
+ 1559 0044 24000000 		.4byte	.LFE3-.LFB3
+ 1560 0048 00000000 		.4byte	.LFB9
+ 1561 004c 10000000 		.4byte	.LFE9-.LFB9
+ 1562 0050 00000000 		.4byte	.LFB10
+ 1563 0054 0C000000 		.4byte	.LFE10-.LFB10
+ 1564 0058 00000000 		.4byte	.LFB11
+ 1565 005c 10000000 		.4byte	.LFE11-.LFB11
+ 1566 0060 00000000 		.4byte	.LFB12
+ 1567 0064 0C000000 		.4byte	.LFE12-.LFB12
+ 1568 0068 00000000 		.4byte	.LFB13
+ 1569 006c 0C000000 		.4byte	.LFE13-.LFB13
+ 1570 0070 00000000 		.4byte	.LFB14
+ 1571 0074 0C000000 		.4byte	.LFE14-.LFB14
+ 1572 0078 00000000 		.4byte	0
+ 1573 007c 00000000 		.4byte	0
+ 1574              		.section	.debug_ranges,"",%progbits
+ 1575              	.Ldebug_ranges0:
+ 1576 0000 00000000 		.4byte	.LBB18
+ 1577 0004 04000000 		.4byte	.LBE18
+ 1578 0008 04000000 		.4byte	.LBB21
+ 1579 000c 06000000 		.4byte	.LBE21
+ 1580 0010 00000000 		.4byte	0
+ 1581 0014 00000000 		.4byte	0
+ 1582 0018 02000000 		.4byte	.LBB24
+ 1583 001c 06000000 		.4byte	.LBE24
+ 1584 0020 08000000 		.4byte	.LBB31
+ 1585 0024 0A000000 		.4byte	.LBE31
+ 1586 0028 00000000 		.4byte	0
+ 1587 002c 00000000 		.4byte	0
+ 1588 0030 06000000 		.4byte	.LBB27
+ 1589 0034 08000000 		.4byte	.LBE27
+ 1590 0038 0A000000 		.4byte	.LBB32
+ 1591 003c 0C000000 		.4byte	.LBE32
+ 1592 0040 0E000000 		.4byte	.LBB33
+ 1593 0044 10000000 		.4byte	.LBE33
+ 1594 0048 00000000 		.4byte	0
+ 1595 004c 00000000 		.4byte	0
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 37
+
+
+ 1596 0050 14000000 		.4byte	.LBB34
+ 1597 0054 16000000 		.4byte	.LBE34
+ 1598 0058 16000000 		.4byte	.LBB37
+ 1599 005c 18000000 		.4byte	.LBE37
+ 1600 0060 00000000 		.4byte	0
+ 1601 0064 00000000 		.4byte	0
+ 1602 0068 02000000 		.4byte	.LBB38
+ 1603 006c 06000000 		.4byte	.LBE38
+ 1604 0070 06000000 		.4byte	.LBB41
+ 1605 0074 08000000 		.4byte	.LBE41
+ 1606 0078 00000000 		.4byte	0
+ 1607 007c 00000000 		.4byte	0
+ 1608 0080 00000000 		.4byte	.LFB5
+ 1609 0084 02000000 		.4byte	.LFE5
+ 1610 0088 00000000 		.4byte	.LFB4
+ 1611 008c 1C000000 		.4byte	.LFE4
+ 1612 0090 00000000 		.4byte	.LFB6
+ 1613 0094 0C000000 		.4byte	.LFE6
+ 1614 0098 00000000 		.4byte	.LFB7
+ 1615 009c 0C000000 		.4byte	.LFE7
+ 1616 00a0 00000000 		.4byte	.LFB8
+ 1617 00a4 24000000 		.4byte	.LFE8
+ 1618 00a8 00000000 		.4byte	.LFB2
+ 1619 00ac 2C000000 		.4byte	.LFE2
+ 1620 00b0 00000000 		.4byte	.LFB3
+ 1621 00b4 24000000 		.4byte	.LFE3
+ 1622 00b8 00000000 		.4byte	.LFB9
+ 1623 00bc 10000000 		.4byte	.LFE9
+ 1624 00c0 00000000 		.4byte	.LFB10
+ 1625 00c4 0C000000 		.4byte	.LFE10
+ 1626 00c8 00000000 		.4byte	.LFB11
+ 1627 00cc 10000000 		.4byte	.LFE11
+ 1628 00d0 00000000 		.4byte	.LFB12
+ 1629 00d4 0C000000 		.4byte	.LFE12
+ 1630 00d8 00000000 		.4byte	.LFB13
+ 1631 00dc 0C000000 		.4byte	.LFE13
+ 1632 00e0 00000000 		.4byte	.LFB14
+ 1633 00e4 0C000000 		.4byte	.LFE14
+ 1634 00e8 00000000 		.4byte	0
+ 1635 00ec 00000000 		.4byte	0
+ 1636              		.section	.debug_line,"",%progbits
+ 1637              	.Ldebug_line0:
+ 1638 0000 B2010000 		.section	.debug_str,"MS",%progbits,1
+ 1638      02005800 
+ 1638      00000201 
+ 1638      FB0E0D00 
+ 1638      01010101 
+ 1639              	.LASF14:
+ 1640 0000 72656733 		.ascii	"reg32\000"
+ 1640      3200
+ 1641              	.LASF21:
+ 1642 0006 57616B65 		.ascii	"Wakeup_Interrupt_SetPriority\000"
+ 1642      75705F49 
+ 1642      6E746572 
+ 1642      72757074 
+ 1642      5F536574 
+ 1643              	.LASF40:
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 38
+
+
+ 1644 0023 43795261 		.ascii	"CyRamVectors\000"
+ 1644      6D566563 
+ 1644      746F7273 
+ 1644      00
+ 1645              	.LASF31:
+ 1646 0030 57616B65 		.ascii	"Wakeup_Interrupt_SetPending\000"
+ 1646      75705F49 
+ 1646      6E746572 
+ 1646      72757074 
+ 1646      5F536574 
+ 1647              	.LASF32:
+ 1648 004c 57616B65 		.ascii	"Wakeup_Interrupt_ClearPending\000"
+ 1648      75705F49 
+ 1648      6E746572 
+ 1648      72757074 
+ 1648      5F436C65 
+ 1649              	.LASF3:
+ 1650 006a 73686F72 		.ascii	"short unsigned int\000"
+ 1650      7420756E 
+ 1650      7369676E 
+ 1650      65642069 
+ 1650      6E7400
+ 1651              	.LASF29:
+ 1652 007d 57616B65 		.ascii	"Wakeup_Interrupt_GetState\000"
+ 1652      75705F49 
+ 1652      6E746572 
+ 1652      72757074 
+ 1652      5F476574 
+ 1653              	.LASF20:
+ 1654 0097 57616B65 		.ascii	"Wakeup_Interrupt_Stop\000"
+ 1654      75705F49 
+ 1654      6E746572 
+ 1654      72757074 
+ 1654      5F53746F 
+ 1655              	.LASF11:
+ 1656 00ad 666C6F61 		.ascii	"float\000"
+ 1656      7400
+ 1657              	.LASF7:
+ 1658 00b3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1658      206C6F6E 
+ 1658      6720756E 
+ 1658      7369676E 
+ 1658      65642069 
+ 1659              	.LASF1:
+ 1660 00ca 756E7369 		.ascii	"unsigned char\000"
+ 1660      676E6564 
+ 1660      20636861 
+ 1660      7200
+ 1661              	.LASF22:
+ 1662 00d8 696E7465 		.ascii	"interruptState\000"
+ 1662      72727570 
+ 1662      74537461 
+ 1662      746500
+ 1663              	.LASF5:
+ 1664 00e7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1664      20756E73 
+ 1664      69676E65 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 39
+
+
+ 1664      6420696E 
+ 1664      7400
+ 1665              	.LASF38:
+ 1666 00f9 57616B65 		.ascii	"Wakeup_Interrupt_SetVector\000"
+ 1666      75705F49 
+ 1666      6E746572 
+ 1666      72757074 
+ 1666      5F536574 
+ 1667              	.LASF26:
+ 1668 0114 7072696F 		.ascii	"priority\000"
+ 1668      72697479 
+ 1668      00
+ 1669              	.LASF12:
+ 1670 011d 646F7562 		.ascii	"double\000"
+ 1670      6C6500
+ 1671              	.LASF10:
+ 1672 0124 75696E74 		.ascii	"uint32\000"
+ 1672      333200
+ 1673              	.LASF33:
+ 1674 012b 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1674      74657243 
+ 1674      72697469 
+ 1674      63616C53 
+ 1674      65637469 
+ 1675              	.LASF8:
+ 1676 0142 756E7369 		.ascii	"unsigned int\000"
+ 1676      676E6564 
+ 1676      20696E74 
+ 1676      00
+ 1677              	.LASF36:
+ 1678 014f 47656E65 		.ascii	"Generated_Source\\PSoC4\\Wakeup_Interrupt.c\000"
+ 1678      72617465 
+ 1678      645F536F 
+ 1678      75726365 
+ 1678      5C50536F 
+ 1679              	.LASF27:
+ 1680 0179 61646472 		.ascii	"address\000"
+ 1680      65737300 
+ 1681              	.LASF34:
+ 1682 0181 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1682      69744372 
+ 1682      69746963 
+ 1682      616C5365 
+ 1682      6374696F 
+ 1683              	.LASF15:
+ 1684 0197 63796973 		.ascii	"cyisraddress\000"
+ 1684      72616464 
+ 1684      72657373 
+ 1684      00
+ 1685              	.LASF37:
+ 1686 01a4 433A5C55 		.ascii	"C:\\Users\\user\\Desktop\\__Testy 740G\\BLE projekt"
+ 1686      73657273 
+ 1686      5C757365 
+ 1686      725C4465 
+ 1686      736B746F 
+ 1687 01d2 5C424C45 		.ascii	"\\BLE_Continuous_Glucose_Monitoring_Sensor01\\BLE_C"
+ 1687      5F436F6E 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 40
+
+
+ 1687      74696E75 
+ 1687      6F75735F 
+ 1687      476C7563 
+ 1688 0203 6F6E7469 		.ascii	"ontinuous_Glucose_Monitoring_Sensor02.cydsn\000"
+ 1688      6E756F75 
+ 1688      735F476C 
+ 1688      75636F73 
+ 1688      655F4D6F 
+ 1689              	.LASF18:
+ 1690 022f 57616B65 		.ascii	"Wakeup_Interrupt_Enable\000"
+ 1690      75705F49 
+ 1690      6E746572 
+ 1690      72757074 
+ 1690      5F456E61 
+ 1691              	.LASF39:
+ 1692 0247 57616B65 		.ascii	"Wakeup_Interrupt_GetPriority\000"
+ 1692      75705F49 
+ 1692      6E746572 
+ 1692      72757074 
+ 1692      5F476574 
+ 1693              	.LASF17:
+ 1694 0264 73697A65 		.ascii	"sizetype\000"
+ 1694      74797065 
+ 1694      00
+ 1695              	.LASF6:
+ 1696 026d 6C6F6E67 		.ascii	"long long int\000"
+ 1696      206C6F6E 
+ 1696      6720696E 
+ 1696      7400
+ 1697              	.LASF25:
+ 1698 027b 57616B65 		.ascii	"Wakeup_Interrupt_StartEx\000"
+ 1698      75705F49 
+ 1698      6E746572 
+ 1698      72757074 
+ 1698      5F537461 
+ 1699              	.LASF28:
+ 1700 0294 57616B65 		.ascii	"Wakeup_Interrupt_GetVector\000"
+ 1700      75705F49 
+ 1700      6E746572 
+ 1700      72757074 
+ 1700      5F476574 
+ 1701              	.LASF30:
+ 1702 02af 57616B65 		.ascii	"Wakeup_Interrupt_Interrupt\000"
+ 1702      75705F49 
+ 1702      6E746572 
+ 1702      72757074 
+ 1702      5F496E74 
+ 1703              	.LASF2:
+ 1704 02ca 73686F72 		.ascii	"short int\000"
+ 1704      7420696E 
+ 1704      7400
+ 1705              	.LASF9:
+ 1706 02d4 75696E74 		.ascii	"uint8\000"
+ 1706      3800
+ 1707              	.LASF23:
+ 1708 02da 7072696F 		.ascii	"priorityOffset\000"
+ 1708      72697479 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccuAQEVe.s 			page 41
+
+
+ 1708      4F666673 
+ 1708      657400
+ 1709              	.LASF4:
+ 1710 02e9 6C6F6E67 		.ascii	"long int\000"
+ 1710      20696E74 
+ 1710      00
+ 1711              	.LASF13:
+ 1712 02f2 63686172 		.ascii	"char\000"
+ 1712      00
+ 1713              	.LASF19:
+ 1714 02f7 57616B65 		.ascii	"Wakeup_Interrupt_Disable\000"
+ 1714      75705F49 
+ 1714      6E746572 
+ 1714      72757074 
+ 1714      5F446973 
+ 1715              	.LASF16:
+ 1716 0310 6C6F6E67 		.ascii	"long double\000"
+ 1716      20646F75 
+ 1716      626C6500 
+ 1717              	.LASF24:
+ 1718 031c 57616B65 		.ascii	"Wakeup_Interrupt_Start\000"
+ 1718      75705F49 
+ 1718      6E746572 
+ 1718      72757074 
+ 1718      5F537461 
+ 1719              	.LASF0:
+ 1720 0333 7369676E 		.ascii	"signed char\000"
+ 1720      65642063 
+ 1720      68617200 
+ 1721              	.LASF35:
+ 1722 033f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1722      43313120 
+ 1722      352E342E 
+ 1722      31203230 
+ 1722      31363036 
+ 1723 0372 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1723      20726576 
+ 1723      6973696F 
+ 1723      6E203233 
+ 1723      37373135 
+ 1724 03a5 73202D66 		.ascii	"s -ffunction-sections -ffat-lto-objects\000"
+ 1724      66756E63 
+ 1724      74696F6E 
+ 1724      2D736563 
+ 1724      74696F6E 
+ 1725              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

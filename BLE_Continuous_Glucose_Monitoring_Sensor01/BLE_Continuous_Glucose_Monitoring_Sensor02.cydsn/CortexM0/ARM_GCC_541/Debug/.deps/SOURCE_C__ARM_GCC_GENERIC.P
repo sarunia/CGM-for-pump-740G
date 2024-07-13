@@ -1,0 +1,52 @@
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/CortexM0/ARM_GCC_541/Debug/BLE.o : C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE.c C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_HAL_PVT.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_STACK_PVT.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_Stack.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGap.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGatt.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGattClient.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGattDb.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGattServer.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackHostMain.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackL2cap.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_bless_isr.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_bms.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_cgms.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_dis.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_eventHandler.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_gatt.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_tps.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/CyFlash.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/CyLFClk.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE.c : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_HAL_PVT.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_STACK_PVT.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_Stack.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGap.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGatt.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGattClient.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGattDb.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackGattServer.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackHostMain.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_StackL2cap.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_bless_isr.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_bms.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_cgms.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_dis.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_eventHandler.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_gatt.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/BLE_tps.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+C:/Users/user/Desktop/Testy\ 740G/BLE\ projekt/BLE_Continuous_Glucose_Monitoring_Sensor01/BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn/Generated_Source/PSoC4/cytypes.h : 
+

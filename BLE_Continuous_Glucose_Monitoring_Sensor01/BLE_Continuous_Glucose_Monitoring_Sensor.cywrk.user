@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="BLE_Continuous_Glucose_Monitoring_Sensor">
+<ExpandedNodeIds>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\TopDesign</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Pins</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Analog</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\DMA</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Clocks</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Interrupts</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\System</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Directives</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Flash Security</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\bmss.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\cgmss.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\cyapicallbacks.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\debug.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\main.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files\bmss.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files\cgmss.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files\debug.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files\main.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE_bless_isr</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\TopDesign</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Pins</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Analog</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\DMA</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Clocks</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Interrupts</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\System</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Directives</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr\Flash Security</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\bmss.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\cgmss.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\cyapicallbacks.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\debug.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Header Files\main.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files\bmss.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files\cgmss.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files\debug.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Source Files\main.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\Advertising_LED</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_bas.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_bas.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_bms.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_bms.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_cgms.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_cgms.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_custom.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_custom.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_dis.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_dis.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_eventHandler.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_eventHandler.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_gatt.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_gatt.h</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_HAL_INT.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_HAL_PVT.c</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Generated_Source\PSoC4\BLE\BLE_HAL_PVT.h</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="BLE_Continuous_Glucose_Monitoring_Sensor">
+<ExpandedNodeIds>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\TopDesign</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\TopDesign</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="BLE_Continuous_Glucose_Monitoring_Sensor">
+<ExpandedNodeIds>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Advertising_LED.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Advertising_LED_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_bas.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_bless_isr.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_bms.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_cgms.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_custom.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_dis.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_eventHandler.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_gatt.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_HAL_INT.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_HAL_PVT.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\bmss.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cgmss.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Cm0Start.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Connected_LED.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Connected_LED_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cy_em_eeprom.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyBootAsmGnu.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyDMA.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cyfitter_cfg.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyFlash.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyLFClk.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyLib.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cymetadata.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cyPm.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cyutils.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\debug.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Disconnect_LED.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Disconnect_LED_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\main.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\SW2.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\SW2_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_BOOT.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_rx.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_rx_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_SCBCLK.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_SPI_UART.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_SPI_UART_INT.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_tx.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_tx_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_UART.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_UART_BOOT.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Wakeup_Interrupt.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\BLE_Continuous_Glucose_Monitoring_Sensor01.elf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\BLE_Continuous_Glucose_Monitoring_Sensor01.hex</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\BLE_Continuous_Glucose_Monitoring_Sensor01.map</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.gpdsc</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.rpt</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Advertising_LED.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Advertising_LED_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_bas.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_bless_isr.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_bms.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_cgms.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_custom.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_dis.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_eventHandler.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_gatt.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_HAL_INT.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\BLE_HAL_PVT.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\bmss.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cgmss.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Cm0Start.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Connected_LED.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Connected_LED_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cy_em_eeprom.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyBootAsmGnu.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyDMA.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cyfitter_cfg.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyFlash.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyLFClk.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\CyLib.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cymetadata.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cyPm.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\cyutils.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\debug.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Disconnect_LED.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\Disconnect_LED_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\main.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\SW2.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\SW2_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_BOOT.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_rx.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_rx_PM.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_SCBCLK.lst</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\CortexM0\ARM_GCC_541\Release\Listing Files\UART_DEB_SPI_UART.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\PSoC 4 Architecture TRM</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\PSoC 4200 BLE Family Datasheet</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\System Reference Guides</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\System Reference Guides\cy_boot_v6_10</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\System Reference Guides\cy_dmac_v1_10</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\System Reference Guides\cy_lfclk_v1_20</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_v3_66.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\cy_isr_v1_71.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\cy_pins_v2_20</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Gnd_v1_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\LED_v1_0</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\LED_v1_0\LED_v1_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Power_v1_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Resistor_v1_0</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Resistor_v1_0\Resistor_v1_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\SCB_P4_v4_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\SwitchSPST_v1_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\PSoC 4 Architecture TRM</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\PSoC 4200 BLE Family Datasheet</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\System Reference Guides</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\System Reference Guides\cy_boot_v6_10</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\System Reference Guides\cy_dmac_v1_10</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\System Reference Guides\cy_lfclk_v1_20</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_v3_66.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\cy_isr_v1_71.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\cy_pins_v2_20</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Gnd_v1_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\LED_v1_0</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\LED_v1_0\LED_v1_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Power_v1_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Resistor_v1_0</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\Resistor_v1_0\Resistor_v1_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\SCB_P4_v4_0.pdf</v>
+<v>BLE_Continuous_Glucose_Monitoring_Sensor\BLE_Continuous_Glucose_Monitoring_Sensor01\SwitchSPST_v1_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\main.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_eventHandler.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_cgms.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_gatt.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_eventHandler.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\debug.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\main.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\bmss.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_StackGattServer.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_Stack.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\cyPm.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\CyBootAsmGnu.s" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_StackGatt.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_StackGattClient.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_custom.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\cyapicallbacks.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\cgmss.h" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\cgmss.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_HAL_INT.c" />
+<name v=".\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_bless_isr.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1250, 682" SelectedTabbedMdiWindow="cb6d4fe6-b71d-4691-94b5-24cfa3f7d818"><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\TopDesign\TopDesign.cysch" Guid="cb6d4fe6-b71d-4691-94b5-24cfa3f7d818" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE.c" Guid="0ffeb217-4939-4fb5-b6f7-6e91174d6caf" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\BLE_Continuous_Glucose_Monitoring_Sensor01.cydwr" Guid="242ae5b2-3221-42a0-952a-4adba6d6f03a" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\main.c" Guid="45722528-9369-46bd-bf2b-a5a4bddaac63" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_eventHandler.c" Guid="1a5b7d42-a3d3-48f5-9480-f1c05eaeb353" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_cgms.c" Guid="5b14541c-ba65-432c-9fa0-7da42620a1da" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_gatt.c" Guid="d6aaa647-7edb-4c96-8938-9146e20b8a36" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_eventHandler.h" Guid="c834c9c0-7730-47c2-89b4-c0b89de8a08e" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\debug.c" Guid="e6d7c070-07a1-4e26-8863-fd278fe269a8" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\main.h" Guid="dbb98edc-ebc0-412c-86ff-2125db87f943" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\bmss.h" Guid="e8e85060-f55c-4038-9712-92b1dd5c695c" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_StackGattServer.h" Guid="5ff57440-049c-4318-ba8d-5109d525ad86" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_Stack.h" Guid="1cd4ddc8-052f-4b4f-afe5-495e62164730" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\cyPm.c" Guid="13ecc2b0-d2ea-47be-ad2f-be7d904cfbc2" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\CyBootAsmGnu.s" Guid="c8c8f170-062b-4866-8294-c937647fd736" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_StackGatt.h" Guid="85329227-985a-4fb3-aa0c-c17535f4f17b" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_StackGattClient.h" Guid="458cc418-d01b-4e52-8bec-f243e999b972" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_custom.c" Guid="3a1be85c-08b3-474a-98a9-f9360b67967b" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\cyapicallbacks.h" Guid="a7e502b1-8424-46b5-ab0c-5d7220d14641" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\cgmss.h" Guid="da699694-cf48-49f6-9414-17311a309fb3" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\cgmss.c" Guid="994ed74d-9bd0-46ab-bdae-8b7a421b4a21" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_HAL_INT.c" Guid="b0277b6c-df63-434f-ac72-2e80b3c57d88" /><DocumentWindow Key="C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\Generated_Source\PSoC4\BLE_bless_isr.c" Guid="401c414e-9ebe-4c54-a0d4-a879a0317cde" /><ToolWindow Key="CyGenericFrontend:e4c7e974-754b-433f-ab8c-50108e0a96a6:Locals" Guid="b1a67c69-75e2-4311-832b-70d395b4d2d4" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="514c29d5-ea42-4fb0-8f94-10c3fa3db52c" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="Release" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

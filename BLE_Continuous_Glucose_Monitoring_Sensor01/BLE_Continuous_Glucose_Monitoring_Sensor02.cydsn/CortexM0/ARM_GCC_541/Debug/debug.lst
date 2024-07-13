@@ -1,0 +1,2011 @@
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"debug.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text._write,"ax",%progbits
+  20              		.align	2
+  21              		.global	_write
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	_write, %function
+  25              	_write:
+  26              	.LFB36:
+  27              		.file 1 "debug.c"
+   1:debug.c       **** /*******************************************************************************
+   2:debug.c       **** * File Name: debug.c
+   3:debug.c       **** *
+   4:debug.c       **** * Version 1.0
+   5:debug.c       **** *
+   6:debug.c       **** * Description:
+   7:debug.c       **** *  Common BLE application code for printout debug messages.
+   8:debug.c       **** *
+   9:debug.c       **** * Hardware Dependency:
+  10:debug.c       **** *  CY8CKIT-042 BLE
+  11:debug.c       **** *
+  12:debug.c       **** ********************************************************************************
+  13:debug.c       **** * Copyright 2016, Cypress Semiconductor Corporation.  All rights reserved.
+  14:debug.c       **** * You may use this file only in accordance with the license, terms, conditions,
+  15:debug.c       **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:debug.c       **** * the software package with which this file was provided.
+  17:debug.c       **** *******************************************************************************/
+  18:debug.c       **** 
+  19:debug.c       **** #include "main.h"
+  20:debug.c       **** 
+  21:debug.c       **** #if (DEBUG_UART_ENABLED == ENABLED)
+  22:debug.c       **** 
+  23:debug.c       **** #if defined(__ARMCC_VERSION)
+  24:debug.c       **** 
+  25:debug.c       **** /* For MDK/RVDS compiler, revise fputc function for printf functionality */
+  26:debug.c       **** struct __FILE
+  27:debug.c       **** {
+  28:debug.c       ****     int handle;
+  29:debug.c       **** };
+  30:debug.c       **** 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 2
+
+
+  31:debug.c       **** enum
+  32:debug.c       **** {
+  33:debug.c       ****     STDIN_HANDLE,
+  34:debug.c       ****     STDOUT_HANDLE,
+  35:debug.c       ****     STDERR_HANDLE
+  36:debug.c       **** };
+  37:debug.c       **** 
+  38:debug.c       **** FILE __stdin = {STDIN_HANDLE};
+  39:debug.c       **** FILE __stdout = {STDOUT_HANDLE};
+  40:debug.c       **** FILE __stderr = {STDERR_HANDLE};
+  41:debug.c       **** 
+  42:debug.c       **** int fputc(int ch, FILE *file)
+  43:debug.c       **** {
+  44:debug.c       ****     int ret = EOF;
+  45:debug.c       **** 
+  46:debug.c       ****     switch( file->handle )
+  47:debug.c       ****     {
+  48:debug.c       ****         case STDOUT_HANDLE:
+  49:debug.c       ****             UART_DEB_UartPutChar(ch);
+  50:debug.c       ****             ret = ch ;
+  51:debug.c       ****             break ;
+  52:debug.c       **** 
+  53:debug.c       ****         case STDERR_HANDLE:
+  54:debug.c       ****             ret = ch ;
+  55:debug.c       ****             break ;
+  56:debug.c       **** 
+  57:debug.c       ****         default:
+  58:debug.c       ****             file = file;
+  59:debug.c       ****             break ;
+  60:debug.c       ****     }
+  61:debug.c       ****     return ret ;
+  62:debug.c       **** }
+  63:debug.c       **** 
+  64:debug.c       **** #elif defined (__ICCARM__)      /* IAR */
+  65:debug.c       **** 
+  66:debug.c       **** /* For IAR compiler, revise __write() function for printf functionality */
+  67:debug.c       **** size_t __write(int handle, const unsigned char * buffer, size_t size)
+  68:debug.c       **** {
+  69:debug.c       ****     size_t nChars = 0;
+  70:debug.c       **** 
+  71:debug.c       ****     if (buffer == 0)
+  72:debug.c       ****     {
+  73:debug.c       ****         /*
+  74:debug.c       ****          * This means that we should flush internal buffers.  Since we
+  75:debug.c       ****          * don't, we just return.  (Remember, "handle" == -1 means that all
+  76:debug.c       ****          * handles should be flushed.)
+  77:debug.c       ****          */
+  78:debug.c       ****         return (0);
+  79:debug.c       ****     }
+  80:debug.c       **** 
+  81:debug.c       ****     for (/* Empty */; size != 0; --size)
+  82:debug.c       ****     {
+  83:debug.c       ****         UART_DEB_UartPutChar(*buffer++);
+  84:debug.c       ****         ++nChars;
+  85:debug.c       ****     }
+  86:debug.c       **** 
+  87:debug.c       ****     return (nChars);
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 3
+
+
+  88:debug.c       **** }
+  89:debug.c       **** 
+  90:debug.c       **** #else  /* (__GNUC__)  GCC */
+  91:debug.c       **** 
+  92:debug.c       **** /* For GCC compiler, revise _write() function for printf functionality */
+  93:debug.c       **** int _write(int file, char *ptr, int len)
+  94:debug.c       **** {
+  28              		.loc 1 94 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 24
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 86B0     		sub	sp, sp, #24
+  37              		.cfi_def_cfa_offset 32
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40 0006 F860     		str	r0, [r7, #12]
+  41 0008 B960     		str	r1, [r7, #8]
+  42 000a 7A60     		str	r2, [r7, #4]
+  95:debug.c       ****     int x;
+  96:debug.c       ****     file = file;
+  97:debug.c       ****     for (x = 0; x < len; x++)
+  43              		.loc 1 97 0
+  44 000c 0023     		movs	r3, #0
+  45 000e 7B61     		str	r3, [r7, #20]
+  46 0010 09E0     		b	.L2
+  47              	.L3:
+  98:debug.c       ****     {
+  99:debug.c       ****         UART_DEB_UartPutChar(*ptr++);
+  48              		.loc 1 99 0 discriminator 3
+  49 0012 BB68     		ldr	r3, [r7, #8]
+  50 0014 5A1C     		adds	r2, r3, #1
+  51 0016 BA60     		str	r2, [r7, #8]
+  52 0018 1B78     		ldrb	r3, [r3]
+  53 001a 1800     		movs	r0, r3
+  54 001c FFF7FEFF 		bl	UART_DEB_SpiUartWriteTxData
+  97:debug.c       ****     {
+  55              		.loc 1 97 0 discriminator 3
+  56 0020 7B69     		ldr	r3, [r7, #20]
+  57 0022 0133     		adds	r3, r3, #1
+  58 0024 7B61     		str	r3, [r7, #20]
+  59              	.L2:
+  97:debug.c       ****     {
+  60              		.loc 1 97 0 is_stmt 0 discriminator 1
+  61 0026 7A69     		ldr	r2, [r7, #20]
+  62 0028 7B68     		ldr	r3, [r7, #4]
+  63 002a 9A42     		cmp	r2, r3
+  64 002c F1DB     		blt	.L3
+ 100:debug.c       ****     }
+ 101:debug.c       ****     return len;
+  65              		.loc 1 101 0 is_stmt 1
+  66 002e 7B68     		ldr	r3, [r7, #4]
+ 102:debug.c       **** }
+  67              		.loc 1 102 0
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 4
+
+
+  68 0030 1800     		movs	r0, r3
+  69 0032 BD46     		mov	sp, r7
+  70 0034 06B0     		add	sp, sp, #24
+  71              		@ sp needed
+  72 0036 80BD     		pop	{r7, pc}
+  73              		.cfi_endproc
+  74              	.LFE36:
+  75              		.size	_write, .-_write
+  76              		.section	.rodata
+  77              		.align	2
+  78              	.LC1:
+  79 0000 4379426C 		.ascii	"CyBle_GetStackLibraryVersion API Error: \000"
+  79      655F4765 
+  79      74537461 
+  79      636B4C69 
+  79      62726172 
+  80 0029 000000   		.align	2
+  81              	.LC3:
+  82 002c 424C4520 		.ascii	"BLE Stack Version: %d.%d.%d.%d\015\012\000"
+  82      53746163 
+  82      6B205665 
+  82      7273696F 
+  82      6E3A2025 
+  83              		.section	.text.PrintStackVersion,"ax",%progbits
+  84              		.align	2
+  85              		.global	PrintStackVersion
+  86              		.code	16
+  87              		.thumb_func
+  88              		.type	PrintStackVersion, %function
+  89              	PrintStackVersion:
+  90              	.LFB37:
+ 103:debug.c       **** 
+ 104:debug.c       **** #endif  /* (__ARMCC_VERSION) */
+ 105:debug.c       **** 
+ 106:debug.c       **** #endif /* DEBUG_UART_ENABLED == ENABLED */
+ 107:debug.c       **** 
+ 108:debug.c       **** 
+ 109:debug.c       **** /*******************************************************************************
+ 110:debug.c       **** * Function Name: PrintStackVersion
+ 111:debug.c       **** ********************************************************************************
+ 112:debug.c       **** *
+ 113:debug.c       **** * Summary:
+ 114:debug.c       **** *   Prints the BLE Stack version if the PRINT_STACK_VERSION is defined.
+ 115:debug.c       **** *
+ 116:debug.c       **** * Parameters:
+ 117:debug.c       **** *   None.
+ 118:debug.c       **** *
+ 119:debug.c       **** * Return:
+ 120:debug.c       **** *   None.
+ 121:debug.c       **** *
+ 122:debug.c       **** *******************************************************************************/
+ 123:debug.c       **** void PrintStackVersion(void)
+ 124:debug.c       **** {
+  91              		.loc 1 124 0
+  92              		.cfi_startproc
+  93              		@ args = 0, pretend = 0, frame = 8
+  94              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 5
+
+
+  95 0000 90B5     		push	{r4, r7, lr}
+  96              		.cfi_def_cfa_offset 12
+  97              		.cfi_offset 4, -12
+  98              		.cfi_offset 7, -8
+  99              		.cfi_offset 14, -4
+ 100 0002 85B0     		sub	sp, sp, #20
+ 101              		.cfi_def_cfa_offset 32
+ 102 0004 02AF     		add	r7, sp, #8
+ 103              		.cfi_def_cfa 7, 24
+ 125:debug.c       ****     CYBLE_STACK_LIB_VERSION_T stackVersion;
+ 126:debug.c       ****     
+ 127:debug.c       ****     apiResult = CyBle_GetStackLibraryVersion(&stackVersion);
+ 104              		.loc 1 127 0
+ 105 0006 3B00     		movs	r3, r7
+ 106 0008 1800     		movs	r0, r3
+ 107 000a FFF7FEFF 		bl	CyBle_GetStackLibraryVersion
+ 108 000e 0300     		movs	r3, r0
+ 109 0010 1A00     		movs	r2, r3
+ 110 0012 104B     		ldr	r3, .L9
+ 111 0014 1A80     		strh	r2, [r3]
+ 128:debug.c       ****     if(apiResult != CYBLE_ERROR_OK)
+ 112              		.loc 1 128 0
+ 113 0016 0F4B     		ldr	r3, .L9
+ 114 0018 1B88     		ldrh	r3, [r3]
+ 115 001a 002B     		cmp	r3, #0
+ 116 001c 06D0     		beq	.L6
+ 129:debug.c       ****     {
+ 130:debug.c       ****         DBG_PRINTF("CyBle_GetStackLibraryVersion API Error: ");
+ 117              		.loc 1 130 0
+ 118 001e 0E4B     		ldr	r3, .L9+4
+ 119 0020 1800     		movs	r0, r3
+ 120 0022 FFF7FEFF 		bl	printf
+ 131:debug.c       ****         PrintApiResult();
+ 121              		.loc 1 131 0
+ 122 0026 FFF7FEFF 		bl	PrintApiResult
+ 132:debug.c       ****     }
+ 133:debug.c       ****     else
+ 134:debug.c       ****     {
+ 135:debug.c       ****         DBG_PRINTF("BLE Stack Version: %d.%d.%d.%d\r\n", stackVersion.majorVersion, 
+ 136:debug.c       ****                                                          stackVersion.minorVersion,
+ 137:debug.c       ****                                                          stackVersion.patch,
+ 138:debug.c       ****                                                          stackVersion.buildNumber);
+ 139:debug.c       ****     }
+ 140:debug.c       **** }
+ 123              		.loc 1 140 0
+ 124 002a 0FE0     		b	.L8
+ 125              	.L6:
+ 135:debug.c       ****                                                          stackVersion.minorVersion,
+ 126              		.loc 1 135 0
+ 127 002c 3B00     		movs	r3, r7
+ 128 002e 1B88     		ldrh	r3, [r3]
+ 129 0030 1900     		movs	r1, r3
+ 130 0032 3B00     		movs	r3, r7
+ 131 0034 5B88     		ldrh	r3, [r3, #2]
+ 132 0036 1A00     		movs	r2, r3
+ 133 0038 3B00     		movs	r3, r7
+ 134 003a 9B88     		ldrh	r3, [r3, #4]
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 6
+
+
+ 135 003c 1C00     		movs	r4, r3
+ 136 003e 3B00     		movs	r3, r7
+ 137 0040 DB88     		ldrh	r3, [r3, #6]
+ 138 0042 0648     		ldr	r0, .L9+8
+ 139 0044 0093     		str	r3, [sp]
+ 140 0046 2300     		movs	r3, r4
+ 141 0048 FFF7FEFF 		bl	printf
+ 142              	.L8:
+ 143              		.loc 1 140 0
+ 144 004c C046     		nop
+ 145 004e BD46     		mov	sp, r7
+ 146 0050 03B0     		add	sp, sp, #12
+ 147              		@ sp needed
+ 148 0052 90BD     		pop	{r4, r7, pc}
+ 149              	.L10:
+ 150              		.align	2
+ 151              	.L9:
+ 152 0054 00000000 		.word	apiResult
+ 153 0058 00000000 		.word	.LC1
+ 154 005c 2C000000 		.word	.LC3
+ 155              		.cfi_endproc
+ 156              	.LFE37:
+ 157              		.size	PrintStackVersion, .-PrintStackVersion
+ 158              		.section	.rodata
+ 159 004d 000000   		.align	2
+ 160              	.LC5:
+ 161 0050 73746174 		.ascii	"state: \000"
+ 161      653A2000 
+ 162              		.align	2
+ 163              	.LC9:
+ 164 0058 73746F70 		.ascii	"stopped\015\000"
+ 164      7065640D 
+ 164      00
+ 165 0061 000000   		.align	2
+ 166              	.LC11:
+ 167 0064 696E6974 		.ascii	"initializing\015\000"
+ 167      69616C69 
+ 167      7A696E67 
+ 167      0D00
+ 168 0072 0000     		.align	2
+ 169              	.LC13:
+ 170 0074 636F6E6E 		.ascii	"connected\015\000"
+ 170      65637465 
+ 170      640D00
+ 171 007f 00       		.align	2
+ 172              	.LC15:
+ 173 0080 64697363 		.ascii	"disconnected\015\000"
+ 173      6F6E6E65 
+ 173      63746564 
+ 173      0D00
+ 174 008e 0000     		.align	2
+ 175              	.LC17:
+ 176 0090 61647665 		.ascii	"advertising\015\000"
+ 176      72746973 
+ 176      696E670D 
+ 176      00
+ 177 009d 000000   		.align	2
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 7
+
+
+ 178              	.LC19:
+ 179 00a0 756E6B6E 		.ascii	"unknown\015\000"
+ 179      6F776E0D 
+ 179      00
+ 180              		.section	.text.PrintState,"ax",%progbits
+ 181              		.align	2
+ 182              		.global	PrintState
+ 183              		.code	16
+ 184              		.thumb_func
+ 185              		.type	PrintState, %function
+ 186              	PrintState:
+ 187              	.LFB38:
+ 141:debug.c       **** 
+ 142:debug.c       **** /*******************************************************************************
+ 143:debug.c       **** * Function Name: PrintState
+ 144:debug.c       **** ********************************************************************************
+ 145:debug.c       **** *
+ 146:debug.c       **** * Summary:
+ 147:debug.c       **** *   Decodes and prints the cyBle_state global variable value.
+ 148:debug.c       **** *
+ 149:debug.c       **** * Parameters:
+ 150:debug.c       **** *   None.
+ 151:debug.c       **** *
+ 152:debug.c       **** * Return:
+ 153:debug.c       **** *   None.
+ 154:debug.c       **** *
+ 155:debug.c       **** *******************************************************************************/
+ 156:debug.c       **** void PrintState(void)
+ 157:debug.c       **** {
+ 188              		.loc 1 157 0
+ 189              		.cfi_startproc
+ 190              		@ args = 0, pretend = 0, frame = 0
+ 191              		@ frame_needed = 1, uses_anonymous_args = 0
+ 192 0000 80B5     		push	{r7, lr}
+ 193              		.cfi_def_cfa_offset 8
+ 194              		.cfi_offset 7, -8
+ 195              		.cfi_offset 14, -4
+ 196 0002 00AF     		add	r7, sp, #0
+ 197              		.cfi_def_cfa_register 7
+ 158:debug.c       ****     DBG_PRINTF("state: ");
+ 198              		.loc 1 158 0
+ 199 0004 164B     		ldr	r3, .L20
+ 200 0006 1800     		movs	r0, r3
+ 201 0008 FFF7FEFF 		bl	printf
+ 159:debug.c       ****     switch(CyBle_GetState())
+ 202              		.loc 1 159 0
+ 203 000c 154B     		ldr	r3, .L20+4
+ 204 000e 1B78     		ldrb	r3, [r3]
+ 205 0010 042B     		cmp	r3, #4
+ 206 0012 1DD8     		bhi	.L12
+ 207 0014 9A00     		lsls	r2, r3, #2
+ 208 0016 144B     		ldr	r3, .L20+8
+ 209 0018 D318     		adds	r3, r2, r3
+ 210 001a 1B68     		ldr	r3, [r3]
+ 211 001c 9F46     		mov	pc, r3
+ 212              		.section	.rodata
+ 213 00a9 000000   		.align	2
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 8
+
+
+ 214              	.L14:
+ 215 00ac 1E000000 		.word	.L13
+ 216 00b0 28000000 		.word	.L15
+ 217 00b4 32000000 		.word	.L16
+ 218 00b8 46000000 		.word	.L17
+ 219 00bc 3C000000 		.word	.L18
+ 220              		.section	.text.PrintState
+ 221              	.L13:
+ 160:debug.c       ****     {
+ 161:debug.c       ****         case CYBLE_STATE_STOPPED:
+ 162:debug.c       ****             DBG_PRINTF("stopped\r\n");
+ 222              		.loc 1 162 0
+ 223 001e 134B     		ldr	r3, .L20+12
+ 224 0020 1800     		movs	r0, r3
+ 225 0022 FFF7FEFF 		bl	puts
+ 163:debug.c       ****             break;
+ 226              		.loc 1 163 0
+ 227 0026 18E0     		b	.L19
+ 228              	.L15:
+ 164:debug.c       ****             
+ 165:debug.c       ****         case CYBLE_STATE_INITIALIZING:
+ 166:debug.c       ****             DBG_PRINTF("initializing\r\n");
+ 229              		.loc 1 166 0
+ 230 0028 114B     		ldr	r3, .L20+16
+ 231 002a 1800     		movs	r0, r3
+ 232 002c FFF7FEFF 		bl	puts
+ 167:debug.c       ****             break;
+ 233              		.loc 1 167 0
+ 234 0030 13E0     		b	.L19
+ 235              	.L16:
+ 168:debug.c       ****             
+ 169:debug.c       ****         case CYBLE_STATE_CONNECTED:
+ 170:debug.c       ****             DBG_PRINTF("connected\r\n");
+ 236              		.loc 1 170 0
+ 237 0032 104B     		ldr	r3, .L20+20
+ 238 0034 1800     		movs	r0, r3
+ 239 0036 FFF7FEFF 		bl	puts
+ 171:debug.c       ****             break;
+ 240              		.loc 1 171 0
+ 241 003a 0EE0     		b	.L19
+ 242              	.L18:
+ 172:debug.c       ****             
+ 173:debug.c       ****         case CYBLE_STATE_DISCONNECTED:
+ 174:debug.c       ****             DBG_PRINTF("disconnected\r\n");
+ 243              		.loc 1 174 0
+ 244 003c 0E4B     		ldr	r3, .L20+24
+ 245 003e 1800     		movs	r0, r3
+ 246 0040 FFF7FEFF 		bl	puts
+ 175:debug.c       ****             break;
+ 247              		.loc 1 175 0
+ 248 0044 09E0     		b	.L19
+ 249              	.L17:
+ 176:debug.c       ****             
+ 177:debug.c       ****         case CYBLE_STATE_ADVERTISING:
+ 178:debug.c       ****             DBG_PRINTF("advertising\r\n");
+ 250              		.loc 1 178 0
+ 251 0046 0D4B     		ldr	r3, .L20+28
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 9
+
+
+ 252 0048 1800     		movs	r0, r3
+ 253 004a FFF7FEFF 		bl	puts
+ 179:debug.c       ****             break;
+ 254              		.loc 1 179 0
+ 255 004e 04E0     		b	.L19
+ 256              	.L12:
+ 180:debug.c       **** 
+ 181:debug.c       ****         default:
+ 182:debug.c       ****             DBG_PRINTF("unknown\r\n");
+ 257              		.loc 1 182 0
+ 258 0050 0B4B     		ldr	r3, .L20+32
+ 259 0052 1800     		movs	r0, r3
+ 260 0054 FFF7FEFF 		bl	puts
+ 183:debug.c       ****             break;
+ 261              		.loc 1 183 0
+ 262 0058 C046     		nop
+ 263              	.L19:
+ 184:debug.c       ****     }
+ 185:debug.c       **** }
+ 264              		.loc 1 185 0
+ 265 005a C046     		nop
+ 266 005c BD46     		mov	sp, r7
+ 267              		@ sp needed
+ 268 005e 80BD     		pop	{r7, pc}
+ 269              	.L21:
+ 270              		.align	2
+ 271              	.L20:
+ 272 0060 50000000 		.word	.LC5
+ 273 0064 00000000 		.word	cyBle_state
+ 274 0068 AC000000 		.word	.L14
+ 275 006c 58000000 		.word	.LC9
+ 276 0070 64000000 		.word	.LC11
+ 277 0074 74000000 		.word	.LC13
+ 278 0078 80000000 		.word	.LC15
+ 279 007c 90000000 		.word	.LC17
+ 280 0080 A0000000 		.word	.LC19
+ 281              		.cfi_endproc
+ 282              	.LFE38:
+ 283              		.size	PrintState, .-PrintState
+ 284              		.section	.rodata
+ 285              		.align	2
+ 286              	.LC22:
+ 287 00c0 30782532 		.ascii	"0x%2.2x \000"
+ 287      2E327820 
+ 287      00
+ 288 00c9 000000   		.align	2
+ 289              	.LC24:
+ 290 00cc 6F6B0D00 		.ascii	"ok\015\000"
+ 291              		.align	2
+ 292              	.LC26:
+ 293 00d0 696E7661 		.ascii	"invalid parameter\015\000"
+ 293      6C696420 
+ 293      70617261 
+ 293      6D657465 
+ 293      720D00
+ 294 00e3 00       		.align	2
+ 295              	.LC28:
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 10
+
+
+ 296 00e4 696E7661 		.ascii	"invalid operation\015\000"
+ 296      6C696420 
+ 296      6F706572 
+ 296      6174696F 
+ 296      6E0D00
+ 297 00f7 00       		.align	2
+ 298              	.LC30:
+ 299 00f8 6E6F2064 		.ascii	"no device entity\015\000"
+ 299      65766963 
+ 299      6520656E 
+ 299      74697479 
+ 299      0D00
+ 300 010a 0000     		.align	2
+ 301              	.LC32:
+ 302 010c 6E6F7469 		.ascii	"notification is disabled\015\000"
+ 302      66696361 
+ 302      74696F6E 
+ 302      20697320 
+ 302      64697361 
+ 303 0126 0000     		.align	2
+ 304              	.LC34:
+ 305 0128 696E6469 		.ascii	"indication is disabled\015\000"
+ 305      63617469 
+ 305      6F6E2069 
+ 305      73206469 
+ 305      7361626C 
+ 306              		.align	2
+ 307              	.LC36:
+ 308 0140 63686172 		.ascii	"characteristic is not discovered\015\000"
+ 308      61637465 
+ 308      72697374 
+ 308      69632069 
+ 308      73206E6F 
+ 309 0162 0000     		.align	2
+ 310              	.LC38:
+ 311 0164 696E7661 		.ascii	"invalid state: \000"
+ 311      6C696420 
+ 311      73746174 
+ 311      653A2000 
+ 312              		.align	2
+ 313              	.LC40:
+ 314 0174 696E7661 		.ascii	"invalid attribute handle\015\000"
+ 314      6C696420 
+ 314      61747472 
+ 314      69627574 
+ 314      65206861 
+ 315 018e 0000     		.align	2
+ 316              	.LC42:
+ 317 0190 666C6173 		.ascii	"flash write not permitted\015\000"
+ 317      68207772 
+ 317      69746520 
+ 317      6E6F7420 
+ 317      7065726D 
+ 318 01ab 00       		.align	2
+ 319              	.LC44:
+ 320 01ac 6F746865 		.ascii	"other api result\015\000"
+ 320      72206170 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 11
+
+
+ 320      69207265 
+ 320      73756C74 
+ 320      0D00
+ 321              		.section	.text.PrintApiResult,"ax",%progbits
+ 322              		.align	2
+ 323              		.global	PrintApiResult
+ 324              		.code	16
+ 325              		.thumb_func
+ 326              		.type	PrintApiResult, %function
+ 327              	PrintApiResult:
+ 328              	.LFB39:
+ 186:debug.c       **** 
+ 187:debug.c       **** 
+ 188:debug.c       **** /*******************************************************************************
+ 189:debug.c       **** * Function Name: PrintApiResult
+ 190:debug.c       **** ********************************************************************************
+ 191:debug.c       **** *
+ 192:debug.c       **** * Summary:
+ 193:debug.c       **** *   Decodes and prints the apiResult global variable value.
+ 194:debug.c       **** *
+ 195:debug.c       **** * Parameters:
+ 196:debug.c       **** *   None.
+ 197:debug.c       **** *
+ 198:debug.c       **** * Return:
+ 199:debug.c       **** *   None.
+ 200:debug.c       **** *
+ 201:debug.c       **** *******************************************************************************/
+ 202:debug.c       **** void PrintApiResult(void)
+ 203:debug.c       **** {
+ 329              		.loc 1 203 0
+ 330              		.cfi_startproc
+ 331              		@ args = 0, pretend = 0, frame = 0
+ 332              		@ frame_needed = 1, uses_anonymous_args = 0
+ 333 0000 80B5     		push	{r7, lr}
+ 334              		.cfi_def_cfa_offset 8
+ 335              		.cfi_offset 7, -8
+ 336              		.cfi_offset 14, -4
+ 337 0002 00AF     		add	r7, sp, #0
+ 338              		.cfi_def_cfa_register 7
+ 204:debug.c       ****     DBG_PRINTF("0x%2.2x ", apiResult);
+ 339              		.loc 1 204 0
+ 340 0004 354B     		ldr	r3, .L38
+ 341 0006 1B88     		ldrh	r3, [r3]
+ 342 0008 1A00     		movs	r2, r3
+ 343 000a 354B     		ldr	r3, .L38+4
+ 344 000c 1100     		movs	r1, r2
+ 345 000e 1800     		movs	r0, r3
+ 346 0010 FFF7FEFF 		bl	printf
+ 205:debug.c       ****     
+ 206:debug.c       ****     switch(apiResult)
+ 347              		.loc 1 206 0
+ 348 0014 314B     		ldr	r3, .L38
+ 349 0016 1B88     		ldrh	r3, [r3]
+ 350 0018 132B     		cmp	r3, #19
+ 351 001a 4DD0     		beq	.L24
+ 352 001c 0ADC     		bgt	.L25
+ 353 001e 012B     		cmp	r3, #1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 12
+
+
+ 354 0020 25D0     		beq	.L26
+ 355 0022 02DC     		bgt	.L27
+ 356 0024 002B     		cmp	r3, #0
+ 357 0026 1DD0     		beq	.L28
+ 358 0028 50E0     		b	.L23
+ 359              	.L27:
+ 360 002a 022B     		cmp	r3, #2
+ 361 002c 24D0     		beq	.L29
+ 362 002e 072B     		cmp	r3, #7
+ 363 0030 27D0     		beq	.L30
+ 364 0032 4BE0     		b	.L23
+ 365              	.L25:
+ 366 0034 0222     		movs	r2, #2
+ 367 0036 FF32     		adds	r2, r2, #255
+ 368 0038 9342     		cmp	r3, r2
+ 369 003a 2CD0     		beq	.L31
+ 370 003c 0222     		movs	r2, #2
+ 371 003e FF32     		adds	r2, r2, #255
+ 372 0040 9342     		cmp	r3, r2
+ 373 0042 06DC     		bgt	.L32
+ 374 0044 282B     		cmp	r3, #40
+ 375 0046 3CD0     		beq	.L33
+ 376 0048 8022     		movs	r2, #128
+ 377 004a 5200     		lsls	r2, r2, #1
+ 378 004c 9342     		cmp	r3, r2
+ 379 004e 1DD0     		beq	.L34
+ 380 0050 3CE0     		b	.L23
+ 381              	.L32:
+ 382 0052 8122     		movs	r2, #129
+ 383 0054 5200     		lsls	r2, r2, #1
+ 384 0056 9342     		cmp	r3, r2
+ 385 0058 22D0     		beq	.L35
+ 386 005a 0422     		movs	r2, #4
+ 387 005c FF32     		adds	r2, r2, #255
+ 388 005e 9342     		cmp	r3, r2
+ 389 0060 23D0     		beq	.L36
+ 390 0062 33E0     		b	.L23
+ 391              	.L28:
+ 207:debug.c       ****     {
+ 208:debug.c       ****         case CYBLE_ERROR_OK:
+ 209:debug.c       ****             DBG_PRINTF("ok\r\n");
+ 392              		.loc 1 209 0
+ 393 0064 1F4B     		ldr	r3, .L38+8
+ 394 0066 1800     		movs	r0, r3
+ 395 0068 FFF7FEFF 		bl	puts
+ 210:debug.c       ****             break;
+ 396              		.loc 1 210 0
+ 397 006c 33E0     		b	.L37
+ 398              	.L26:
+ 211:debug.c       ****             
+ 212:debug.c       ****         case CYBLE_ERROR_INVALID_PARAMETER:
+ 213:debug.c       ****             DBG_PRINTF("invalid parameter\r\n");
+ 399              		.loc 1 213 0
+ 400 006e 1E4B     		ldr	r3, .L38+12
+ 401 0070 1800     		movs	r0, r3
+ 402 0072 FFF7FEFF 		bl	puts
+ 214:debug.c       ****             break;
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 13
+
+
+ 403              		.loc 1 214 0
+ 404 0076 2EE0     		b	.L37
+ 405              	.L29:
+ 215:debug.c       ****             
+ 216:debug.c       ****         case CYBLE_ERROR_INVALID_OPERATION:
+ 217:debug.c       ****             DBG_PRINTF("invalid operation\r\n");
+ 406              		.loc 1 217 0
+ 407 0078 1C4B     		ldr	r3, .L38+16
+ 408 007a 1800     		movs	r0, r3
+ 409 007c FFF7FEFF 		bl	puts
+ 218:debug.c       ****             break;
+ 410              		.loc 1 218 0
+ 411 0080 29E0     		b	.L37
+ 412              	.L30:
+ 219:debug.c       ****             
+ 220:debug.c       ****         case CYBLE_ERROR_NO_DEVICE_ENTITY:
+ 221:debug.c       ****             DBG_PRINTF("no device entity\r\n");
+ 413              		.loc 1 221 0
+ 414 0082 1B4B     		ldr	r3, .L38+20
+ 415 0084 1800     		movs	r0, r3
+ 416 0086 FFF7FEFF 		bl	puts
+ 222:debug.c       ****             break;
+ 417              		.loc 1 222 0
+ 418 008a 24E0     		b	.L37
+ 419              	.L34:
+ 223:debug.c       ****             
+ 224:debug.c       ****         case CYBLE_ERROR_NTF_DISABLED:
+ 225:debug.c       ****             DBG_PRINTF("notification is disabled\r\n");
+ 420              		.loc 1 225 0
+ 421 008c 194B     		ldr	r3, .L38+24
+ 422 008e 1800     		movs	r0, r3
+ 423 0090 FFF7FEFF 		bl	puts
+ 226:debug.c       ****             break;
+ 424              		.loc 1 226 0
+ 425 0094 1FE0     		b	.L37
+ 426              	.L31:
+ 227:debug.c       ****             
+ 228:debug.c       ****         case CYBLE_ERROR_IND_DISABLED:
+ 229:debug.c       ****             DBG_PRINTF("indication is disabled\r\n");
+ 427              		.loc 1 229 0
+ 428 0096 184B     		ldr	r3, .L38+28
+ 429 0098 1800     		movs	r0, r3
+ 430 009a FFF7FEFF 		bl	puts
+ 230:debug.c       ****             break;
+ 431              		.loc 1 230 0
+ 432 009e 1AE0     		b	.L37
+ 433              	.L35:
+ 231:debug.c       ****             
+ 232:debug.c       ****         case CYBLE_ERROR_CHAR_IS_NOT_DISCOVERED:
+ 233:debug.c       ****             DBG_PRINTF("characteristic is not discovered\r\n");
+ 434              		.loc 1 233 0
+ 435 00a0 164B     		ldr	r3, .L38+32
+ 436 00a2 1800     		movs	r0, r3
+ 437 00a4 FFF7FEFF 		bl	puts
+ 234:debug.c       ****             break;
+ 438              		.loc 1 234 0
+ 439 00a8 15E0     		b	.L37
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 14
+
+
+ 440              	.L36:
+ 235:debug.c       ****             
+ 236:debug.c       ****         case CYBLE_ERROR_INVALID_STATE:
+ 237:debug.c       ****             DBG_PRINTF("invalid state: ");
+ 441              		.loc 1 237 0
+ 442 00aa 154B     		ldr	r3, .L38+36
+ 443 00ac 1800     		movs	r0, r3
+ 444 00ae FFF7FEFF 		bl	printf
+ 238:debug.c       ****             PrintState();
+ 445              		.loc 1 238 0
+ 446 00b2 FFF7FEFF 		bl	PrintState
+ 239:debug.c       ****             break;
+ 447              		.loc 1 239 0
+ 448 00b6 0EE0     		b	.L37
+ 449              	.L24:
+ 240:debug.c       ****             
+ 241:debug.c       ****         case CYBLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE:
+ 242:debug.c       ****             DBG_PRINTF("invalid attribute handle\r\n");
+ 450              		.loc 1 242 0
+ 451 00b8 124B     		ldr	r3, .L38+40
+ 452 00ba 1800     		movs	r0, r3
+ 453 00bc FFF7FEFF 		bl	puts
+ 243:debug.c       ****             break;
+ 454              		.loc 1 243 0
+ 455 00c0 09E0     		b	.L37
+ 456              	.L33:
+ 244:debug.c       ****             
+ 245:debug.c       ****         case CYBLE_ERROR_FLASH_WRITE_NOT_PERMITED:
+ 246:debug.c       ****             DBG_PRINTF("flash write not permitted\r\n");
+ 457              		.loc 1 246 0
+ 458 00c2 114B     		ldr	r3, .L38+44
+ 459 00c4 1800     		movs	r0, r3
+ 460 00c6 FFF7FEFF 		bl	puts
+ 247:debug.c       ****             break;
+ 461              		.loc 1 247 0
+ 462 00ca 04E0     		b	.L37
+ 463              	.L23:
+ 248:debug.c       ****             
+ 249:debug.c       ****         default:
+ 250:debug.c       ****             DBG_PRINTF("other api result\r\n");
+ 464              		.loc 1 250 0
+ 465 00cc 0F4B     		ldr	r3, .L38+48
+ 466 00ce 1800     		movs	r0, r3
+ 467 00d0 FFF7FEFF 		bl	puts
+ 251:debug.c       ****             break;
+ 468              		.loc 1 251 0
+ 469 00d4 C046     		nop
+ 470              	.L37:
+ 252:debug.c       ****     }
+ 253:debug.c       **** }
+ 471              		.loc 1 253 0
+ 472 00d6 C046     		nop
+ 473 00d8 BD46     		mov	sp, r7
+ 474              		@ sp needed
+ 475 00da 80BD     		pop	{r7, pc}
+ 476              	.L39:
+ 477              		.align	2
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 15
+
+
+ 478              	.L38:
+ 479 00dc 00000000 		.word	apiResult
+ 480 00e0 C0000000 		.word	.LC22
+ 481 00e4 CC000000 		.word	.LC24
+ 482 00e8 D0000000 		.word	.LC26
+ 483 00ec E4000000 		.word	.LC28
+ 484 00f0 F8000000 		.word	.LC30
+ 485 00f4 0C010000 		.word	.LC32
+ 486 00f8 28010000 		.word	.LC34
+ 487 00fc 40010000 		.word	.LC36
+ 488 0100 64010000 		.word	.LC38
+ 489 0104 74010000 		.word	.LC40
+ 490 0108 90010000 		.word	.LC42
+ 491 010c AC010000 		.word	.LC44
+ 492              		.cfi_endproc
+ 493              	.LFE39:
+ 494              		.size	PrintApiResult, .-PrintApiResult
+ 495              		.text
+ 496              	.Letext0:
+ 497              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 498              		.file 3 "Generated_Source\\PSoC4/BLE_Stack.h"
+ 499              		.file 4 "Generated_Source\\PSoC4/BLE_eventHandler.h"
+ 500              		.file 5 "main.h"
+ 501              		.section	.debug_info,"",%progbits
+ 502              	.Ldebug_info0:
+ 503 0000 C3020000 		.4byte	0x2c3
+ 504 0004 0400     		.2byte	0x4
+ 505 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 506 000a 04       		.byte	0x4
+ 507 000b 01       		.uleb128 0x1
+ 508 000c 89020000 		.4byte	.LASF68
+ 509 0010 0C       		.byte	0xc
+ 510 0011 F3030000 		.4byte	.LASF69
+ 511 0015 44030000 		.4byte	.LASF70
+ 512 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 513 001d 00000000 		.4byte	0
+ 514 0021 00000000 		.4byte	.Ldebug_line0
+ 515 0025 02       		.uleb128 0x2
+ 516 0026 01       		.byte	0x1
+ 517 0027 06       		.byte	0x6
+ 518 0028 FB030000 		.4byte	.LASF0
+ 519 002c 02       		.uleb128 0x2
+ 520 002d 01       		.byte	0x1
+ 521 002e 08       		.byte	0x8
+ 522 002f CD030000 		.4byte	.LASF1
+ 523 0033 02       		.uleb128 0x2
+ 524 0034 02       		.byte	0x2
+ 525 0035 05       		.byte	0x5
+ 526 0036 7F000000 		.4byte	.LASF2
+ 527 003a 02       		.uleb128 0x2
+ 528 003b 02       		.byte	0x2
+ 529 003c 07       		.byte	0x7
+ 530 003d C6040000 		.4byte	.LASF3
+ 531 0041 02       		.uleb128 0x2
+ 532 0042 04       		.byte	0x4
+ 533 0043 05       		.byte	0x5
+ 534 0044 62020000 		.4byte	.LASF4
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 16
+
+
+ 535 0048 02       		.uleb128 0x2
+ 536 0049 04       		.byte	0x4
+ 537 004a 07       		.byte	0x7
+ 538 004b E4050000 		.4byte	.LASF5
+ 539 004f 02       		.uleb128 0x2
+ 540 0050 08       		.byte	0x8
+ 541 0051 05       		.byte	0x5
+ 542 0052 34020000 		.4byte	.LASF6
+ 543 0056 02       		.uleb128 0x2
+ 544 0057 08       		.byte	0x8
+ 545 0058 07       		.byte	0x7
+ 546 0059 07040000 		.4byte	.LASF7
+ 547 005d 03       		.uleb128 0x3
+ 548 005e 04       		.byte	0x4
+ 549 005f 05       		.byte	0x5
+ 550 0060 696E7400 		.ascii	"int\000"
+ 551 0064 02       		.uleb128 0x2
+ 552 0065 04       		.byte	0x4
+ 553 0066 07       		.byte	0x7
+ 554 0067 4A040000 		.4byte	.LASF8
+ 555 006b 04       		.uleb128 0x4
+ 556 006c 86010000 		.4byte	.LASF9
+ 557 0070 02       		.byte	0x2
+ 558 0071 FD01     		.2byte	0x1fd
+ 559 0073 3A000000 		.4byte	0x3a
+ 560 0077 04       		.uleb128 0x4
+ 561 0078 F6050000 		.4byte	.LASF10
+ 562 007c 02       		.byte	0x2
+ 563 007d FE01     		.2byte	0x1fe
+ 564 007f 48000000 		.4byte	0x48
+ 565 0083 02       		.uleb128 0x2
+ 566 0084 04       		.byte	0x4
+ 567 0085 04       		.byte	0x4
+ 568 0086 2E020000 		.4byte	.LASF11
+ 569 008a 02       		.uleb128 0x2
+ 570 008b 08       		.byte	0x8
+ 571 008c 04       		.byte	0x4
+ 572 008d E3060000 		.4byte	.LASF12
+ 573 0091 02       		.uleb128 0x2
+ 574 0092 01       		.byte	0x1
+ 575 0093 08       		.byte	0x8
+ 576 0094 F4040000 		.4byte	.LASF13
+ 577 0098 02       		.uleb128 0x2
+ 578 0099 08       		.byte	0x8
+ 579 009a 04       		.byte	0x4
+ 580 009b F0000000 		.4byte	.LASF14
+ 581 009f 02       		.uleb128 0x2
+ 582 00a0 04       		.byte	0x4
+ 583 00a1 07       		.byte	0x7
+ 584 00a2 89000000 		.4byte	.LASF15
+ 585 00a6 05       		.uleb128 0x5
+ 586 00a7 04       		.byte	0x4
+ 587 00a8 91000000 		.4byte	0x91
+ 588 00ac 06       		.uleb128 0x6
+ 589 00ad 02       		.byte	0x2
+ 590 00ae 3A000000 		.4byte	0x3a
+ 591 00b2 03       		.byte	0x3
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 17
+
+
+ 592 00b3 EA03     		.2byte	0x3ea
+ 593 00b5 8B010000 		.4byte	0x18b
+ 594 00b9 07       		.uleb128 0x7
+ 595 00ba 92000000 		.4byte	.LASF16
+ 596 00be 00       		.byte	0
+ 597 00bf 07       		.uleb128 0x7
+ 598 00c0 38010000 		.4byte	.LASF17
+ 599 00c4 01       		.byte	0x1
+ 600 00c5 07       		.uleb128 0x7
+ 601 00c6 8D010000 		.4byte	.LASF18
+ 602 00ca 02       		.byte	0x2
+ 603 00cb 07       		.uleb128 0x7
+ 604 00cc 53050000 		.4byte	.LASF19
+ 605 00d0 03       		.byte	0x3
+ 606 00d1 07       		.uleb128 0x7
+ 607 00d2 0B020000 		.4byte	.LASF20
+ 608 00d6 04       		.byte	0x4
+ 609 00d7 07       		.uleb128 0x7
+ 610 00d8 56010000 		.4byte	.LASF21
+ 611 00dc 05       		.byte	0x5
+ 612 00dd 07       		.uleb128 0x7
+ 613 00de BE010000 		.4byte	.LASF22
+ 614 00e2 06       		.byte	0x6
+ 615 00e3 07       		.uleb128 0x7
+ 616 00e4 1D030000 		.4byte	.LASF23
+ 617 00e8 07       		.byte	0x7
+ 618 00e9 07       		.uleb128 0x7
+ 619 00ea 6B020000 		.4byte	.LASF24
+ 620 00ee 08       		.byte	0x8
+ 621 00ef 07       		.uleb128 0x7
+ 622 00f0 35040000 		.4byte	.LASF25
+ 623 00f4 09       		.byte	0x9
+ 624 00f5 07       		.uleb128 0x7
+ 625 00f6 F1010000 		.4byte	.LASF26
+ 626 00fa 0A       		.byte	0xa
+ 627 00fb 07       		.uleb128 0x7
+ 628 00fc 42020000 		.4byte	.LASF27
+ 629 0100 0B       		.byte	0xb
+ 630 0101 07       		.uleb128 0x7
+ 631 0102 1E040000 		.4byte	.LASF28
+ 632 0106 0C       		.byte	0xc
+ 633 0107 07       		.uleb128 0x7
+ 634 0108 57040000 		.4byte	.LASF29
+ 635 010c 0D       		.byte	0xd
+ 636 010d 07       		.uleb128 0x7
+ 637 010e 25000000 		.4byte	.LASF30
+ 638 0112 0E       		.byte	0xe
+ 639 0113 07       		.uleb128 0x7
+ 640 0114 00000000 		.4byte	.LASF31
+ 641 0118 0F       		.byte	0xf
+ 642 0119 07       		.uleb128 0x7
+ 643 011a EA060000 		.4byte	.LASF32
+ 644 011e 10       		.byte	0x10
+ 645 011f 07       		.uleb128 0x7
+ 646 0120 5B000000 		.4byte	.LASF33
+ 647 0124 11       		.byte	0x11
+ 648 0125 07       		.uleb128 0x7
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 18
+
+
+ 649 0126 25060000 		.4byte	.LASF34
+ 650 012a 12       		.byte	0x12
+ 651 012b 07       		.uleb128 0x7
+ 652 012c FD050000 		.4byte	.LASF35
+ 653 0130 13       		.byte	0x13
+ 654 0131 07       		.uleb128 0x7
+ 655 0132 8A060000 		.4byte	.LASF36
+ 656 0136 27       		.byte	0x27
+ 657 0137 07       		.uleb128 0x7
+ 658 0138 CB000000 		.4byte	.LASF37
+ 659 013c 28       		.byte	0x28
+ 660 013d 07       		.uleb128 0x7
+ 661 013e 03010000 		.4byte	.LASF38
+ 662 0142 29       		.byte	0x29
+ 663 0143 07       		.uleb128 0x7
+ 664 0144 48060000 		.4byte	.LASF39
+ 665 0148 2A       		.byte	0x2a
+ 666 0149 07       		.uleb128 0x7
+ 667 014a 8E050000 		.4byte	.LASF40
+ 668 014e 2B       		.byte	0x2b
+ 669 014f 07       		.uleb128 0x7
+ 670 0150 DB030000 		.4byte	.LASF41
+ 671 0154 2C       		.byte	0x2c
+ 672 0155 07       		.uleb128 0x7
+ 673 0156 A1000000 		.4byte	.LASF42
+ 674 015a 2D       		.byte	0x2d
+ 675 015b 07       		.uleb128 0x7
+ 676 015c 1D050000 		.4byte	.LASF43
+ 677 0160 FE       		.byte	0xfe
+ 678 0161 07       		.uleb128 0x7
+ 679 0162 B9060000 		.4byte	.LASF44
+ 680 0166 FF       		.byte	0xff
+ 681 0167 08       		.uleb128 0x8
+ 682 0168 71060000 		.4byte	.LASF45
+ 683 016c 0001     		.2byte	0x100
+ 684 016e 08       		.uleb128 0x8
+ 685 016f 18070000 		.4byte	.LASF46
+ 686 0173 0101     		.2byte	0x101
+ 687 0175 08       		.uleb128 0x8
+ 688 0176 A3040000 		.4byte	.LASF47
+ 689 017a 0201     		.2byte	0x102
+ 690 017c 08       		.uleb128 0x8
+ 691 017d C9060000 		.4byte	.LASF48
+ 692 0181 0301     		.2byte	0x103
+ 693 0183 08       		.uleb128 0x8
+ 694 0184 F9040000 		.4byte	.LASF49
+ 695 0188 0401     		.2byte	0x104
+ 696 018a 00       		.byte	0
+ 697 018b 04       		.uleb128 0x4
+ 698 018c AB010000 		.4byte	.LASF50
+ 699 0190 03       		.byte	0x3
+ 700 0191 5C04     		.2byte	0x45c
+ 701 0193 AC000000 		.4byte	0xac
+ 702 0197 09       		.uleb128 0x9
+ 703 0198 08       		.byte	0x8
+ 704 0199 03       		.byte	0x3
+ 705 019a 1505     		.2byte	0x515
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 19
+
+
+ 706 019c D5010000 		.4byte	0x1d5
+ 707 01a0 0A       		.uleb128 0xa
+ 708 01a1 4E000000 		.4byte	.LASF51
+ 709 01a5 03       		.byte	0x3
+ 710 01a6 1805     		.2byte	0x518
+ 711 01a8 6B000000 		.4byte	0x6b
+ 712 01ac 00       		.byte	0
+ 713 01ad 0A       		.uleb128 0xa
+ 714 01ae AC060000 		.4byte	.LASF52
+ 715 01b2 03       		.byte	0x3
+ 716 01b3 1A05     		.2byte	0x51a
+ 717 01b5 6B000000 		.4byte	0x6b
+ 718 01b9 02       		.byte	0x2
+ 719 01ba 0A       		.uleb128 0xa
+ 720 01bb 17030000 		.4byte	.LASF53
+ 721 01bf 03       		.byte	0x3
+ 722 01c0 1C05     		.2byte	0x51c
+ 723 01c2 6B000000 		.4byte	0x6b
+ 724 01c6 04       		.byte	0x4
+ 725 01c7 0A       		.uleb128 0xa
+ 726 01c8 E8040000 		.4byte	.LASF54
+ 727 01cc 03       		.byte	0x3
+ 728 01cd 1E05     		.2byte	0x51e
+ 729 01cf 6B000000 		.4byte	0x6b
+ 730 01d3 06       		.byte	0x6
+ 731 01d4 00       		.byte	0
+ 732 01d5 04       		.uleb128 0x4
+ 733 01d6 39050000 		.4byte	.LASF55
+ 734 01da 03       		.byte	0x3
+ 735 01db 2005     		.2byte	0x520
+ 736 01dd 97010000 		.4byte	0x197
+ 737 01e1 06       		.uleb128 0x6
+ 738 01e2 01       		.byte	0x1
+ 739 01e3 2C000000 		.4byte	0x2c
+ 740 01e7 04       		.byte	0x4
+ 741 01e8 A808     		.2byte	0x8a8
+ 742 01ea 0D020000 		.4byte	0x20d
+ 743 01ee 07       		.uleb128 0x7
+ 744 01ef 24010000 		.4byte	.LASF56
+ 745 01f3 00       		.byte	0
+ 746 01f4 07       		.uleb128 0x7
+ 747 01f5 D8010000 		.4byte	.LASF57
+ 748 01f9 01       		.byte	0x1
+ 749 01fa 07       		.uleb128 0x7
+ 750 01fb 78050000 		.4byte	.LASF58
+ 751 01ff 02       		.byte	0x2
+ 752 0200 07       		.uleb128 0x7
+ 753 0201 C1050000 		.4byte	.LASF59
+ 754 0205 03       		.byte	0x3
+ 755 0206 07       		.uleb128 0x7
+ 756 0207 7C040000 		.4byte	.LASF60
+ 757 020b 04       		.byte	0x4
+ 758 020c 00       		.byte	0
+ 759 020d 04       		.uleb128 0x4
+ 760 020e 95040000 		.4byte	.LASF61
+ 761 0212 04       		.byte	0x4
+ 762 0213 B608     		.2byte	0x8b6
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 20
+
+
+ 763 0215 E1010000 		.4byte	0x1e1
+ 764 0219 0B       		.uleb128 0xb
+ 765 021a FC000000 		.4byte	.LASF71
+ 766 021e 01       		.byte	0x1
+ 767 021f 5D       		.byte	0x5d
+ 768 0220 5D000000 		.4byte	0x5d
+ 769 0224 00000000 		.4byte	.LFB36
+ 770 0228 38000000 		.4byte	.LFE36-.LFB36
+ 771 022c 01       		.uleb128 0x1
+ 772 022d 9C       		.byte	0x9c
+ 773 022e 69020000 		.4byte	0x269
+ 774 0232 0C       		.uleb128 0xc
+ 775 0233 1F010000 		.4byte	.LASF62
+ 776 0237 01       		.byte	0x1
+ 777 0238 5D       		.byte	0x5d
+ 778 0239 5D000000 		.4byte	0x5d
+ 779 023d 02       		.uleb128 0x2
+ 780 023e 91       		.byte	0x91
+ 781 023f 6C       		.sleb128 -20
+ 782 0240 0D       		.uleb128 0xd
+ 783 0241 70747200 		.ascii	"ptr\000"
+ 784 0245 01       		.byte	0x1
+ 785 0246 5D       		.byte	0x5d
+ 786 0247 A6000000 		.4byte	0xa6
+ 787 024b 02       		.uleb128 0x2
+ 788 024c 91       		.byte	0x91
+ 789 024d 68       		.sleb128 -24
+ 790 024e 0D       		.uleb128 0xd
+ 791 024f 6C656E00 		.ascii	"len\000"
+ 792 0253 01       		.byte	0x1
+ 793 0254 5D       		.byte	0x5d
+ 794 0255 5D000000 		.4byte	0x5d
+ 795 0259 02       		.uleb128 0x2
+ 796 025a 91       		.byte	0x91
+ 797 025b 64       		.sleb128 -28
+ 798 025c 0E       		.uleb128 0xe
+ 799 025d 7800     		.ascii	"x\000"
+ 800 025f 01       		.byte	0x1
+ 801 0260 5F       		.byte	0x5f
+ 802 0261 5D000000 		.4byte	0x5d
+ 803 0265 02       		.uleb128 0x2
+ 804 0266 91       		.byte	0x91
+ 805 0267 74       		.sleb128 -12
+ 806 0268 00       		.byte	0
+ 807 0269 0F       		.uleb128 0xf
+ 808 026a 74010000 		.4byte	.LASF72
+ 809 026e 01       		.byte	0x1
+ 810 026f 7B       		.byte	0x7b
+ 811 0270 00000000 		.4byte	.LFB37
+ 812 0274 60000000 		.4byte	.LFE37-.LFB37
+ 813 0278 01       		.uleb128 0x1
+ 814 0279 9C       		.byte	0x9c
+ 815 027a 8D020000 		.4byte	0x28d
+ 816 027e 10       		.uleb128 0x10
+ 817 027f 10050000 		.4byte	.LASF63
+ 818 0283 01       		.byte	0x1
+ 819 0284 7D       		.byte	0x7d
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 21
+
+
+ 820 0285 D5010000 		.4byte	0x1d5
+ 821 0289 02       		.uleb128 0x2
+ 822 028a 91       		.byte	0x91
+ 823 028b 68       		.sleb128 -24
+ 824 028c 00       		.byte	0
+ 825 028d 11       		.uleb128 0x11
+ 826 028e D9050000 		.4byte	.LASF64
+ 827 0292 01       		.byte	0x1
+ 828 0293 9C       		.byte	0x9c
+ 829 0294 00000000 		.4byte	.LFB38
+ 830 0298 84000000 		.4byte	.LFE38-.LFB38
+ 831 029c 01       		.uleb128 0x1
+ 832 029d 9C       		.byte	0x9c
+ 833 029e 11       		.uleb128 0x11
+ 834 029f D9040000 		.4byte	.LASF65
+ 835 02a3 01       		.byte	0x1
+ 836 02a4 CA       		.byte	0xca
+ 837 02a5 00000000 		.4byte	.LFB39
+ 838 02a9 10010000 		.4byte	.LFE39-.LFB39
+ 839 02ad 01       		.uleb128 0x1
+ 840 02ae 9C       		.byte	0x9c
+ 841 02af 12       		.uleb128 0x12
+ 842 02b0 65060000 		.4byte	.LASF66
+ 843 02b4 04       		.byte	0x4
+ 844 02b5 160B     		.2byte	0xb16
+ 845 02b7 0D020000 		.4byte	0x20d
+ 846 02bb 13       		.uleb128 0x13
+ 847 02bc 3A030000 		.4byte	.LASF67
+ 848 02c0 05       		.byte	0x5
+ 849 02c1 3A       		.byte	0x3a
+ 850 02c2 8B010000 		.4byte	0x18b
+ 851 02c6 00       		.byte	0
+ 852              		.section	.debug_abbrev,"",%progbits
+ 853              	.Ldebug_abbrev0:
+ 854 0000 01       		.uleb128 0x1
+ 855 0001 11       		.uleb128 0x11
+ 856 0002 01       		.byte	0x1
+ 857 0003 25       		.uleb128 0x25
+ 858 0004 0E       		.uleb128 0xe
+ 859 0005 13       		.uleb128 0x13
+ 860 0006 0B       		.uleb128 0xb
+ 861 0007 03       		.uleb128 0x3
+ 862 0008 0E       		.uleb128 0xe
+ 863 0009 1B       		.uleb128 0x1b
+ 864 000a 0E       		.uleb128 0xe
+ 865 000b 55       		.uleb128 0x55
+ 866 000c 17       		.uleb128 0x17
+ 867 000d 11       		.uleb128 0x11
+ 868 000e 01       		.uleb128 0x1
+ 869 000f 10       		.uleb128 0x10
+ 870 0010 17       		.uleb128 0x17
+ 871 0011 00       		.byte	0
+ 872 0012 00       		.byte	0
+ 873 0013 02       		.uleb128 0x2
+ 874 0014 24       		.uleb128 0x24
+ 875 0015 00       		.byte	0
+ 876 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 22
+
+
+ 877 0017 0B       		.uleb128 0xb
+ 878 0018 3E       		.uleb128 0x3e
+ 879 0019 0B       		.uleb128 0xb
+ 880 001a 03       		.uleb128 0x3
+ 881 001b 0E       		.uleb128 0xe
+ 882 001c 00       		.byte	0
+ 883 001d 00       		.byte	0
+ 884 001e 03       		.uleb128 0x3
+ 885 001f 24       		.uleb128 0x24
+ 886 0020 00       		.byte	0
+ 887 0021 0B       		.uleb128 0xb
+ 888 0022 0B       		.uleb128 0xb
+ 889 0023 3E       		.uleb128 0x3e
+ 890 0024 0B       		.uleb128 0xb
+ 891 0025 03       		.uleb128 0x3
+ 892 0026 08       		.uleb128 0x8
+ 893 0027 00       		.byte	0
+ 894 0028 00       		.byte	0
+ 895 0029 04       		.uleb128 0x4
+ 896 002a 16       		.uleb128 0x16
+ 897 002b 00       		.byte	0
+ 898 002c 03       		.uleb128 0x3
+ 899 002d 0E       		.uleb128 0xe
+ 900 002e 3A       		.uleb128 0x3a
+ 901 002f 0B       		.uleb128 0xb
+ 902 0030 3B       		.uleb128 0x3b
+ 903 0031 05       		.uleb128 0x5
+ 904 0032 49       		.uleb128 0x49
+ 905 0033 13       		.uleb128 0x13
+ 906 0034 00       		.byte	0
+ 907 0035 00       		.byte	0
+ 908 0036 05       		.uleb128 0x5
+ 909 0037 0F       		.uleb128 0xf
+ 910 0038 00       		.byte	0
+ 911 0039 0B       		.uleb128 0xb
+ 912 003a 0B       		.uleb128 0xb
+ 913 003b 49       		.uleb128 0x49
+ 914 003c 13       		.uleb128 0x13
+ 915 003d 00       		.byte	0
+ 916 003e 00       		.byte	0
+ 917 003f 06       		.uleb128 0x6
+ 918 0040 04       		.uleb128 0x4
+ 919 0041 01       		.byte	0x1
+ 920 0042 0B       		.uleb128 0xb
+ 921 0043 0B       		.uleb128 0xb
+ 922 0044 49       		.uleb128 0x49
+ 923 0045 13       		.uleb128 0x13
+ 924 0046 3A       		.uleb128 0x3a
+ 925 0047 0B       		.uleb128 0xb
+ 926 0048 3B       		.uleb128 0x3b
+ 927 0049 05       		.uleb128 0x5
+ 928 004a 01       		.uleb128 0x1
+ 929 004b 13       		.uleb128 0x13
+ 930 004c 00       		.byte	0
+ 931 004d 00       		.byte	0
+ 932 004e 07       		.uleb128 0x7
+ 933 004f 28       		.uleb128 0x28
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 23
+
+
+ 934 0050 00       		.byte	0
+ 935 0051 03       		.uleb128 0x3
+ 936 0052 0E       		.uleb128 0xe
+ 937 0053 1C       		.uleb128 0x1c
+ 938 0054 0B       		.uleb128 0xb
+ 939 0055 00       		.byte	0
+ 940 0056 00       		.byte	0
+ 941 0057 08       		.uleb128 0x8
+ 942 0058 28       		.uleb128 0x28
+ 943 0059 00       		.byte	0
+ 944 005a 03       		.uleb128 0x3
+ 945 005b 0E       		.uleb128 0xe
+ 946 005c 1C       		.uleb128 0x1c
+ 947 005d 05       		.uleb128 0x5
+ 948 005e 00       		.byte	0
+ 949 005f 00       		.byte	0
+ 950 0060 09       		.uleb128 0x9
+ 951 0061 13       		.uleb128 0x13
+ 952 0062 01       		.byte	0x1
+ 953 0063 0B       		.uleb128 0xb
+ 954 0064 0B       		.uleb128 0xb
+ 955 0065 3A       		.uleb128 0x3a
+ 956 0066 0B       		.uleb128 0xb
+ 957 0067 3B       		.uleb128 0x3b
+ 958 0068 05       		.uleb128 0x5
+ 959 0069 01       		.uleb128 0x1
+ 960 006a 13       		.uleb128 0x13
+ 961 006b 00       		.byte	0
+ 962 006c 00       		.byte	0
+ 963 006d 0A       		.uleb128 0xa
+ 964 006e 0D       		.uleb128 0xd
+ 965 006f 00       		.byte	0
+ 966 0070 03       		.uleb128 0x3
+ 967 0071 0E       		.uleb128 0xe
+ 968 0072 3A       		.uleb128 0x3a
+ 969 0073 0B       		.uleb128 0xb
+ 970 0074 3B       		.uleb128 0x3b
+ 971 0075 05       		.uleb128 0x5
+ 972 0076 49       		.uleb128 0x49
+ 973 0077 13       		.uleb128 0x13
+ 974 0078 38       		.uleb128 0x38
+ 975 0079 0B       		.uleb128 0xb
+ 976 007a 00       		.byte	0
+ 977 007b 00       		.byte	0
+ 978 007c 0B       		.uleb128 0xb
+ 979 007d 2E       		.uleb128 0x2e
+ 980 007e 01       		.byte	0x1
+ 981 007f 3F       		.uleb128 0x3f
+ 982 0080 19       		.uleb128 0x19
+ 983 0081 03       		.uleb128 0x3
+ 984 0082 0E       		.uleb128 0xe
+ 985 0083 3A       		.uleb128 0x3a
+ 986 0084 0B       		.uleb128 0xb
+ 987 0085 3B       		.uleb128 0x3b
+ 988 0086 0B       		.uleb128 0xb
+ 989 0087 27       		.uleb128 0x27
+ 990 0088 19       		.uleb128 0x19
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 24
+
+
+ 991 0089 49       		.uleb128 0x49
+ 992 008a 13       		.uleb128 0x13
+ 993 008b 11       		.uleb128 0x11
+ 994 008c 01       		.uleb128 0x1
+ 995 008d 12       		.uleb128 0x12
+ 996 008e 06       		.uleb128 0x6
+ 997 008f 40       		.uleb128 0x40
+ 998 0090 18       		.uleb128 0x18
+ 999 0091 9642     		.uleb128 0x2116
+ 1000 0093 19       		.uleb128 0x19
+ 1001 0094 01       		.uleb128 0x1
+ 1002 0095 13       		.uleb128 0x13
+ 1003 0096 00       		.byte	0
+ 1004 0097 00       		.byte	0
+ 1005 0098 0C       		.uleb128 0xc
+ 1006 0099 05       		.uleb128 0x5
+ 1007 009a 00       		.byte	0
+ 1008 009b 03       		.uleb128 0x3
+ 1009 009c 0E       		.uleb128 0xe
+ 1010 009d 3A       		.uleb128 0x3a
+ 1011 009e 0B       		.uleb128 0xb
+ 1012 009f 3B       		.uleb128 0x3b
+ 1013 00a0 0B       		.uleb128 0xb
+ 1014 00a1 49       		.uleb128 0x49
+ 1015 00a2 13       		.uleb128 0x13
+ 1016 00a3 02       		.uleb128 0x2
+ 1017 00a4 18       		.uleb128 0x18
+ 1018 00a5 00       		.byte	0
+ 1019 00a6 00       		.byte	0
+ 1020 00a7 0D       		.uleb128 0xd
+ 1021 00a8 05       		.uleb128 0x5
+ 1022 00a9 00       		.byte	0
+ 1023 00aa 03       		.uleb128 0x3
+ 1024 00ab 08       		.uleb128 0x8
+ 1025 00ac 3A       		.uleb128 0x3a
+ 1026 00ad 0B       		.uleb128 0xb
+ 1027 00ae 3B       		.uleb128 0x3b
+ 1028 00af 0B       		.uleb128 0xb
+ 1029 00b0 49       		.uleb128 0x49
+ 1030 00b1 13       		.uleb128 0x13
+ 1031 00b2 02       		.uleb128 0x2
+ 1032 00b3 18       		.uleb128 0x18
+ 1033 00b4 00       		.byte	0
+ 1034 00b5 00       		.byte	0
+ 1035 00b6 0E       		.uleb128 0xe
+ 1036 00b7 34       		.uleb128 0x34
+ 1037 00b8 00       		.byte	0
+ 1038 00b9 03       		.uleb128 0x3
+ 1039 00ba 08       		.uleb128 0x8
+ 1040 00bb 3A       		.uleb128 0x3a
+ 1041 00bc 0B       		.uleb128 0xb
+ 1042 00bd 3B       		.uleb128 0x3b
+ 1043 00be 0B       		.uleb128 0xb
+ 1044 00bf 49       		.uleb128 0x49
+ 1045 00c0 13       		.uleb128 0x13
+ 1046 00c1 02       		.uleb128 0x2
+ 1047 00c2 18       		.uleb128 0x18
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 25
+
+
+ 1048 00c3 00       		.byte	0
+ 1049 00c4 00       		.byte	0
+ 1050 00c5 0F       		.uleb128 0xf
+ 1051 00c6 2E       		.uleb128 0x2e
+ 1052 00c7 01       		.byte	0x1
+ 1053 00c8 3F       		.uleb128 0x3f
+ 1054 00c9 19       		.uleb128 0x19
+ 1055 00ca 03       		.uleb128 0x3
+ 1056 00cb 0E       		.uleb128 0xe
+ 1057 00cc 3A       		.uleb128 0x3a
+ 1058 00cd 0B       		.uleb128 0xb
+ 1059 00ce 3B       		.uleb128 0x3b
+ 1060 00cf 0B       		.uleb128 0xb
+ 1061 00d0 27       		.uleb128 0x27
+ 1062 00d1 19       		.uleb128 0x19
+ 1063 00d2 11       		.uleb128 0x11
+ 1064 00d3 01       		.uleb128 0x1
+ 1065 00d4 12       		.uleb128 0x12
+ 1066 00d5 06       		.uleb128 0x6
+ 1067 00d6 40       		.uleb128 0x40
+ 1068 00d7 18       		.uleb128 0x18
+ 1069 00d8 9642     		.uleb128 0x2116
+ 1070 00da 19       		.uleb128 0x19
+ 1071 00db 01       		.uleb128 0x1
+ 1072 00dc 13       		.uleb128 0x13
+ 1073 00dd 00       		.byte	0
+ 1074 00de 00       		.byte	0
+ 1075 00df 10       		.uleb128 0x10
+ 1076 00e0 34       		.uleb128 0x34
+ 1077 00e1 00       		.byte	0
+ 1078 00e2 03       		.uleb128 0x3
+ 1079 00e3 0E       		.uleb128 0xe
+ 1080 00e4 3A       		.uleb128 0x3a
+ 1081 00e5 0B       		.uleb128 0xb
+ 1082 00e6 3B       		.uleb128 0x3b
+ 1083 00e7 0B       		.uleb128 0xb
+ 1084 00e8 49       		.uleb128 0x49
+ 1085 00e9 13       		.uleb128 0x13
+ 1086 00ea 02       		.uleb128 0x2
+ 1087 00eb 18       		.uleb128 0x18
+ 1088 00ec 00       		.byte	0
+ 1089 00ed 00       		.byte	0
+ 1090 00ee 11       		.uleb128 0x11
+ 1091 00ef 2E       		.uleb128 0x2e
+ 1092 00f0 00       		.byte	0
+ 1093 00f1 3F       		.uleb128 0x3f
+ 1094 00f2 19       		.uleb128 0x19
+ 1095 00f3 03       		.uleb128 0x3
+ 1096 00f4 0E       		.uleb128 0xe
+ 1097 00f5 3A       		.uleb128 0x3a
+ 1098 00f6 0B       		.uleb128 0xb
+ 1099 00f7 3B       		.uleb128 0x3b
+ 1100 00f8 0B       		.uleb128 0xb
+ 1101 00f9 27       		.uleb128 0x27
+ 1102 00fa 19       		.uleb128 0x19
+ 1103 00fb 11       		.uleb128 0x11
+ 1104 00fc 01       		.uleb128 0x1
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 26
+
+
+ 1105 00fd 12       		.uleb128 0x12
+ 1106 00fe 06       		.uleb128 0x6
+ 1107 00ff 40       		.uleb128 0x40
+ 1108 0100 18       		.uleb128 0x18
+ 1109 0101 9642     		.uleb128 0x2116
+ 1110 0103 19       		.uleb128 0x19
+ 1111 0104 00       		.byte	0
+ 1112 0105 00       		.byte	0
+ 1113 0106 12       		.uleb128 0x12
+ 1114 0107 34       		.uleb128 0x34
+ 1115 0108 00       		.byte	0
+ 1116 0109 03       		.uleb128 0x3
+ 1117 010a 0E       		.uleb128 0xe
+ 1118 010b 3A       		.uleb128 0x3a
+ 1119 010c 0B       		.uleb128 0xb
+ 1120 010d 3B       		.uleb128 0x3b
+ 1121 010e 05       		.uleb128 0x5
+ 1122 010f 49       		.uleb128 0x49
+ 1123 0110 13       		.uleb128 0x13
+ 1124 0111 3F       		.uleb128 0x3f
+ 1125 0112 19       		.uleb128 0x19
+ 1126 0113 3C       		.uleb128 0x3c
+ 1127 0114 19       		.uleb128 0x19
+ 1128 0115 00       		.byte	0
+ 1129 0116 00       		.byte	0
+ 1130 0117 13       		.uleb128 0x13
+ 1131 0118 34       		.uleb128 0x34
+ 1132 0119 00       		.byte	0
+ 1133 011a 03       		.uleb128 0x3
+ 1134 011b 0E       		.uleb128 0xe
+ 1135 011c 3A       		.uleb128 0x3a
+ 1136 011d 0B       		.uleb128 0xb
+ 1137 011e 3B       		.uleb128 0x3b
+ 1138 011f 0B       		.uleb128 0xb
+ 1139 0120 49       		.uleb128 0x49
+ 1140 0121 13       		.uleb128 0x13
+ 1141 0122 3F       		.uleb128 0x3f
+ 1142 0123 19       		.uleb128 0x19
+ 1143 0124 3C       		.uleb128 0x3c
+ 1144 0125 19       		.uleb128 0x19
+ 1145 0126 00       		.byte	0
+ 1146 0127 00       		.byte	0
+ 1147 0128 00       		.byte	0
+ 1148              		.section	.debug_aranges,"",%progbits
+ 1149 0000 34000000 		.4byte	0x34
+ 1150 0004 0200     		.2byte	0x2
+ 1151 0006 00000000 		.4byte	.Ldebug_info0
+ 1152 000a 04       		.byte	0x4
+ 1153 000b 00       		.byte	0
+ 1154 000c 0000     		.2byte	0
+ 1155 000e 0000     		.2byte	0
+ 1156 0010 00000000 		.4byte	.LFB36
+ 1157 0014 38000000 		.4byte	.LFE36-.LFB36
+ 1158 0018 00000000 		.4byte	.LFB37
+ 1159 001c 60000000 		.4byte	.LFE37-.LFB37
+ 1160 0020 00000000 		.4byte	.LFB38
+ 1161 0024 84000000 		.4byte	.LFE38-.LFB38
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 27
+
+
+ 1162 0028 00000000 		.4byte	.LFB39
+ 1163 002c 10010000 		.4byte	.LFE39-.LFB39
+ 1164 0030 00000000 		.4byte	0
+ 1165 0034 00000000 		.4byte	0
+ 1166              		.section	.debug_ranges,"",%progbits
+ 1167              	.Ldebug_ranges0:
+ 1168 0000 00000000 		.4byte	.LFB36
+ 1169 0004 38000000 		.4byte	.LFE36
+ 1170 0008 00000000 		.4byte	.LFB37
+ 1171 000c 60000000 		.4byte	.LFE37
+ 1172 0010 00000000 		.4byte	.LFB38
+ 1173 0014 84000000 		.4byte	.LFE38
+ 1174 0018 00000000 		.4byte	.LFB39
+ 1175 001c 10010000 		.4byte	.LFE39
+ 1176 0020 00000000 		.4byte	0
+ 1177 0024 00000000 		.4byte	0
+ 1178              		.section	.debug_line,"",%progbits
+ 1179              	.Ldebug_line0:
+ 1180 0000 FF000000 		.section	.debug_str,"MS",%progbits,1
+ 1180      02007100 
+ 1180      00000201 
+ 1180      FB0E0D00 
+ 1180      01010101 
+ 1181              	.LASF31:
+ 1182 0000 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_NOT_REGISTERED\000"
+ 1182      455F4552 
+ 1182      524F525F 
+ 1182      4C324341 
+ 1182      505F5053 
+ 1183              	.LASF30:
+ 1184 0025 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_ALREADY_REGISTERED\000"
+ 1184      455F4552 
+ 1184      524F525F 
+ 1184      4C324341 
+ 1184      505F5053 
+ 1185              	.LASF51:
+ 1186 004e 6D616A6F 		.ascii	"majorVersion\000"
+ 1186      72566572 
+ 1186      73696F6E 
+ 1186      00
+ 1187              	.LASF33:
+ 1188 005b 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_CHANNEL_NOT_FOUND\000"
+ 1188      455F4552 
+ 1188      524F525F 
+ 1188      4C324341 
+ 1188      505F4348 
+ 1189              	.LASF2:
+ 1190 007f 73686F72 		.ascii	"short int\000"
+ 1190      7420696E 
+ 1190      7400
+ 1191              	.LASF15:
+ 1192 0089 73697A65 		.ascii	"sizetype\000"
+ 1192      74797065 
+ 1192      00
+ 1193              	.LASF16:
+ 1194 0092 4359424C 		.ascii	"CYBLE_ERROR_OK\000"
+ 1194      455F4552 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 28
+
+
+ 1194      524F525F 
+ 1194      4F4B00
+ 1195              	.LASF42:
+ 1196 00a1 4359424C 		.ascii	"CYBLE_ERROR_LL_SAME_TRANSACTION_COLLISION\000"
+ 1196      455F4552 
+ 1196      524F525F 
+ 1196      4C4C5F53 
+ 1196      414D455F 
+ 1197              	.LASF37:
+ 1198 00cb 4359424C 		.ascii	"CYBLE_ERROR_FLASH_WRITE_NOT_PERMITED\000"
+ 1198      455F4552 
+ 1198      524F525F 
+ 1198      464C4153 
+ 1198      485F5752 
+ 1199              	.LASF14:
+ 1200 00f0 6C6F6E67 		.ascii	"long double\000"
+ 1200      20646F75 
+ 1200      626C6500 
+ 1201              	.LASF71:
+ 1202 00fc 5F777269 		.ascii	"_write\000"
+ 1202      746500
+ 1203              	.LASF38:
+ 1204 0103 4359424C 		.ascii	"CYBLE_ERROR_MIC_AUTH_FAILED\000"
+ 1204      455F4552 
+ 1204      524F525F 
+ 1204      4D49435F 
+ 1204      41555448 
+ 1205              	.LASF62:
+ 1206 011f 66696C65 		.ascii	"file\000"
+ 1206      00
+ 1207              	.LASF56:
+ 1208 0124 4359424C 		.ascii	"CYBLE_STATE_STOPPED\000"
+ 1208      455F5354 
+ 1208      4154455F 
+ 1208      53544F50 
+ 1208      50454400 
+ 1209              	.LASF17:
+ 1210 0138 4359424C 		.ascii	"CYBLE_ERROR_INVALID_PARAMETER\000"
+ 1210      455F4552 
+ 1210      524F525F 
+ 1210      494E5641 
+ 1210      4C49445F 
+ 1211              	.LASF21:
+ 1212 0156 4359424C 		.ascii	"CYBLE_ERROR_OOB_NOT_AVAILABLE\000"
+ 1212      455F4552 
+ 1212      524F525F 
+ 1212      4F4F425F 
+ 1212      4E4F545F 
+ 1213              	.LASF72:
+ 1214 0174 5072696E 		.ascii	"PrintStackVersion\000"
+ 1214      74537461 
+ 1214      636B5665 
+ 1214      7273696F 
+ 1214      6E00
+ 1215              	.LASF9:
+ 1216 0186 75696E74 		.ascii	"uint16\000"
+ 1216      313600
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 29
+
+
+ 1217              	.LASF18:
+ 1218 018d 4359424C 		.ascii	"CYBLE_ERROR_INVALID_OPERATION\000"
+ 1218      455F4552 
+ 1218      524F525F 
+ 1218      494E5641 
+ 1218      4C49445F 
+ 1219              	.LASF50:
+ 1220 01ab 4359424C 		.ascii	"CYBLE_API_RESULT_T\000"
+ 1220      455F4150 
+ 1220      495F5245 
+ 1220      53554C54 
+ 1220      5F5400
+ 1221              	.LASF22:
+ 1222 01be 4359424C 		.ascii	"CYBLE_ERROR_NO_CONNECTION\000"
+ 1222      455F4552 
+ 1222      524F525F 
+ 1222      4E4F5F43 
+ 1222      4F4E4E45 
+ 1223              	.LASF57:
+ 1224 01d8 4359424C 		.ascii	"CYBLE_STATE_INITIALIZING\000"
+ 1224      455F5354 
+ 1224      4154455F 
+ 1224      494E4954 
+ 1224      49414C49 
+ 1225              	.LASF26:
+ 1226 01f1 4359424C 		.ascii	"CYBLE_ERROR_TX_POWER_READ\000"
+ 1226      455F4552 
+ 1226      524F525F 
+ 1226      54585F50 
+ 1226      4F574552 
+ 1227              	.LASF20:
+ 1228 020b 4359424C 		.ascii	"CYBLE_ERROR_INSUFFICIENT_RESOURCES\000"
+ 1228      455F4552 
+ 1228      524F525F 
+ 1228      494E5355 
+ 1228      46464943 
+ 1229              	.LASF11:
+ 1230 022e 666C6F61 		.ascii	"float\000"
+ 1230      7400
+ 1231              	.LASF6:
+ 1232 0234 6C6F6E67 		.ascii	"long long int\000"
+ 1232      206C6F6E 
+ 1232      6720696E 
+ 1232      7400
+ 1233              	.LASF27:
+ 1234 0242 4359424C 		.ascii	"CYBLE_ERROR_BT_ON_NOT_COMPLETED\000"
+ 1234      455F4552 
+ 1234      524F525F 
+ 1234      42545F4F 
+ 1234      4E5F4E4F 
+ 1235              	.LASF4:
+ 1236 0262 6C6F6E67 		.ascii	"long int\000"
+ 1236      20696E74 
+ 1236      00
+ 1237              	.LASF24:
+ 1238 026b 4359424C 		.ascii	"CYBLE_ERROR_REPEATED_ATTEMPTS\000"
+ 1238      455F4552 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 30
+
+
+ 1238      524F525F 
+ 1238      52455045 
+ 1238      41544544 
+ 1239              	.LASF68:
+ 1240 0289 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1240      43313120 
+ 1240      352E342E 
+ 1240      31203230 
+ 1240      31363036 
+ 1241 02bc 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1241      20726576 
+ 1241      6973696F 
+ 1241      6E203233 
+ 1241      37373135 
+ 1242 02ef 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1242      66756E63 
+ 1242      74696F6E 
+ 1242      2D736563 
+ 1242      74696F6E 
+ 1243              	.LASF53:
+ 1244 0317 70617463 		.ascii	"patch\000"
+ 1244      6800
+ 1245              	.LASF23:
+ 1246 031d 4359424C 		.ascii	"CYBLE_ERROR_NO_DEVICE_ENTITY\000"
+ 1246      455F4552 
+ 1246      524F525F 
+ 1246      4E4F5F44 
+ 1246      45564943 
+ 1247              	.LASF67:
+ 1248 033a 61706952 		.ascii	"apiResult\000"
+ 1248      6573756C 
+ 1248      7400
+ 1249              	.LASF70:
+ 1250 0344 433A5C55 		.ascii	"C:\\Users\\user\\Desktop\\Testy 740G\\BLE projekt\\"
+ 1250      73657273 
+ 1250      5C757365 
+ 1250      725C4465 
+ 1250      736B746F 
+ 1251 0371 424C455F 		.ascii	"BLE_Continuous_Glucose_Monitoring_Sensor01\\BLE_Con"
+ 1251      436F6E74 
+ 1251      696E756F 
+ 1251      75735F47 
+ 1251      6C75636F 
+ 1252 03a3 74696E75 		.ascii	"tinuous_Glucose_Monitoring_Sensor02.cydsn\000"
+ 1252      6F75735F 
+ 1252      476C7563 
+ 1252      6F73655F 
+ 1252      4D6F6E69 
+ 1253              	.LASF1:
+ 1254 03cd 756E7369 		.ascii	"unsigned char\000"
+ 1254      676E6564 
+ 1254      20636861 
+ 1254      7200
+ 1255              	.LASF41:
+ 1256 03db 4359424C 		.ascii	"CYBLE_ERROR_FLASH_WRITE\000"
+ 1256      455F4552 
+ 1256      524F525F 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 31
+
+
+ 1256      464C4153 
+ 1256      485F5752 
+ 1257              	.LASF69:
+ 1258 03f3 64656275 		.ascii	"debug.c\000"
+ 1258      672E6300 
+ 1259              	.LASF0:
+ 1260 03fb 7369676E 		.ascii	"signed char\000"
+ 1260      65642063 
+ 1260      68617200 
+ 1261              	.LASF7:
+ 1262 0407 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1262      206C6F6E 
+ 1262      6720756E 
+ 1262      7369676E 
+ 1262      65642069 
+ 1263              	.LASF28:
+ 1264 041e 4359424C 		.ascii	"CYBLE_ERROR_SEC_FAILED\000"
+ 1264      455F4552 
+ 1264      524F525F 
+ 1264      5345435F 
+ 1264      4641494C 
+ 1265              	.LASF25:
+ 1266 0435 4359424C 		.ascii	"CYBLE_ERROR_GAP_ROLE\000"
+ 1266      455F4552 
+ 1266      524F525F 
+ 1266      4741505F 
+ 1266      524F4C45 
+ 1267              	.LASF8:
+ 1268 044a 756E7369 		.ascii	"unsigned int\000"
+ 1268      676E6564 
+ 1268      20696E74 
+ 1268      00
+ 1269              	.LASF29:
+ 1270 0457 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_WRONG_ENCODING\000"
+ 1270      455F4552 
+ 1270      524F525F 
+ 1270      4C324341 
+ 1270      505F5053 
+ 1271              	.LASF60:
+ 1272 047c 4359424C 		.ascii	"CYBLE_STATE_DISCONNECTED\000"
+ 1272      455F5354 
+ 1272      4154455F 
+ 1272      44495343 
+ 1272      4F4E4E45 
+ 1273              	.LASF61:
+ 1274 0495 4359424C 		.ascii	"CYBLE_STATE_T\000"
+ 1274      455F5354 
+ 1274      4154455F 
+ 1274      5400
+ 1275              	.LASF47:
+ 1276 04a3 4359424C 		.ascii	"CYBLE_ERROR_CHAR_IS_NOT_DISCOVERED\000"
+ 1276      455F4552 
+ 1276      524F525F 
+ 1276      43484152 
+ 1276      5F49535F 
+ 1277              	.LASF3:
+ 1278 04c6 73686F72 		.ascii	"short unsigned int\000"
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 32
+
+
+ 1278      7420756E 
+ 1278      7369676E 
+ 1278      65642069 
+ 1278      6E7400
+ 1279              	.LASF65:
+ 1280 04d9 5072696E 		.ascii	"PrintApiResult\000"
+ 1280      74417069 
+ 1280      52657375 
+ 1280      6C7400
+ 1281              	.LASF54:
+ 1282 04e8 6275696C 		.ascii	"buildNumber\000"
+ 1282      644E756D 
+ 1282      62657200 
+ 1283              	.LASF13:
+ 1284 04f4 63686172 		.ascii	"char\000"
+ 1284      00
+ 1285              	.LASF49:
+ 1286 04f9 4359424C 		.ascii	"CYBLE_ERROR_STACK_BUSY\000"
+ 1286      455F4552 
+ 1286      524F525F 
+ 1286      53544143 
+ 1286      4B5F4255 
+ 1287              	.LASF63:
+ 1288 0510 73746163 		.ascii	"stackVersion\000"
+ 1288      6B566572 
+ 1288      73696F6E 
+ 1288      00
+ 1289              	.LASF43:
+ 1290 051d 4359424C 		.ascii	"CYBLE_ERROR_CONTROLLER_BUSY\000"
+ 1290      455F4552 
+ 1290      524F525F 
+ 1290      434F4E54 
+ 1290      524F4C4C 
+ 1291              	.LASF55:
+ 1292 0539 4359424C 		.ascii	"CYBLE_STACK_LIB_VERSION_T\000"
+ 1292      455F5354 
+ 1292      41434B5F 
+ 1292      4C49425F 
+ 1292      56455253 
+ 1293              	.LASF19:
+ 1294 0553 4359424C 		.ascii	"CYBLE_ERROR_MEMORY_ALLOCATION_FAILED\000"
+ 1294      455F4552 
+ 1294      524F525F 
+ 1294      4D454D4F 
+ 1294      52595F41 
+ 1295              	.LASF58:
+ 1296 0578 4359424C 		.ascii	"CYBLE_STATE_CONNECTED\000"
+ 1296      455F5354 
+ 1296      4154455F 
+ 1296      434F4E4E 
+ 1296      45435445 
+ 1297              	.LASF40:
+ 1298 058e 4359424C 		.ascii	"CYBLE_ERROR_UNSUPPORTED_FEATURE_OR_PARAMETER_VALUE\000"
+ 1298      455F4552 
+ 1298      524F525F 
+ 1298      554E5355 
+ 1298      50504F52 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 33
+
+
+ 1299              	.LASF59:
+ 1300 05c1 4359424C 		.ascii	"CYBLE_STATE_ADVERTISING\000"
+ 1300      455F5354 
+ 1300      4154455F 
+ 1300      41445645 
+ 1300      52544953 
+ 1301              	.LASF64:
+ 1302 05d9 5072696E 		.ascii	"PrintState\000"
+ 1302      74537461 
+ 1302      746500
+ 1303              	.LASF5:
+ 1304 05e4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1304      20756E73 
+ 1304      69676E65 
+ 1304      6420696E 
+ 1304      7400
+ 1305              	.LASF10:
+ 1306 05f6 75696E74 		.ascii	"uint32\000"
+ 1306      333200
+ 1307              	.LASF35:
+ 1308 05fd 4359424C 		.ascii	"CYBLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE\000"
+ 1308      455F4552 
+ 1308      524F525F 
+ 1308      47415454 
+ 1308      5F44425F 
+ 1309              	.LASF34:
+ 1310 0625 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_NOT_IN_RANGE\000"
+ 1310      455F4552 
+ 1310      524F525F 
+ 1310      4C324341 
+ 1310      505F5053 
+ 1311              	.LASF39:
+ 1312 0648 4359424C 		.ascii	"CYBLE_ERROR_HARDWARE_FAILURE\000"
+ 1312      455F4552 
+ 1312      524F525F 
+ 1312      48415244 
+ 1312      57415245 
+ 1313              	.LASF66:
+ 1314 0665 6379426C 		.ascii	"cyBle_state\000"
+ 1314      655F7374 
+ 1314      61746500 
+ 1315              	.LASF45:
+ 1316 0671 4359424C 		.ascii	"CYBLE_ERROR_NTF_DISABLED\000"
+ 1316      455F4552 
+ 1316      524F525F 
+ 1316      4E54465F 
+ 1316      44495341 
+ 1317              	.LASF36:
+ 1318 068a 4359424C 		.ascii	"CYBLE_ERROR_DEVICE_ALREADY_EXISTS\000"
+ 1318      455F4552 
+ 1318      524F525F 
+ 1318      44455649 
+ 1318      43455F41 
+ 1319              	.LASF52:
+ 1320 06ac 6D696E6F 		.ascii	"minorVersion\000"
+ 1320      72566572 
+ 1320      73696F6E 
+ARM GAS  C:\Users\user\AppData\Local\Temp\ccJFhRn7.s 			page 34
+
+
+ 1320      00
+ 1321              	.LASF44:
+ 1322 06b9 4359424C 		.ascii	"CYBLE_ERROR_MAX\000"
+ 1322      455F4552 
+ 1322      524F525F 
+ 1322      4D415800 
+ 1323              	.LASF48:
+ 1324 06c9 4359424C 		.ascii	"CYBLE_ERROR_INVALID_STATE\000"
+ 1324      455F4552 
+ 1324      524F525F 
+ 1324      494E5641 
+ 1324      4C49445F 
+ 1325              	.LASF12:
+ 1326 06e3 646F7562 		.ascii	"double\000"
+ 1326      6C6500
+ 1327              	.LASF32:
+ 1328 06ea 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_CONNECTION_ENTITY_NOT_FOUND\000"
+ 1328      455F4552 
+ 1328      524F525F 
+ 1328      4C324341 
+ 1328      505F434F 
+ 1329              	.LASF46:
+ 1330 0718 4359424C 		.ascii	"CYBLE_ERROR_IND_DISABLED\000"
+ 1330      455F4552 
+ 1330      524F525F 
+ 1330      494E445F 
+ 1330      44495341 
+ 1331              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,101 @@
+--------------- Build Started: 06/25/2024 20:27:34 Project: BLE_Continuous_Glucose_Monitoring_Sensor02, Configuration: ARM GCC 5.4-2016-q2-update Release ---------------
+cydsfit.exe -.appdatapath "C:\Users\user\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn\BLE_Continuous_Glucose_Monitoring_Sensor02.cyprj" -d CY8C4248LQI-BL583 -s "C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor02.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/main.lst -g -D NDEBUG -Wall -ffunction-sections -ffat-lto-objects -Os -c main.c -o .\CortexM0\ARM_GCC_541\Release\main.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/cgmss.lst -g -D NDEBUG -Wall -ffunction-sections -ffat-lto-objects -Os -c cgmss.c -o .\CortexM0\ARM_GCC_541\Release\cgmss.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Release/bmss.lst -g -D NDEBUG -Wall -ffunction-sections -ffat-lto-objects -Os -c bmss.c -o .\CortexM0\ARM_GCC_541\Release\bmss.o
+bmss.c: In function 'BmsInit':
+bmss.c:39:5: warning: implicit declaration of function 'CyBle_BmsRegisterAttrCallback' [-Wimplicit-function-declaration]
+     CyBle_BmsRegisterAttrCallback(BmsCallBack);
+     ^
+bmss.c: In function 'BmsCallBack':
+bmss.c:66:34: error: 'CYBLE_BMS_CHAR_VALUE_T' undeclared (first use in this function)
+                 for(i = 0; i < ((CYBLE_BMS_CHAR_VALUE_T*)eventParam)->value->len; i++)
+                                  ^
+bmss.c:66:34: note: each undeclared identifier is reported only once for each function it appears in
+bmss.c:66:57: error: expected expression before ')' token
+                 for(i = 0; i < ((CYBLE_BMS_CHAR_VALUE_T*)eventParam)->value->len; i++)
+                                                         ^
+In file included from main.h:23:0,
+                 from bmss.h:20,
+                 from bmss.c:19:
+bmss.c:68:67: error: expected expression before ')' token
+                     DBG_PRINTF("%2.2x ", ((CYBLE_BMS_CHAR_VALUE_T*)eventParam)->value->val[i]);
+                                                                   ^
+debug.h:69:46: note: in definition of macro 'DBG_PRINTF'
+     #define DBG_PRINTF(...)          (printf(__VA_ARGS__))
+                                              ^
+bmss.c:72:49: error: expected expression before ')' token
+                 bmcp = ((CYBLE_BMS_CHAR_VALUE_T*)eventParam)->value->val[0];
+                                                 ^
+bmss.c:76:26: error: 'CYBLE_BMS_BMCP_OPC_RD' undeclared (first use in this function)
+                     case CYBLE_BMS_BMCP_OPC_RD:
+                          ^
+bmss.c:79:46: error: 'CYBLE_BMS_BMFT_RD' undeclared (first use in this function)
+                         opCodeFlag = (uint8) CYBLE_BMS_BMFT_RD;
+                                              ^
+bmss.c:80:48: error: 'CYBLE_BMS_BMFT_RC' undeclared (first use in this function)
+                         authCodeFlag = (uint8) CYBLE_BMS_BMFT_RC;
+                                                ^
+bmss.c:83:26: error: 'CYBLE_BMS_BMCP_OPC_AB' undeclared (first use in this function)
+                     case CYBLE_BMS_BMCP_OPC_AB:
+                          ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+bmss.c:86:47: error: 'CYBLE_BMS_BMFT_AB' undeclared (first use in this function)
+                         opCodeFlag = (uint8) (CYBLE_BMS_BMFT_AB >> (8 * CYBLE_BMS_BMFT_SECOND_BYTE));
+                                               ^
+bmss.c:87:49: error: 'CYBLE_BMS_BMFT_AC' undeclared (first use in this function)
+                         authCodeFlag = (uint8) (CYBLE_BMS_BMFT_AC >> (8 * CYBLE_BMS_BMFT_SECOND_BYTE));
+                                                 ^
+bmss.c:90:26: error: 'CYBLE_BMS_BMCP_OPC_BA' undeclared (first use in this function)
+                     case CYBLE_BMS_BMCP_OPC_BA:
+                          ^
+bmss.c:93:47: error: 'CYBLE_BMS_BMFT_BA' undeclared (first use in this function)
+                         opCodeFlag = (uint8) (CYBLE_BMS_BMFT_BA >> (8 * CYBLE_BMS_BMFT_THIRD_BYTE));
+                                               ^
+bmss.c:94:49: error: 'CYBLE_BMS_BMFT_BC' undeclared (first use in this function)
+                         authCodeFlag = (uint8) (CYBLE_BMS_BMFT_BC >> (8 * CYBLE_BMS_BMFT_THIRD_BYTE));
+                                                 ^
+bmss.c:105:28: warning: implicit declaration of function 'CyBle_BmssGetCharacteristicValue' [-Wimplicit-function-declaration]
+                     (void) CyBle_BmssGetCharacteristicValue(CYBLE_BMS_BMFT, CYBLE_BMS_BMFT_SIZE, features);
+                            ^
+bmss.c:105:61: error: 'CYBLE_BMS_BMFT' undeclared (first use in this function)
+                     (void) CyBle_BmssGetCharacteristicValue(CYBLE_BMS_BMFT, CYBLE_BMS_BMFT_SIZE, features);
+                                                             ^
+bmss.c:111:57: error: expected expression before ')' token
+                             if(((CYBLE_BMS_CHAR_VALUE_T*)eventParam)->value->len == (CYBLE_BMS_AUTH_CODE_SIZE + 1))
+                                                         ^
+bmss.c:113:74: error: expected expression before ')' token
+                                 for(i = 1u; i < ((CYBLE_BMS_CHAR_VALUE_T*)eventParam)->value->len; i++)
+                                                                          ^
+bmss.c:115:65: error: expected expression before ')' token
+                                     if(((CYBLE_BMS_CHAR_VALUE_T*)eventParam)->value->val[i] != authCode[i])
+                                                                 ^
+bmss.c:169:42: error: expected expression before ')' token
+                 ((CYBLE_BMS_CHAR_VALUE_T*)eventParam)->gattErrorCode = bmsGattError;
+                                          ^
+bmss.c: In function 'BmsProcess':
+bmss.c:194:18: error: 'CYBLE_BMS_BMCP_OPC_RD' undeclared (first use in this function)
+             case CYBLE_BMS_BMCP_OPC_RD:
+                  ^
+bmss.c:200:18: error: 'CYBLE_BMS_BMCP_OPC_AB' undeclared (first use in this function)
+             case CYBLE_BMS_BMCP_OPC_AB:
+                  ^
+bmss.c:209:18: error: 'CYBLE_BMS_BMCP_OPC_BA' undeclared (first use in this function)
+             case CYBLE_BMS_BMCP_OPC_BA:
+                  ^
+--------------- Build Failed: 06/25/2024 20:27:39 ---------------

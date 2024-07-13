@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\__Testy 740G\BLE projekt\BLE_Continuous_Glucose_Monitoring_Sensor01\BLE_Continuous_Glucose_Monitoring_Sensor01.cydsn\BLE_Continuous_Glucose_Monitoring_Sensor01.cyprj|9ac123e0-4bfa-4bb3-a35c-1ed9dc2ef1d7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|36869ece-6857-4b33-8366-4c2d072d92d8
+C:\Users\user\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|bdc0fdc1-a722-49d4-968b-bfc33d75df4a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d756dabf-516b-4a09-8762-86f0b01bbc4e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|09b64942-8b2d-43bd-a0a6-058517a7c894
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|53b5c9bd-e6e6-4b62-9148-49737fb82f1e
