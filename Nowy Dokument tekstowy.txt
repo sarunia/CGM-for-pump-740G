@@ -1,0 +1,97 @@
+Advertised Device: PC 84:c6:92:3b:c2:c9 - mac adres modułu Blue Adapter
+
+446202 kod pompy do aplikacji Carelink, chyba sie automatycznie paruje z tym kodem do Blue Adaptera w celu przesłania dancych na stronę
+
+Mac adres pompy 00 23 F7 C6 CE FA
+
+
+dostosuj kod w arduino, aby ustawić dla BLE: Security mode = Mode 2, Security level = Authenticated pairingwith data signing, Strict pairing = No, I/O capabilities = Display, Bonding requirement = Bonding, Encryption key size = 16 bytes
+
+Security mode (tryb zabezpieczeń): Ustawia parametr ESP_LE_AUTH_REQ_SC_MITM_BOND, co oznacza uwierzytelnione łączenie z ochroną przed MITM (Man-in-the-Middle) oraz wymaganie tworzenia wiązań (bonding).
+
+Security level (poziom zabezpieczeń): Używa parametrów uwierzytelnionego łączenia z ochroną przed MITM, co jest równoważne z autoryzowanym łączeniem z podpisem danych.
+
+Strict pairing (ścisłe łączenie): W tym przypadku nie ma bezpośredniego ustawienia tego parametru, ale wybrany tryb (ESP_LE_AUTH_REQ_SC_MITM_BOND) obejmuje uwierzytelnione łączenie z ochroną przed MITM i wymaganie tworzenia wiązań, co można interpretować jako formę "ścisłego" łączenia.
+
+I/O capabilities (możliwości wejścia/wyjścia): Ustawia parametr ESP_IO_CAP_DISPLAY_ONLY, co oznacza, że urządzenie może tylko wyświetlać dane, co spełnia wymagania dotyczące możliwości wejścia/wyjścia = Display.
+
+Bonding requirement (wymaganie tworzenia wiązań): Jest ustawione na wymaganie tworzenia wiązań, co odpowiada ESP_LE_AUTH_REQ_SC_MITM_BOND.
+
+Encryption key size (rozmiar klucza szyfrowania): Ustawia rozmiar klucza na 16 bajtów za pomocą security->setKeySize(16);.
+
+Podsumowując, powyższy kod jest zgodny z podanymi wymaganiami bezpieczeństwa.
+
+
+CYBLE_GAPP_DISC_DATA_T cyBle_discoveryData =
+{
+    { 
+        0x02u, 0x01u, 0x06u, // Flags
+        0x0Fu, 0x09u, 0x43u, 0x47u, 0x4Du, 0x20u, 0x47u, 0x54u, 0x31u, 0x32u, 0x33u, 0x34u, 0x35u, 0x36u, 0x37u, 0x4Du, // Complete Local Name
+        0x04u, 0xFFu, 0xF9u, 0x01u, 0x00u // Manufacturer Specific Data
+    },
+    0x18u // Length of advertising data (24 bajtów)
+};
+
+CYBLE_GAPP_SCAN_RSP_DATA_T cyBle_scanRspData =
+{
+    { 
+        0x05u, 0x02u, 0x82u, 0xFEu, 0x1Fu, 0x18u, // Incomplete List of 16-bit Service Class UUIDs
+        0x02u, 0x0Au, 0x00u // Tx Power Level
+    },
+    0x09u // Length of scan response data (9 bajtów)
+};
+
+
+
+
+
+
+
+
+CYBLE_GAPP_DISC_DATA_T cyBle_discoveryData =
+{
+    { 0x02u, 0x01u, 0x06u, 0x0Fu, 0x09u, 0x43u, 0x47u,
+    0x4Du, 0x20u, 0x47u, 0x54u, 0x31u, 0x32u, 0x33u, 0x34u,
+    0x35u, 0x36u, 0x37u, 0x4Du, 0x04u, 0xFFu, 0xF9u, 0x01u,
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u }, /* uint8 advertising_data[CYBLE_MAX_ADV_DATA_LEN] */
+    0x18u,      /* uint8 adv_data_length */
+};
+
+CYBLE_GAPP_SCAN_RSP_DATA_T cyBle_scanRspData =
+{
+    { 0x05u, 0x02u, 0x1Fu, 0x18u, 0x1Eu, 0x18u, 0x02u, 
+    0x0Au, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u }, /* uint8 scan_rsp_data[CYBLE_MAX_SCAN_RSP_DATA_LEN] */
+    0x09u,      /* uint8 scan_rsp_data_length */
+};
+
+
+
+
+CYBLE_GAPP_DISC_DATA_T cyBle_discoveryData =
+{
+    { 0x02u, 0x01u, 0x06u, 0x0Fu, 0x09u, 0x43u, 0x47u,
+    0x4Du, 0x20u, 0x47u, 0x54u, 0x31u, 0x32u, 0x33u, 0x34u,
+    0x35u, 0x36u, 0x37u, 0x4Du, 0x04u, 0xFFu, 0xF9u, 0x01u,
+    0x00, 0x05, 0x02, 0x82, 0xFE, 0x1F, 0x18 }, /* uint8 advertising_data[CYBLE_MAX_ADV_DATA_LEN] */
+    0x1Eu,      /* uint8 adv_data_length */
+};
+
+CYBLE_GAPP_SCAN_RSP_DATA_T cyBle_scanRspData =
+{
+    { 0x02u, 0x0Au, 0x00u }, /* uint8 scan_rsp_data[CYBLE_MAX_SCAN_RSP_DATA_LEN] */
+    0x03u,      /* uint8 scan_rsp_data_length */
+};
+
+
+
+
+
+
+
+
+
+
+
+

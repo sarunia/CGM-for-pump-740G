@@ -1,0 +1,2134 @@
+[16:35:27:340] : 'Get Device ID' request sent
+[16:35:27:356] : 'Command Status' event received
+[16:35:27:356] : 	Status: BLE_STATUS_OK
+[16:35:27:359] : 'Get Device ID Response' event received
+[16:35:27:359] : 	Device ID: BLE_DONGLE_V4_2
+[16:35:27:361] : 'Command Complete' event received
+[16:35:27:361] : 	Status: BLE_STATUS_OK
+[16:35:27:363] : 'Get Device Description Info' request sent
+[16:35:27:364] : 'Command Status' event received
+[16:35:27:364] : 	Status: BLE_STATUS_OK
+[16:35:27:365] : 'Get Device Description Response' event received
+[16:35:27:365] : 	Manufacturer String: 'Cypress Semiconductor'
+[16:35:27:365] : 	Product String: 'CySmart BLE 4.2 USB Dongle'
+[16:35:27:365] : 'Command Complete' event received
+[16:35:27:365] : 	Status: BLE_STATUS_OK
+[16:35:27:368] : 'Get Firmware Version' request sent
+[16:35:27:368] : 'Command Status' event received
+[16:35:27:368] : 	Status: BLE_STATUS_OK
+[16:35:27:369] : 'Get Firmware Version Response' event received
+[16:35:27:369] : 	Firmware Version: 1.2.2.32
+[16:35:27:369] : 'Command Complete' event received
+[16:35:27:369] : 	Status: BLE_STATUS_OK
+[16:35:27:371] : 'Get Hardware Version' request sent
+[16:35:27:372] : 'Command Status' event received
+[16:35:27:372] : 	Status: BLE_STATUS_OK
+[16:35:27:372] : 'Get Hardware Version Response' event received
+[16:35:27:372] : 	Hardware Version: 2.0.0.0
+[16:35:27:373] : 'Command Complete' event received
+[16:35:27:373] : 	Status: BLE_STATUS_OK
+[16:35:27:375] : 'Get Supported Tool Versions' request sent
+[16:35:27:376] : 'Command Status' event received
+[16:35:27:376] : 	Status: BLE_STATUS_OK
+[16:35:27:376] : 'Get Supported Tool Version Response' event received
+[16:35:27:376] : 	Minimum Supported Version: 1.2
+[16:35:27:376] : 	Recommended Version: 1.2
+[16:35:27:377] : 'Command Complete' event received
+[16:35:27:377] : 	Status: BLE_STATUS_OK
+[16:35:30:839] : 'Init BLE Stack' request sent
+[16:35:30:844] : 'Command Status' event received
+[16:35:30:844] : 	Status: BLE_STATUS_OK
+[16:35:30:845] : 'Command Complete' event received
+[16:35:30:845] : 	Status: BLE_STATUS_OK
+[16:35:30:924] : 'Get default data length' request sent
+[16:35:30:927] : 'Command Status' event received
+[16:35:30:927] : 	Status: BLE_STATUS_OK
+[16:35:30:928] : 'Get default data length response' event received
+[16:35:30:928] : 	Suggested maximum Tx octet: 251
+[16:35:30:928] : 	Suggested maximum Tx time: 2120 µs
+[16:35:30:928] : 	Supported maximum Tx octet: 251
+[16:35:30:928] : 	Supported maximum Tx time: 2120 µs
+[16:35:30:928] : 	Supported maximum Rx octet: 251
+[16:35:30:928] : 	Supported maximum Rx time: 2120 µs
+[16:35:30:929] : 'Command Complete' event received
+[16:35:30:929] : 	Status: BLE_STATUS_OK
+[16:35:30:930] : 'Get BLE Stack Version' request sent
+[16:35:30:931] : 'Command Status' event received
+[16:35:30:931] : 	Status: BLE_STATUS_OK
+[16:35:30:931] : 'Get BLE Stack Version Response' event received
+[16:35:30:931] : 	BLE Stack Version: 3.0.3.0
+[16:35:30:931] : 'Get Bonded Devices List' request sent
+[16:35:30:932] : 'Command Complete' event received
+[16:35:30:932] : 	Status: BLE_STATUS_OK
+[16:35:30:932] : 'Command Status' event received
+[16:35:30:932] : 	Status: BLE_STATUS_OK
+[16:35:30:934] : 'Get Bonded Devices List Response' event received
+[16:35:30:934] : 'Get Local Device BD Address' request sent
+[16:35:30:936] : 'Command Complete' event received
+[16:35:30:936] : 	Status: BLE_STATUS_OK
+[16:35:30:936] : 'Command Status' event received
+[16:35:30:936] : 	Status: BLE_STATUS_OK
+[16:35:30:937] : 'Get Local BD Address Response' event received
+[16:35:30:937] : 	BD Address Type: RANDOM_ADDRESS
+[16:35:30:937] : 	BD Address: 80:95:19:29:49:C0:00:00
+[16:35:30:938] : 'Get Whitelist' request sent
+[16:35:30:938] : 'Command Complete' event received
+[16:35:30:938] : 	Status: BLE_STATUS_OK
+[16:35:30:939] : 'Command Status' event received
+[16:35:30:939] : 	Status: BLE_STATUS_OK
+[16:35:30:939] : 'Get Local Device BD Address' request sent
+[16:35:30:939] : 'Get Whitelist Response' event received
+[16:35:30:939] : 'Command Complete' event received
+[16:35:30:939] : 	Status: BLE_STATUS_OK
+[16:35:30:939] : 'Command Status' event received
+[16:35:30:939] : 	Status: BLE_STATUS_OK
+[16:35:30:939] : 'Get Local BD Address Response' event received
+[16:35:30:939] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:30:939] : 	BD Address: 90:86:FE:50:A0:00:00:00
+[16:35:30:939] : 'Get Bonded Devices List' request sent
+[16:35:30:939] : 'Command Complete' event received
+[16:35:30:939] : 	Status: BLE_STATUS_OK
+[16:35:30:939] : 'Command Status' event received
+[16:35:30:939] : 	Status: BLE_STATUS_OK
+[16:35:30:941] : 'Get Bonded Devices List Response' event received
+[16:35:30:941] : 'Get local device security keys' request sent
+[16:35:30:942] : 'Command Complete' event received
+[16:35:30:942] : 	Status: BLE_STATUS_OK
+[16:35:30:942] : 'Command Status' event received
+[16:35:30:942] : 	Status: BLE_STATUS_OK
+[16:35:30:943] : 'Get local device security keys response' event received
+[16:35:30:943] : 	Key flags: INITIATOR_ENCRYPTION_INFORMATION, INITIATOR_IDENTITY_INFORMATION, INITIATOR_SIGNATURE_KEY, RESPONDER_ENCRYPTION_INFORMATION, RESPONDER_IDENTITY_INFORMATION, RESPONDER_SIGNATURE_KEY
+[16:35:30:943] : 	Long Term Key (LTK): [D6:93:E8:A4:23:55:48:99:1D:77:61:E6:63:2B:10:8E]
+[16:35:30:943] : 	Encrypted Diversifier (EDIV) and Random Number: [99:1F:26:1E:F6:09:97:2E:AD:7E]
+[16:35:30:943] : 	Identity Resolving Key (IRK): [0A:2D:F4:65:E3:BD:7B:49:1E:B4:C0:95:95:13:46:73]
+[16:35:30:943] : 	Identification Address: [0x00A050FE8690, PUBLIC_ADDRESS]
+[16:35:30:943] : 	Connection Signature Resolving Key (CSRK): [90:D5:06:95:92:ED:91:D7:A8:9E:2C:DC:4A:93:5B:F9]
+[16:35:30:944] : 'Command Complete' event received
+[16:35:30:944] : 	Status: BLE_STATUS_OK
+[16:35:30:945] : 'Get Tx Power' request sent
+[16:35:30:945] : 	Channel Group ID: ADV_CHANNEL
+[16:35:30:946] : 'Command Status' event received
+[16:35:30:946] : 	Status: BLE_STATUS_OK
+[16:35:30:946] : 'Get Tx Power Response' event received
+[16:35:30:946] : 	Channel Group ID: ADV_CHANNEL
+[16:35:30:946] : 	Channel Power: 3 dBm
+[16:35:30:947] : 'Command Complete' event received
+[16:35:30:947] : 	Status: BLE_STATUS_OK
+[16:35:30:948] : 'Get Tx Power' request sent
+[16:35:30:948] : 	Channel Group ID: CONNECTION_CHANNEL
+[16:35:30:948] : 'Command Status' event received
+[16:35:30:948] : 	Status: BLE_STATUS_OK
+[16:35:30:948] : 'Get Tx Power Response' event received
+[16:35:30:948] : 	Channel Group ID: CONNECTION_CHANNEL
+[16:35:30:948] : 	Channel Power: 3 dBm
+[16:35:30:948] : 'Command Complete' event received
+[16:35:30:948] : 	Status: BLE_STATUS_OK
+[16:35:30:949] : 'Generate secure connection ECDH keys' request sent
+[16:35:30:950] : 'Command Status' event received
+[16:35:30:950] : 	Status: BLE_STATUS_OK
+[16:35:31:738] : 'Command Complete' event received
+[16:35:31:738] : 	Status: BLE_STATUS_OK
+[16:35:31:739] : 'Get resolving list' request sent
+[16:35:31:740] : 'Command Status' event received
+[16:35:31:740] : 	Status: BLE_STATUS_OK
+[16:35:31:741] : 'Get resolving list response' event received
+[16:35:31:742] : 'Command Complete' event received
+[16:35:31:742] : 	Status: BLE_STATUS_OK
+[16:35:31:742] : 'Set Device IO Capabilities' request sent
+[16:35:31:742] : 	IO Capabilities: KEYBOARD_AND_DISPLAY
+[16:35:31:753] : 'Command Status' event received
+[16:35:31:753] : 	Status: BLE_STATUS_OK
+[16:35:31:753] : 'Command Complete' event received
+[16:35:31:753] : 	Status: BLE_STATUS_OK
+[16:35:31:755] : 'Set identity address' request sent
+[16:35:31:755] : 	ID Address Type: PUBLIC_ADDRESS
+[16:35:31:755] : 	ID Address: 20:43:50:50:A0:00:00:00
+[16:35:31:756] : 'Command Status' event received
+[16:35:31:756] : 	Status: BLE_STATUS_OK
+[16:35:31:756] : 'Command Complete' event received
+[16:35:31:756] : 	Status: BLE_STATUS_OK
+[16:35:31:757] : 'Set Scan Parameters' request sent
+[16:35:31:757] : 	Scan Type: ACTIVE_SCAN
+[16:35:31:757] : 	Scan Interval: 10.00 ms
+[16:35:31:757] : 	Scan Window: 10.00 ms
+[16:35:31:757] : 	Local BD address type: PUBLIC_ADDRESS
+[16:35:31:757] : 	Scan Procedure Type: OBSERVATION_PROCEDURE
+[16:35:31:757] : 	Scan Filter Policy: 0x00
+[16:35:31:757] : 	Duplicate Filter Policy: ENABLE_DUPLICATE_FILTERING
+[16:35:31:757] : 	Scan Timeout: Continuous
+[16:35:31:759] : 'Command Status' event received
+[16:35:31:759] : 	Status: BLE_STATUS_OK
+[16:35:31:760] : 'Command Complete' event received
+[16:35:31:760] : 	Status: BLE_STATUS_OK
+[16:35:31:762] : 'Set Connection Parameters' request sent
+[16:35:31:762] : 	Connection Interval Minimum: 7.50 ms
+[16:35:31:762] : 	Connection Interval Maximum: 10.00 ms
+[16:35:31:762] : 	Slave Latency: 0
+[16:35:31:762] : 	Supervision Timeout: 100 ms
+[16:35:31:762] : 	Initiator Filter Policy: 0x00
+[16:35:31:762] : 	Local BD address type: PUBLIC_ADDRESS
+[16:35:31:762] : 	Connection CE Length Minimum: .00 ms
+[16:35:31:762] : 	Connection CE Length Maximum: .00 ms
+[16:35:31:762] : 	Connection Scan Interval: 10.00 ms
+[16:35:31:762] : 	Connection Scan Window: 10.00 ms
+[16:35:31:763] : 'Command Status' event received
+[16:35:31:763] : 	Status: BLE_STATUS_OK
+[16:35:31:763] : 'Command Complete' event received
+[16:35:31:763] : 	Status: BLE_STATUS_OK
+[16:35:31:765] : 'Set Local Device Security' request sent
+[16:35:31:765] : 	Security Level: 0x13
+[16:35:31:765] : 	Encryption Key Size: 16
+[16:35:31:765] : 	Bonding: 0x01
+[16:35:31:765] : 	Pairing properties: USE_KEYPRESS_NOTIFICATION
+[16:35:31:765] : 	Secure connection only mode: Disable
+[16:35:31:767] : 'Command Status' event received
+[16:35:31:767] : 	Status: BLE_STATUS_OK
+[16:35:31:767] : 'Command Complete' event received
+[16:35:31:767] : 	Status: BLE_STATUS_OK
+[16:35:31:769] : 'Address resolution control' request sent
+[16:35:31:769] : 	Controller resolution: Enable
+[16:35:31:770] : 'Command Status' event received
+[16:35:31:770] : 	Status: BLE_STATUS_OK
+[16:35:31:770] : 'Command Complete' event received
+[16:35:31:770] : 	Status: BLE_STATUS_OK
+[16:35:31:771] : 'Set resolvable address timeout' request sent
+[16:35:31:771] : 	Timeout: 900 s
+[16:35:31:772] : 'Command Status' event received
+[16:35:31:772] : 	Status: BLE_STATUS_OK
+[16:35:31:772] : 'Command Complete' event received
+[16:35:31:772] : 	Status: BLE_STATUS_OK
+[16:35:31:772] : 'Set default data length' requset sent
+[16:35:31:772] : 	Suggested maximum Tx octet: 251
+[16:35:31:772] : 	Suggested maximum Tx time: 2120 µs
+[16:35:31:773] : 'Command Status' event received
+[16:35:31:773] : 	Status: BLE_STATUS_OK
+[16:35:31:773] : 'Command Complete' event received
+[16:35:31:773] : 	Status: BLE_STATUS_OK
+[16:35:31:774] : 'Get Device IO Capabilities' request sent
+[16:35:31:775] : 'Command Status' event received
+[16:35:31:775] : 	Status: BLE_STATUS_OK
+[16:35:31:775] : 'Get Device IO Capabilities Response' event received
+[16:35:31:775] : 	IO Capabilities: KEYBOARD_AND_DISPLAY
+[16:35:31:776] : 'Command Complete' event received
+[16:35:31:776] : 	Status: BLE_STATUS_OK
+[16:35:31:776] : 'Get local device security keys' request sent
+[16:35:31:776] : 'Command Status' event received
+[16:35:31:776] : 	Status: BLE_STATUS_OK
+[16:35:31:777] : 'Get local device security keys response' event received
+[16:35:31:777] : 	Key flags: INITIATOR_ENCRYPTION_INFORMATION, INITIATOR_IDENTITY_INFORMATION, INITIATOR_SIGNATURE_KEY, RESPONDER_ENCRYPTION_INFORMATION, RESPONDER_IDENTITY_INFORMATION, RESPONDER_SIGNATURE_KEY
+[16:35:31:777] : 	Long Term Key (LTK): [D6:93:E8:A4:23:55:48:99:1D:77:61:E6:63:2B:10:8E]
+[16:35:31:777] : 	Encrypted Diversifier (EDIV) and Random Number: [99:1F:26:1E:F6:09:97:2E:AD:7E]
+[16:35:31:777] : 	Identity Resolving Key (IRK): [0A:2D:F4:65:E3:BD:7B:49:1E:B4:C0:95:95:13:46:73]
+[16:35:31:777] : 	Identification Address: [0x00A050504320, PUBLIC_ADDRESS]
+[16:35:31:777] : 	Connection Signature Resolving Key (CSRK): [90:D5:06:95:92:ED:91:D7:A8:9E:2C:DC:4A:93:5B:F9]
+[16:35:31:777] : 'Command Complete' event received
+[16:35:31:777] : 	Status: BLE_STATUS_OK
+[16:35:31:778] : 'Get Scan Parameters' request sent
+[16:35:31:779] : 'Command Status' event received
+[16:35:31:779] : 	Status: BLE_STATUS_OK
+[16:35:31:780] : 'Get Scan Parameters Response' event received
+[16:35:31:780] : 	Scan Type: ACTIVE_SCAN
+[16:35:31:780] : 	Scan Interval: 10.00 ms
+[16:35:31:780] : 	Scan Window: 10.00 ms
+[16:35:31:780] : 	Local BD address type: PUBLIC_ADDRESS
+[16:35:31:780] : 	Scan Procedure Type: OBSERVATION_PROCEDURE
+[16:35:31:780] : 	Scan Filter Policy: 0x00
+[16:35:31:780] : 	Duplicate Filter Policy: ENABLE_DUPLICATE_FILTERING
+[16:35:31:780] : 	Scan Timeout: Continuous
+[16:35:31:782] : 'Command Complete' event received
+[16:35:31:782] : 	Status: BLE_STATUS_OK
+[16:35:31:782] : 'Get Connection Parameters' request sent
+[16:35:31:783] : 'Command Status' event received
+[16:35:31:783] : 	Status: BLE_STATUS_OK
+[16:35:31:784] : 'Get Connection Parameters Response' event received
+[16:35:31:784] : 	Connection Interval Minimum: 7.50 ms
+[16:35:31:784] : 	Connection Interval Maximum: 10.00 ms
+[16:35:31:784] : 	Slave Latency: 0
+[16:35:31:784] : 	Supervision Timeout: 100 ms
+[16:35:31:784] : 	Initiator Filter Policy: 0x00
+[16:35:31:784] : 	Local BD address type: PUBLIC_ADDRESS
+[16:35:31:784] : 	Connection CE Length Minimum: .00 ms
+[16:35:31:784] : 	Connection CE Length Maximum: .00 ms
+[16:35:31:784] : 	Connection Scan Interval: 10.00 ms
+[16:35:31:784] : 	Connection Scan Window: 10.00 ms
+[16:35:31:785] : 'Command Complete' event received
+[16:35:31:785] : 	Status: BLE_STATUS_OK
+[16:35:31:786] : 'Get Local Device Security' request sent
+[16:35:31:787] : 'Command Status' event received
+[16:35:31:787] : 	Status: BLE_STATUS_OK
+[16:35:31:787] : 'Get Local Device Security Response' event received
+[16:35:31:787] : 	Security Level: 0x13
+[16:35:31:787] : 	Encryption Key Size: 16
+[16:35:31:787] : 	Bonding: 0x01
+[16:35:31:787] : 	Pairing properties: USE_KEYPRESS_NOTIFICATION
+[16:35:31:788] : 'Command Complete' event received
+[16:35:31:788] : 	Status: BLE_STATUS_OK
+[16:35:34:775] : 'Start Scan' request sent
+[16:35:34:777] : 'Command Status' event received
+[16:35:34:777] : 	Status: BLE_STATUS_OK
+[16:35:34:816] : 'Scan Progress Result' event received
+[16:35:34:816] : 	Discovered Item 1:
+[16:35:34:816] : 	------------------------
+[16:35:34:816] : 	Advertisement Event Type: Scannable undirected
+[16:35:34:816] : 	BD Address Type: RANDOM_ADDRESS
+[16:35:34:816] : 	BD Address: 7F:56:9F:98:4B:76:00:00
+[16:35:34:816] : 	Advertisement Event Data: 1A:FF:4C:00:02:15:50:76:5C:B7:D9:EA:4E:21:99:A4:FA:87:96:13:A4:92:C9:AA:D3:7C:CE
+[16:35:34:816] : 	RSSI: -48 dBm
+[16:35:34:834] : 'Scan Progress Result' event received
+[16:35:34:834] : 	Discovered Item 1:
+[16:35:34:834] : 	------------------------
+[16:35:34:834] : 	Advertisement Event Type: Non-connectable undirected
+[16:35:34:834] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:34:834] : 	BD Address: C7:61:EA:CE:24:4C:00:00
+[16:35:34:834] : 	Advertisement Event Data: 02:01:06:0F:FF:8F:03:0A:10:42:0C:01:C6:61:EA:CE:24:4C:EC
+[16:35:34:834] : 	RSSI: -73 dBm
+[16:35:34:875] : 'Scan Progress Result' event received
+[16:35:34:875] : 	Discovered Item 1:
+[16:35:34:875] : 	------------------------
+[16:35:34:875] : 	Advertisement Event Type: Non-connectable undirected
+[16:35:34:875] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:34:875] : 	BD Address: 38:78:C6:95:A7:A8:00:00
+[16:35:34:875] : 	Advertisement Event Data: 1A:FF:4C:00:02:15:50:76:5C:B7:D9:EA:4E:21:99:A4:FA:87:96:13:A4:92:4A:DC:0D:36:CE
+[16:35:34:875] : 	RSSI: -69 dBm
+[16:35:34:914] : 'Scan Progress Result' event received
+[16:35:34:914] : 	Discovered Item 1:
+[16:35:34:914] : 	------------------------
+[16:35:34:914] : 	Advertisement Event Type: Connectable undirected
+[16:35:34:914] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:34:914] : 	BD Address: 13:73:E0:5B:BC:B8:00:00
+[16:35:34:914] : 	Advertisement Event Data: 02:01:1A:1B:FF:75:00:42:04:01:01:6F:B8:BC:5B:E0:73:13:BA:BC:5B:E0:73:12:0B:00:00:00:00:00:00
+[16:35:34:914] : 	RSSI: -81 dBm
+[16:35:35:041] : 'Scan Progress Result' event received
+[16:35:35:041] : 	Discovered Item 1:
+[16:35:35:041] : 	------------------------
+[16:35:35:041] : 	Advertisement Event Type: Scannable undirected
+[16:35:35:041] : 	BD Address Type: RANDOM_ADDRESS
+[16:35:35:041] : 	BD Address: B1:98:87:D4:0F:7F:00:00
+[16:35:35:041] : 	Advertisement Event Data: 1D:FF:2D:01:02:00:01:10:FE:91:1E:1C:9B:AA:4E:17:B7:44:DE:FA:6D:DA:68:CD:18:46:F3:7A:A5:EF
+[16:35:35:041] : 	RSSI: -48 dBm
+[16:35:35:099] : 'Scan Progress Result' event received
+[16:35:35:099] : 	Discovered Item 1:
+[16:35:35:099] : 	------------------------
+[16:35:35:099] : 	Advertisement Event Type: Connectable undirected
+[16:35:35:099] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:35:099] : 	BD Address: 3F:32:78:9E:BB:E2:00:00
+[16:35:35:099] : 	Advertisement Event Data: 02:01:06:06:FF:40:00:00:6C:02:11:06:59:C1:4A:4A:ED:2B:73:B5:59:4E:F4:4E:00:00:2A:80
+[16:35:35:099] : 	RSSI: -72 dBm
+[16:35:35:099] : 'Scan Progress Result' event received
+[16:35:35:099] : 	Discovered Item 1:
+[16:35:35:099] : 	------------------------
+[16:35:35:099] : 	Advertisement Event Type: Scan response
+[16:35:35:099] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:35:099] : 	BD Address: 3F:32:78:9E:BB:E2:00:00
+[16:35:35:099] : 	Advertisement Event Data: 0D:09:4C:33:32:36:30:20:53:65:72:69:65:73
+[16:35:35:099] : 	RSSI: -72 dBm
+[16:35:36:234] : 'Scan Progress Result' event received
+[16:35:36:234] : 	Discovered Item 1:
+[16:35:36:234] : 	------------------------
+[16:35:36:234] : 	Advertisement Event Type: Connectable undirected
+[16:35:36:234] : 	BD Address Type: RANDOM_ADDRESS
+[16:35:36:234] : 	BD Address: 40:2D:05:BB:03:55:00:00
+[16:35:36:234] : 	Advertisement Event Data: 02:01:1A:02:0A:08
+[16:35:36:234] : 	RSSI: -85 dBm
+[16:35:37:567] : 'Scan Progress Result' event received
+[16:35:37:567] : 	Discovered Item 1:
+[16:35:37:567] : 	------------------------
+[16:35:37:567] : 	Advertisement Event Type: Connectable undirected
+[16:35:37:567] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:37:567] : 	BD Address: 21:B2:54:EE:75:DE:00:00
+[16:35:37:567] : 	Advertisement Event Data: 02:01:06:1B:FF:57:01:02:FF:FF:FF:FF:FF:FF:FF:FF:FF:FF:FF:FF:FF:FF:FF:FF:03:DE:75:EE:54:B2:21
+[16:35:37:567] : 	RSSI: -84 dBm
+[16:35:37:567] : 'Scan Progress Result' event received
+[16:35:37:567] : 	Discovered Item 1:
+[16:35:37:567] : 	------------------------
+[16:35:37:567] : 	Advertisement Event Type: Scan response
+[16:35:37:567] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:37:567] : 	BD Address: 21:B2:54:EE:75:DE:00:00
+[16:35:37:567] : 	Advertisement Event Data: 10:09:4D:69:20:53:6D:61:72:74:20:42:61:6E:64:20:34:03:02:E0:FE
+[16:35:37:567] : 	RSSI: -85 dBm
+[16:35:44:836] : 'Scan Progress Result' event received
+[16:35:44:836] : 	Discovered Item 1:
+[16:35:44:836] : 	------------------------
+[16:35:44:836] : 	Advertisement Event Type: Scan response
+[16:35:44:836] : 	BD Address Type: PUBLIC_ADDRESS
+[16:35:44:836] : 	BD Address: 13:73:E0:5B:BC:B8:00:00
+[16:35:44:836] : 	Advertisement Event Data: 1D:08:5B:54:56:5D:20:53:61:6D:73:75:6E:67:20:51:36:30:20:53:65:72:69:65:73:20:28:36:35:29
+[16:35:44:836] : 	RSSI: -81 dBm
+[16:36:32:790] : 'Scan Progress Result' event received
+[16:36:32:790] : 	Discovered Item 1:
+[16:36:32:790] : 	------------------------
+[16:36:32:790] : 	Advertisement Event Type: Non-connectable undirected
+[16:36:32:790] : 	BD Address Type: RANDOM_ADDRESS
+[16:36:32:790] : 	BD Address: F5:DF:81:59:D8:C2:00:00
+[16:36:32:790] : 	Advertisement Event Data: 1E:FF:4C:00:12:19:00:F7:E3:F9:45:D1:04:8D:7D:6E:56:95:3A:2A:9D:06:8B:67:08:A3:C8:42:06:02:00
+[16:36:32:790] : 	RSSI: -84 dBm
+[16:36:32:800] : 'Scan Progress Result' event received
+[16:36:32:800] : 	Discovered Item 1:
+[16:36:32:800] : 	------------------------
+[16:36:32:800] : 	Advertisement Event Type: Scannable undirected
+[16:36:32:800] : 	BD Address Type: RANDOM_ADDRESS
+[16:36:32:800] : 	BD Address: 7F:56:9F:98:4B:76:00:00
+[16:36:32:800] : 	Advertisement Event Data: 1A:FF:4C:00:02:15:50:76:5C:B7:D9:EA:4E:21:99:A4:FA:87:96:13:A4:92:C9:AA:D3:7C:CE
+[16:36:32:800] : 	RSSI: -54 dBm
+[16:36:32:995] : 'Scan Progress Result' event received
+[16:36:32:995] : 	Discovered Item 1:
+[16:36:32:995] : 	------------------------
+[16:36:32:995] : 	Advertisement Event Type: Non-connectable undirected
+[16:36:32:995] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:32:995] : 	BD Address: C7:61:EA:CE:24:4C:00:00
+[16:36:32:995] : 	Advertisement Event Data: 02:01:06:0F:FF:8F:03:0A:10:42:0C:01:C6:61:EA:CE:24:4C:EC
+[16:36:32:995] : 	RSSI: -73 dBm
+[16:36:33:009] : 'Scan Progress Result' event received
+[16:36:33:009] : 	Discovered Item 1:
+[16:36:33:009] : 	------------------------
+[16:36:33:009] : 	Advertisement Event Type: Non-connectable undirected
+[16:36:33:009] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:33:009] : 	BD Address: 38:78:C6:95:A7:A8:00:00
+[16:36:33:009] : 	Advertisement Event Data: 1A:FF:4C:00:02:15:50:76:5C:B7:D9:EA:4E:21:99:A4:FA:87:96:13:A4:92:4A:DC:0D:36:CE
+[16:36:33:009] : 	RSSI: -68 dBm
+[16:36:33:240] : 'Scan Progress Result' event received
+[16:36:33:240] : 	Discovered Item 1:
+[16:36:33:240] : 	------------------------
+[16:36:33:240] : 	Advertisement Event Type: Connectable undirected
+[16:36:33:240] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:33:240] : 	BD Address: 13:73:E0:5B:BC:B8:00:00
+[16:36:33:240] : 	Advertisement Event Data: 02:01:1A:1B:FF:75:00:42:04:01:20:6F:19:0D:00:02:01:41:00:00:00:00:00:00:00:00:00:00:00:00:00
+[16:36:33:240] : 	RSSI: -82 dBm
+[16:36:33:448] : 'Scan Progress Result' event received
+[16:36:33:448] : 	Discovered Item 1:
+[16:36:33:448] : 	------------------------
+[16:36:33:448] : 	Advertisement Event Type: Scannable undirected
+[16:36:33:448] : 	BD Address Type: RANDOM_ADDRESS
+[16:36:33:448] : 	BD Address: B1:98:87:D4:0F:7F:00:00
+[16:36:33:448] : 	Advertisement Event Data: 1D:FF:2D:01:02:00:01:10:FE:91:1E:1C:9B:AA:4E:17:B7:44:DE:FA:6D:DA:68:CD:18:46:F3:7A:A5:EF
+[16:36:33:448] : 	RSSI: -48 dBm
+[16:36:33:484] : 'Scan Progress Result' event received
+[16:36:33:484] : 	Discovered Item 1:
+[16:36:33:484] : 	------------------------
+[16:36:33:484] : 	Advertisement Event Type: Connectable undirected
+[16:36:33:484] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:33:484] : 	BD Address: 3F:32:78:9E:BB:E2:00:00
+[16:36:33:484] : 	Advertisement Event Data: 02:01:06:06:FF:40:00:00:6C:02:11:06:59:C1:4A:4A:ED:2B:73:B5:59:4E:F4:4E:00:00:2A:80
+[16:36:33:484] : 	RSSI: -71 dBm
+[16:36:33:485] : 'Scan Progress Result' event received
+[16:36:33:485] : 	Discovered Item 1:
+[16:36:33:485] : 	------------------------
+[16:36:33:485] : 	Advertisement Event Type: Scan response
+[16:36:33:485] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:33:485] : 	BD Address: 3F:32:78:9E:BB:E2:00:00
+[16:36:33:485] : 	Advertisement Event Data: 0D:09:4C:33:32:36:30:20:53:65:72:69:65:73
+[16:36:33:485] : 	RSSI: -72 dBm
+[16:36:39:222] : 'Scan Progress Result' event received
+[16:36:39:222] : 	Discovered Item 1:
+[16:36:39:222] : 	------------------------
+[16:36:39:222] : 	Advertisement Event Type: Connectable undirected
+[16:36:39:222] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:39:222] : 	BD Address: 91:F8:84:A2:16:DC:00:00
+[16:36:39:222] : 	Advertisement Event Data: 02:01:06:0F:09:43:47:4D:20:47:54:38:37:31:34:33:38:35:4D:04:FF:F9:01:00:05:02:82:FE:1F:18
+[16:36:39:222] : 	RSSI: -55 dBm
+[16:36:39:222] : 'Scan Progress Result' event received
+[16:36:39:222] : 	Discovered Item 1:
+[16:36:39:222] : 	------------------------
+[16:36:39:222] : 	Advertisement Event Type: Scan response
+[16:36:39:222] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:39:222] : 	BD Address: 91:F8:84:A2:16:DC:00:00
+[16:36:39:222] : 	Advertisement Event Data: 02:0A:00
+[16:36:39:222] : 	RSSI: -55 dBm
+[16:36:41:986] : 'Scan Progress Result' event received
+[16:36:41:986] : 	Discovered Item 1:
+[16:36:41:986] : 	------------------------
+[16:36:41:986] : 	Advertisement Event Type: Connectable undirected
+[16:36:41:986] : 	BD Address Type: RANDOM_ADDRESS
+[16:36:41:986] : 	BD Address: 40:2D:05:BB:03:55:00:00
+[16:36:41:986] : 	Advertisement Event Data: 02:01:1A:02:0A:08
+[16:36:41:986] : 	RSSI: -85 dBm
+[16:36:42:190] : 'Stop Scan' request sent
+[16:36:42:192] : 'Command Status' event received
+[16:36:42:192] : 	Status: BLE_STATUS_OK
+[16:36:42:192] : 'Scan Stopped Notification' event received
+[16:36:42:211] : 'Command Complete' event received
+[16:36:42:211] : 	Status: BLE_STATUS_OK
+[16:36:42:212] : 'Resolve and Set Peer Device BD Address' request sent
+[16:36:42:212] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:42:212] : 	BD Address: 91:F8:84:A2:16:DC:00:00
+[16:36:42:213] : 'Command Status' event received
+[16:36:42:213] : 	Status: BLE_STATUS_OK
+[16:36:42:213] : 'Resolve and Set Peer Device BD Address Response' event received
+[16:36:42:213] : 	Status: 0x01
+[16:36:42:213] : 'Command Complete' event received
+[16:36:42:213] : 	Status: BLE_STATUS_OK
+[16:36:42:214] : 'Establish Connection' request sent
+[16:36:42:214] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:42:214] : 	BD Address: 91:F8:84:A2:16:DC:00:00
+[16:36:42:218] : 'Command Status' event received
+[16:36:42:218] : 	Status: BLE_STATUS_OK
+[16:36:42:431] : 'Establish Connection Response' event received
+[16:36:42:629] : 'Enhanced connection complete' event received
+[16:36:42:629] : 	Status: 0x00
+[16:36:42:629] : 	Role: 0x00
+[16:36:42:629] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:42:629] : 	BD Address: 91:F8:84:A2:16:DC:00:00
+[16:36:42:629] : 	Local resolvable address: 00:00:00:00:00:00:00:00
+[16:36:42:629] : 	Peer resolvable address: 00:00:00:00:00:00:00:00
+[16:36:42:629] : 	Connection Interval: 8.75 ms
+[16:36:42:629] : 	Slave Latency: 0
+[16:36:42:629] : 	Supervision Timeout: 100 ms
+[16:36:42:630] : 'Command Complete' event received
+[16:36:42:630] : 	Status: BLE_STATUS_OK
+[16:36:42:630] : 'Get local device security keys' request sent
+[16:36:42:631] : 'Data length changed notification' event received
+[16:36:42:631] : 	Connection maximum Tx octet: 27
+[16:36:42:631] : 	Connection maximum Tx time: 328 µs
+[16:36:42:631] : 	Connection maximum Rx octet: 27
+[16:36:42:631] : 	Connection maximum Rx time: 328 µs
+[16:36:42:634] : 'Command Status' event received
+[16:36:42:634] : 	Status: BLE_STATUS_OK
+[16:36:42:634] : 'Get local device security keys response' event received
+[16:36:42:634] : 	Key flags: INITIATOR_ENCRYPTION_INFORMATION, INITIATOR_IDENTITY_INFORMATION, INITIATOR_SIGNATURE_KEY, RESPONDER_ENCRYPTION_INFORMATION, RESPONDER_IDENTITY_INFORMATION, RESPONDER_SIGNATURE_KEY
+[16:36:42:634] : 	Long Term Key (LTK): [D6:93:E8:A4:23:55:48:99:1D:77:61:E6:63:2B:10:8E]
+[16:36:42:634] : 	Encrypted Diversifier (EDIV) and Random Number: [99:1F:26:1E:F6:09:97:2E:AD:7E]
+[16:36:42:634] : 	Identity Resolving Key (IRK): [0A:2D:F4:65:E3:BD:7B:49:1E:B4:C0:95:95:13:46:73]
+[16:36:42:634] : 	Identification Address: [0x00A050504320, PUBLIC_ADDRESS]
+[16:36:42:634] : 	Connection Signature Resolving Key (CSRK): [90:D5:06:95:92:ED:91:D7:A8:9E:2C:DC:4A:93:5B:F9]
+[16:36:42:634] : 'Command Complete' event received
+[16:36:42:634] : 	Status: BLE_STATUS_OK
+[16:36:42:635] : 'Set OOB data' request sent
+[16:36:42:635] : 	OOB flag: Disable
+[16:36:42:635] : 	OOB Key: [00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00]
+[16:36:42:635] : 	OOB Data: [00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00]
+[16:36:42:636] : 'Command Status' event received
+[16:36:42:636] : 	Status: BLE_STATUS_OK
+[16:36:42:636] : 'Command Complete' event received
+[16:36:42:636] : 	Status: BLE_STATUS_OK
+[16:36:42:638] : 'Exchange GATT MTU Size' request sent
+[16:36:42:638] : 	MTU: 0x0200
+[16:36:42:639] : 'Command Status' event received
+[16:36:42:639] : 	Status: BLE_STATUS_OK
+[16:36:42:654] : 'Exchange GATT MTU Size Response' event received
+[16:36:42:654] : 	MTU: 0x0017
+[16:36:42:654] : 'Command Complete' event received
+[16:36:42:654] : 	Status: BLE_STATUS_OK
+[16:36:42:658] : 'Read using Characteristic UUID' request sent
+[16:36:42:658] : 	Start Handle: 0x0001
+[16:36:42:658] : 	End Handle: 0xFFFF
+[16:36:42:658] : 	UUID: 0x2A00
+[16:36:42:660] : 'Command Status' event received
+[16:36:42:660] : 	Status: BLE_STATUS_OK
+[16:36:42:673] : 'Read using Characteristic UUID Response' event received
+[16:36:42:673] : 	Characteristic value 1:
+[16:36:42:673] : 	--------------------------------
+[16:36:42:673] : 	Attribute Handle: 0x0007
+[16:36:42:673] : 	Value: [43:47:4D:20:54:72:61:6E:73:6D:69:74:74:65:72]
+[16:36:42:674] : 'Command Complete' event received
+[16:36:42:674] : 	Status: BLE_STATUS_OK
+[16:36:46:904] : 'Discover All Primary Services' request sent
+[16:36:46:904] : 'Command Status' event received
+[16:36:46:904] : 	Status: BLE_STATUS_OK
+[16:36:46:916] : 'Discover All Primary Services Result Progress' event received
+[16:36:46:916] : 	Primary Service 1:
+[16:36:46:916] : 	------------------------
+[16:36:46:916] : 	Start Handle: 0x0001
+[16:36:46:916] : 	End Handle: 0x0004
+[16:36:46:916] : 	UUID: 0x1801
+[16:36:46:916] : 	Primary Service 2:
+[16:36:46:916] : 	------------------------
+[16:36:46:916] : 	Start Handle: 0x0005
+[16:36:46:916] : 	End Handle: 0x000B
+[16:36:46:916] : 	UUID: 0x1800
+[16:36:46:916] : 	Primary Service 3:
+[16:36:46:916] : 	------------------------
+[16:36:46:916] : 	Start Handle: 0x000C
+[16:36:46:916] : 	End Handle: 0x001E
+[16:36:46:916] : 	UUID: 0x180A
+[16:36:46:933] : 'Discover All Primary Services Result Progress' event received
+[16:36:46:933] : 	Primary Service 1:
+[16:36:46:933] : 	------------------------
+[16:36:46:933] : 	Start Handle: 0x001F
+[16:36:46:933] : 	End Handle: 0x0022
+[16:36:46:933] : 	UUID: 0x180F
+[16:36:46:949] : 'Discover All Primary Services Result Progress' event received
+[16:36:46:949] : 	Primary Service 1:
+[16:36:46:949] : 	------------------------
+[16:36:46:949] : 	Start Handle: 0x0023
+[16:36:46:949] : 	End Handle: 0x002A
+[16:36:46:949] : 	UUID: 15DBCD6163884C33B9D8580254FED03B
+[16:36:46:967] : 'Discover All Primary Services Result Progress' event received
+[16:36:46:967] : 	Primary Service 1:
+[16:36:46:967] : 	------------------------
+[16:36:46:967] : 	Start Handle: 0x002B
+[16:36:46:967] : 	End Handle: 0x002F
+[16:36:46:967] : 	UUID: 0xFE82
+[16:36:46:994] : 'Discover All Primary Services Result Progress' event received
+[16:36:46:994] : 	Primary Service 1:
+[16:36:46:994] : 	------------------------
+[16:36:46:994] : 	Start Handle: 0x0030
+[16:36:46:994] : 	End Handle: 0x0039
+[16:36:46:994] : 	UUID: 00000300000010000000009132591325
+[16:36:47:011] : 'Discover All Primary Services Result Progress' event received
+[16:36:47:011] : 	Primary Service 1:
+[16:36:47:011] : 	------------------------
+[16:36:47:011] : 	Start Handle: 0x003A
+[16:36:47:011] : 	End Handle: 0x0059
+[16:36:47:011] : 	UUID: 0x181F
+[16:36:47:029] : 'GATT Error Notification' event received
+[16:36:47:029] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:042] : 'Find Included Services' request sent
+[16:36:47:042] : 	Start Handle: 0x0001
+[16:36:47:042] : 	End Handle: 0x0004
+[16:36:47:043] : 'Command Status' event received
+[16:36:47:043] : 	Status: BLE_STATUS_OK
+[16:36:47:055] : 'GATT Error Notification' event received
+[16:36:47:055] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:063] : 'Find Included Services' request sent
+[16:36:47:063] : 	Start Handle: 0x0005
+[16:36:47:063] : 	End Handle: 0x000B
+[16:36:47:064] : 'Command Status' event received
+[16:36:47:064] : 	Status: BLE_STATUS_OK
+[16:36:47:089] : 'GATT Error Notification' event received
+[16:36:47:089] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:097] : 'Find Included Services' request sent
+[16:36:47:097] : 	Start Handle: 0x000C
+[16:36:47:097] : 	End Handle: 0x001E
+[16:36:47:098] : 'Command Status' event received
+[16:36:47:098] : 	Status: BLE_STATUS_OK
+[16:36:47:116] : 'GATT Error Notification' event received
+[16:36:47:116] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:123] : 'Find Included Services' request sent
+[16:36:47:123] : 	Start Handle: 0x001F
+[16:36:47:123] : 	End Handle: 0x0022
+[16:36:47:124] : 'Command Status' event received
+[16:36:47:124] : 	Status: BLE_STATUS_OK
+[16:36:47:143] : 'GATT Error Notification' event received
+[16:36:47:143] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:151] : 'Find Included Services' request sent
+[16:36:47:151] : 	Start Handle: 0x0023
+[16:36:47:151] : 	End Handle: 0x002A
+[16:36:47:152] : 'Command Status' event received
+[16:36:47:152] : 	Status: BLE_STATUS_OK
+[16:36:47:169] : 'GATT Error Notification' event received
+[16:36:47:169] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:179] : 'Find Included Services' request sent
+[16:36:47:179] : 	Start Handle: 0x002B
+[16:36:47:179] : 	End Handle: 0x002F
+[16:36:47:180] : 'Command Status' event received
+[16:36:47:180] : 	Status: BLE_STATUS_OK
+[16:36:47:195] : 'GATT Error Notification' event received
+[16:36:47:195] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:207] : 'Find Included Services' request sent
+[16:36:47:207] : 	Start Handle: 0x0030
+[16:36:47:207] : 	End Handle: 0x0039
+[16:36:47:207] : 'Command Status' event received
+[16:36:47:207] : 	Status: BLE_STATUS_OK
+[16:36:47:221] : 'GATT Error Notification' event received
+[16:36:47:221] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:230] : 'Find Included Services' request sent
+[16:36:47:230] : 	Start Handle: 0x003A
+[16:36:47:230] : 	End Handle: 0x0059
+[16:36:47:231] : 'Command Status' event received
+[16:36:47:231] : 	Status: BLE_STATUS_OK
+[16:36:47:247] : 'GATT Error Notification' event received
+[16:36:47:247] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:258] : 'Discover All Characteristics' request sent
+[16:36:47:258] : 	Start Handle: 0x0001
+[16:36:47:258] : 	End Handle: 0x0004
+[16:36:47:258] : 'Command Status' event received
+[16:36:47:258] : 	Status: BLE_STATUS_OK
+[16:36:47:275] : 'Discover All Characteristics Result Progress' event received
+[16:36:47:275] : 	Characteristic 1:
+[16:36:47:275] : 	--------------------------
+[16:36:47:275] : 	Attribute Handle: 0x0002
+[16:36:47:275] : 	Characteristic Value Handle: 0x0003
+[16:36:47:275] : 	UUID: 0x2A05
+[16:36:47:275] : 	Properties: 0x20
+[16:36:47:292] : 'GATT Error Notification' event received
+[16:36:47:292] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:303] : 'Discover All Characteristic Descriptors' request sent
+[16:36:47:303] : 	Start Handle: 0x0004
+[16:36:47:303] : 	End Handle: 0x0004
+[16:36:47:304] : 'Command Status' event received
+[16:36:47:304] : 	Status: BLE_STATUS_OK
+[16:36:47:318] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:47:318] : 	Characteristic Descriptor 1:
+[16:36:47:318] : 	-------------------------------------
+[16:36:47:318] : 	Attribute Handle: 0x0004
+[16:36:47:318] : 	UUID: 0x2902
+[16:36:47:327] : 'Command Complete' event received
+[16:36:47:327] : 	Status: BLE_STATUS_OK
+[16:36:47:337] : 'Discover All Characteristics' request sent
+[16:36:47:337] : 	Start Handle: 0x0005
+[16:36:47:337] : 	End Handle: 0x000B
+[16:36:47:338] : 'Command Status' event received
+[16:36:47:338] : 	Status: BLE_STATUS_OK
+[16:36:47:352] : 'Discover All Characteristics Result Progress' event received
+[16:36:47:352] : 	Characteristic 1:
+[16:36:47:352] : 	--------------------------
+[16:36:47:352] : 	Attribute Handle: 0x0006
+[16:36:47:352] : 	Characteristic Value Handle: 0x0007
+[16:36:47:352] : 	UUID: 0x2A00
+[16:36:47:352] : 	Properties: 0xA
+[16:36:47:352] : 	Characteristic 2:
+[16:36:47:352] : 	--------------------------
+[16:36:47:352] : 	Attribute Handle: 0x0008
+[16:36:47:352] : 	Characteristic Value Handle: 0x0009
+[16:36:47:352] : 	UUID: 0x2A01
+[16:36:47:352] : 	Properties: 0x2
+[16:36:47:352] : 	Characteristic 3:
+[16:36:47:352] : 	--------------------------
+[16:36:47:352] : 	Attribute Handle: 0x000A
+[16:36:47:352] : 	Characteristic Value Handle: 0x000B
+[16:36:47:352] : 	UUID: 0x2A04
+[16:36:47:352] : 	Properties: 0x2
+[16:36:47:419] : 'GATT Error Notification' event received
+[16:36:47:419] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:432] : 'Discover All Characteristics' request sent
+[16:36:47:432] : 	Start Handle: 0x000C
+[16:36:47:432] : 	End Handle: 0x001E
+[16:36:47:433] : 'Command Status' event received
+[16:36:47:433] : 	Status: BLE_STATUS_OK
+[16:36:47:449] : 'Discover All Characteristics Result Progress' event received
+[16:36:47:449] : 	Characteristic 1:
+[16:36:47:449] : 	--------------------------
+[16:36:47:449] : 	Attribute Handle: 0x000D
+[16:36:47:449] : 	Characteristic Value Handle: 0x000E
+[16:36:47:449] : 	UUID: 0x2A29
+[16:36:47:449] : 	Properties: 0x2
+[16:36:47:449] : 	Characteristic 2:
+[16:36:47:449] : 	--------------------------
+[16:36:47:449] : 	Attribute Handle: 0x000F
+[16:36:47:449] : 	Characteristic Value Handle: 0x0010
+[16:36:47:449] : 	UUID: 0x2A24
+[16:36:47:449] : 	Properties: 0x2
+[16:36:47:449] : 	Characteristic 3:
+[16:36:47:449] : 	--------------------------
+[16:36:47:449] : 	Attribute Handle: 0x0011
+[16:36:47:449] : 	Characteristic Value Handle: 0x0012
+[16:36:47:449] : 	UUID: 0x2A25
+[16:36:47:449] : 	Properties: 0x2
+[16:36:47:544] : 'Discover All Characteristics Result Progress' event received
+[16:36:47:544] : 	Characteristic 1:
+[16:36:47:544] : 	--------------------------
+[16:36:47:544] : 	Attribute Handle: 0x0013
+[16:36:47:544] : 	Characteristic Value Handle: 0x0014
+[16:36:47:544] : 	UUID: 0x2A26
+[16:36:47:544] : 	Properties: 0x2
+[16:36:47:544] : 	Characteristic 2:
+[16:36:47:544] : 	--------------------------
+[16:36:47:544] : 	Attribute Handle: 0x0015
+[16:36:47:544] : 	Characteristic Value Handle: 0x0016
+[16:36:47:544] : 	UUID: 0x2A27
+[16:36:47:544] : 	Properties: 0x2
+[16:36:47:544] : 	Characteristic 3:
+[16:36:47:544] : 	--------------------------
+[16:36:47:544] : 	Attribute Handle: 0x0017
+[16:36:47:544] : 	Characteristic Value Handle: 0x0018
+[16:36:47:544] : 	UUID: 0x2A28
+[16:36:47:544] : 	Properties: 0x2
+[16:36:47:674] : 'Discover All Characteristics Result Progress' event received
+[16:36:47:674] : 	Characteristic 1:
+[16:36:47:674] : 	--------------------------
+[16:36:47:674] : 	Attribute Handle: 0x0019
+[16:36:47:674] : 	Characteristic Value Handle: 0x001A
+[16:36:47:674] : 	UUID: 0x2A23
+[16:36:47:674] : 	Properties: 0x2
+[16:36:47:674] : 	Characteristic 2:
+[16:36:47:674] : 	--------------------------
+[16:36:47:674] : 	Attribute Handle: 0x001B
+[16:36:47:674] : 	Characteristic Value Handle: 0x001C
+[16:36:47:674] : 	UUID: 0x2A2A
+[16:36:47:674] : 	Properties: 0x2
+[16:36:47:674] : 	Characteristic 3:
+[16:36:47:674] : 	--------------------------
+[16:36:47:674] : 	Attribute Handle: 0x001D
+[16:36:47:674] : 	Characteristic Value Handle: 0x001E
+[16:36:47:674] : 	UUID: 0x2A50
+[16:36:47:674] : 	Properties: 0x2
+[16:36:47:794] : 'GATT Error Notification' event received
+[16:36:47:794] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:813] : 'Discover All Characteristics' request sent
+[16:36:47:813] : 	Start Handle: 0x001F
+[16:36:47:813] : 	End Handle: 0x0022
+[16:36:47:813] : 'Command Status' event received
+[16:36:47:813] : 	Status: BLE_STATUS_OK
+[16:36:47:825] : 'Discover All Characteristics Result Progress' event received
+[16:36:47:825] : 	Characteristic 1:
+[16:36:47:825] : 	--------------------------
+[16:36:47:825] : 	Attribute Handle: 0x0020
+[16:36:47:825] : 	Characteristic Value Handle: 0x0021
+[16:36:47:825] : 	UUID: 0x2A19
+[16:36:47:825] : 	Properties: 0x12
+[16:36:47:871] : 'GATT Error Notification' event received
+[16:36:47:871] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:47:892] : 'Discover All Characteristic Descriptors' request sent
+[16:36:47:892] : 	Start Handle: 0x0022
+[16:36:47:892] : 	End Handle: 0x0022
+[16:36:47:893] : 'Command Status' event received
+[16:36:47:893] : 	Status: BLE_STATUS_OK
+[16:36:47:904] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:47:904] : 	Characteristic Descriptor 1:
+[16:36:47:904] : 	-------------------------------------
+[16:36:47:904] : 	Attribute Handle: 0x0022
+[16:36:47:904] : 	UUID: 0x2902
+[16:36:47:924] : 'Command Complete' event received
+[16:36:47:924] : 	Status: BLE_STATUS_OK
+[16:36:47:945] : 'Discover All Characteristics' request sent
+[16:36:47:945] : 	Start Handle: 0x0023
+[16:36:47:945] : 	End Handle: 0x002A
+[16:36:47:946] : 'Command Status' event received
+[16:36:47:946] : 	Status: BLE_STATUS_OK
+[16:36:47:956] : 'Discover All Characteristics Result Progress' event received
+[16:36:47:956] : 	Characteristic 1:
+[16:36:47:956] : 	--------------------------
+[16:36:47:956] : 	Attribute Handle: 0x0024
+[16:36:47:956] : 	Characteristic Value Handle: 0x0025
+[16:36:47:956] : 	UUID: C774EDACE57345E197C68B5C18CC571A
+[16:36:47:956] : 	Properties: 0x20
+[16:36:47:998] : 'Discover All Characteristics Result Progress' event received
+[16:36:47:998] : 	Characteristic 1:
+[16:36:47:998] : 	--------------------------
+[16:36:47:998] : 	Attribute Handle: 0x0027
+[16:36:47:998] : 	Characteristic Value Handle: 0x0028
+[16:36:47:998] : 	UUID: DE3E52211308439CA13A884DDC387CA7
+[16:36:47:998] : 	Properties: 0x2
+[16:36:48:050] : 'Discover All Characteristics Result Progress' event received
+[16:36:48:050] : 	Characteristic 1:
+[16:36:48:050] : 	--------------------------
+[16:36:48:050] : 	Attribute Handle: 0x0029
+[16:36:48:050] : 	Characteristic Value Handle: 0x002A
+[16:36:48:050] : 	UUID: 8484039E97D340C0BB55C70C17BADAE2
+[16:36:48:050] : 	Properties: 0x8
+[16:36:48:093] : 'GATT Error Notification' event received
+[16:36:48:093] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:48:115] : 'Discover All Characteristic Descriptors' request sent
+[16:36:48:115] : 	Start Handle: 0x0026
+[16:36:48:115] : 	End Handle: 0x0026
+[16:36:48:116] : 'Command Status' event received
+[16:36:48:116] : 	Status: BLE_STATUS_OK
+[16:36:48:132] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:48:132] : 	Characteristic Descriptor 1:
+[16:36:48:132] : 	-------------------------------------
+[16:36:48:132] : 	Attribute Handle: 0x0026
+[16:36:48:132] : 	UUID: 0x2902
+[16:36:48:155] : 'Command Complete' event received
+[16:36:48:155] : 	Status: BLE_STATUS_OK
+[16:36:48:177] : 'Discover All Characteristics' request sent
+[16:36:48:177] : 	Start Handle: 0x002B
+[16:36:48:177] : 	End Handle: 0x002F
+[16:36:48:178] : 'Command Status' event received
+[16:36:48:178] : 	Status: BLE_STATUS_OK
+[16:36:48:193] : 'Discover All Characteristics Result Progress' event received
+[16:36:48:193] : 	Characteristic 1:
+[16:36:48:193] : 	--------------------------
+[16:36:48:193] : 	Attribute Handle: 0x002C
+[16:36:48:193] : 	Characteristic Value Handle: 0x002D
+[16:36:48:193] : 	UUID: 0000FE82000010000000009132591325
+[16:36:48:193] : 	Properties: 0x18
+[16:36:48:237] : 'GATT Error Notification' event received
+[16:36:48:237] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:48:262] : 'Discover All Characteristic Descriptors' request sent
+[16:36:48:262] : 	Start Handle: 0x002E
+[16:36:48:262] : 	End Handle: 0x002F
+[16:36:48:263] : 'Command Status' event received
+[16:36:48:263] : 	Status: BLE_STATUS_OK
+[16:36:48:279] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:48:279] : 	Characteristic Descriptor 1:
+[16:36:48:279] : 	-------------------------------------
+[16:36:48:279] : 	Attribute Handle: 0x002E
+[16:36:48:279] : 	UUID: 0x2901
+[16:36:48:279] : 	Characteristic Descriptor 2:
+[16:36:48:279] : 	-------------------------------------
+[16:36:48:279] : 	Attribute Handle: 0x002F
+[16:36:48:279] : 	UUID: 0x2902
+[16:36:48:328] : 'Command Complete' event received
+[16:36:48:328] : 	Status: BLE_STATUS_OK
+[16:36:48:351] : 'Discover All Characteristics' request sent
+[16:36:48:351] : 	Start Handle: 0x0030
+[16:36:48:351] : 	End Handle: 0x0039
+[16:36:48:352] : 'Command Status' event received
+[16:36:48:352] : 	Status: BLE_STATUS_OK
+[16:36:48:368] : 'Discover All Characteristics Result Progress' event received
+[16:36:48:368] : 	Characteristic 1:
+[16:36:48:368] : 	--------------------------
+[16:36:48:368] : 	Attribute Handle: 0x0031
+[16:36:48:368] : 	Characteristic Value Handle: 0x0032
+[16:36:48:368] : 	UUID: 0x2A52
+[16:36:48:368] : 	Properties: 0x28
+[16:36:48:418] : 'Discover All Characteristics Result Progress' event received
+[16:36:48:418] : 	Characteristic 1:
+[16:36:48:418] : 	--------------------------
+[16:36:48:418] : 	Attribute Handle: 0x0034
+[16:36:48:418] : 	Characteristic Value Handle: 0x0035
+[16:36:48:418] : 	UUID: 00000360000010000000009132591325
+[16:36:48:418] : 	Properties: 0x28
+[16:36:48:463] : 'Discover All Characteristics Result Progress' event received
+[16:36:48:463] : 	Characteristic 1:
+[16:36:48:463] : 	--------------------------
+[16:36:48:463] : 	Attribute Handle: 0x0037
+[16:36:48:463] : 	Characteristic Value Handle: 0x0038
+[16:36:48:463] : 	UUID: 00000350000010000000009132591325
+[16:36:48:463] : 	Properties: 0x10
+[16:36:48:512] : 'GATT Error Notification' event received
+[16:36:48:512] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:48:541] : 'Discover All Characteristic Descriptors' request sent
+[16:36:48:541] : 	Start Handle: 0x0039
+[16:36:48:541] : 	End Handle: 0x0039
+[16:36:48:542] : 'Command Status' event received
+[16:36:48:542] : 	Status: BLE_STATUS_OK
+[16:36:48:560] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:48:560] : 	Characteristic Descriptor 1:
+[16:36:48:560] : 	-------------------------------------
+[16:36:48:560] : 	Attribute Handle: 0x0039
+[16:36:48:560] : 	UUID: 0x2902
+[16:36:48:586] : 'Command Complete' event received
+[16:36:48:586] : 	Status: BLE_STATUS_OK
+[16:36:48:611] : 'Discover All Characteristic Descriptors' request sent
+[16:36:48:611] : 	Start Handle: 0x0036
+[16:36:48:611] : 	End Handle: 0x0036
+[16:36:48:612] : 'Command Status' event received
+[16:36:48:612] : 	Status: BLE_STATUS_OK
+[16:36:48:638] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:48:638] : 	Characteristic Descriptor 1:
+[16:36:48:638] : 	-------------------------------------
+[16:36:48:638] : 	Attribute Handle: 0x0036
+[16:36:48:638] : 	UUID: 0x2902
+[16:36:48:662] : 'Command Complete' event received
+[16:36:48:662] : 	Status: BLE_STATUS_OK
+[16:36:48:689] : 'Discover All Characteristic Descriptors' request sent
+[16:36:48:689] : 	Start Handle: 0x0033
+[16:36:48:689] : 	End Handle: 0x0033
+[16:36:48:690] : 'Command Status' event received
+[16:36:48:690] : 	Status: BLE_STATUS_OK
+[16:36:48:708] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:48:708] : 	Characteristic Descriptor 1:
+[16:36:48:708] : 	-------------------------------------
+[16:36:48:708] : 	Attribute Handle: 0x0033
+[16:36:48:708] : 	UUID: 0x2902
+[16:36:48:738] : 'Command Complete' event received
+[16:36:48:738] : 	Status: BLE_STATUS_OK
+[16:36:48:762] : 'Discover All Characteristics' request sent
+[16:36:48:762] : 	Start Handle: 0x003A
+[16:36:48:762] : 	End Handle: 0x0059
+[16:36:48:763] : 'Command Status' event received
+[16:36:48:763] : 	Status: BLE_STATUS_OK
+[16:36:48:779] : 'Discover All Characteristics Result Progress' event received
+[16:36:48:779] : 	Characteristic 1:
+[16:36:48:779] : 	--------------------------
+[16:36:48:779] : 	Attribute Handle: 0x003B
+[16:36:48:779] : 	Characteristic Value Handle: 0x003C
+[16:36:48:779] : 	UUID: 0x2AA7
+[16:36:48:779] : 	Properties: 0x30
+[16:36:48:828] : 'Discover All Characteristics Result Progress' event received
+[16:36:48:828] : 	Characteristic 1:
+[16:36:48:828] : 	--------------------------
+[16:36:48:828] : 	Attribute Handle: 0x003F
+[16:36:48:828] : 	Characteristic Value Handle: 0x0040
+[16:36:48:828] : 	UUID: 00000200000010000000009132591325
+[16:36:48:828] : 	Properties: 0x2
+[16:36:48:879] : 'Discover All Characteristics Result Progress' event received
+[16:36:48:879] : 	Characteristic 1:
+[16:36:48:879] : 	--------------------------
+[16:36:48:879] : 	Attribute Handle: 0x0042
+[16:36:48:879] : 	Characteristic Value Handle: 0x0043
+[16:36:48:879] : 	UUID: 0x2AA8
+[16:36:48:879] : 	Properties: 0x2
+[16:36:48:879] : 	Characteristic 2:
+[16:36:48:879] : 	--------------------------
+[16:36:48:879] : 	Attribute Handle: 0x0044
+[16:36:48:879] : 	Characteristic Value Handle: 0x0045
+[16:36:48:879] : 	UUID: 0x2AA9
+[16:36:48:879] : 	Properties: 0x2
+[16:36:48:879] : 	Characteristic 3:
+[16:36:48:879] : 	--------------------------
+[16:36:48:879] : 	Attribute Handle: 0x0046
+[16:36:48:879] : 	Characteristic Value Handle: 0x0047
+[16:36:48:879] : 	UUID: 0x2AAA
+[16:36:48:879] : 	Properties: 0xA
+[16:36:49:037] : 'Discover All Characteristics Result Progress' event received
+[16:36:49:037] : 	Characteristic 1:
+[16:36:49:037] : 	--------------------------
+[16:36:49:037] : 	Attribute Handle: 0x0048
+[16:36:49:037] : 	Characteristic Value Handle: 0x0049
+[16:36:49:037] : 	UUID: 0x2AAB
+[16:36:49:037] : 	Properties: 0x22
+[16:36:49:095] : 'Discover All Characteristics Result Progress' event received
+[16:36:49:095] : 	Characteristic 1:
+[16:36:49:095] : 	--------------------------
+[16:36:49:095] : 	Attribute Handle: 0x004B
+[16:36:49:095] : 	Characteristic Value Handle: 0x004C
+[16:36:49:095] : 	UUID: 00000203000010000000009132591325
+[16:36:49:095] : 	Properties: 0x20
+[16:36:49:148] : 'Discover All Characteristics Result Progress' event received
+[16:36:49:148] : 	Characteristic 1:
+[16:36:49:148] : 	--------------------------
+[16:36:49:148] : 	Attribute Handle: 0x004E
+[16:36:49:148] : 	Characteristic Value Handle: 0x004F
+[16:36:49:148] : 	UUID: 0x2A52
+[16:36:49:148] : 	Properties: 0x28
+[16:36:49:148] : 	Characteristic 2:
+[16:36:49:148] : 	--------------------------
+[16:36:49:148] : 	Attribute Handle: 0x0051
+[16:36:49:148] : 	Characteristic Value Handle: 0x0052
+[16:36:49:148] : 	UUID: 0x2AAC
+[16:36:49:148] : 	Properties: 0x28
+[16:36:49:265] : 'Discover All Characteristics Result Progress' event received
+[16:36:49:265] : 	Characteristic 1:
+[16:36:49:265] : 	--------------------------
+[16:36:49:265] : 	Attribute Handle: 0x0054
+[16:36:49:265] : 	Characteristic Value Handle: 0x0055
+[16:36:49:265] : 	UUID: 00000201000010000000009132591325
+[16:36:49:265] : 	Properties: 0x22
+[16:36:49:319] : 'Discover All Characteristics Result Progress' event received
+[16:36:49:319] : 	Characteristic 1:
+[16:36:49:319] : 	--------------------------
+[16:36:49:319] : 	Attribute Handle: 0x0057
+[16:36:49:319] : 	Characteristic Value Handle: 0x0058
+[16:36:49:319] : 	UUID: 00000202000010000000009132591325
+[16:36:49:319] : 	Properties: 0x20
+[16:36:49:381] : 'GATT Error Notification' event received
+[16:36:49:381] : 	Error Code: BLE_GATT_ERR_ATTRIBUTE_NOT_FOUND
+[16:36:49:409] : 'Discover All Characteristic Descriptors' request sent
+[16:36:49:409] : 	Start Handle: 0x0059
+[16:36:49:409] : 	End Handle: 0x0059
+[16:36:49:411] : 'Command Status' event received
+[16:36:49:411] : 	Status: BLE_STATUS_OK
+[16:36:49:426] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:49:426] : 	Characteristic Descriptor 1:
+[16:36:49:426] : 	-------------------------------------
+[16:36:49:426] : 	Attribute Handle: 0x0059
+[16:36:49:426] : 	UUID: 0x2902
+[16:36:49:455] : 'Command Complete' event received
+[16:36:49:455] : 	Status: BLE_STATUS_OK
+[16:36:49:487] : 'Discover All Characteristic Descriptors' request sent
+[16:36:49:487] : 	Start Handle: 0x0056
+[16:36:49:487] : 	End Handle: 0x0056
+[16:36:49:488] : 'Command Status' event received
+[16:36:49:488] : 	Status: BLE_STATUS_OK
+[16:36:49:505] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:49:505] : 	Characteristic Descriptor 1:
+[16:36:49:505] : 	-------------------------------------
+[16:36:49:505] : 	Attribute Handle: 0x0056
+[16:36:49:505] : 	UUID: 0x2902
+[16:36:49:534] : 'Command Complete' event received
+[16:36:49:534] : 	Status: BLE_STATUS_OK
+[16:36:49:562] : 'Discover All Characteristic Descriptors' request sent
+[16:36:49:562] : 	Start Handle: 0x0053
+[16:36:49:562] : 	End Handle: 0x0053
+[16:36:49:562] : 'Command Status' event received
+[16:36:49:562] : 	Status: BLE_STATUS_OK
+[16:36:49:575] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:49:575] : 	Characteristic Descriptor 1:
+[16:36:49:575] : 	-------------------------------------
+[16:36:49:575] : 	Attribute Handle: 0x0053
+[16:36:49:575] : 	UUID: 0x2902
+[16:36:49:607] : 'Command Complete' event received
+[16:36:49:607] : 	Status: BLE_STATUS_OK
+[16:36:49:640] : 'Discover All Characteristic Descriptors' request sent
+[16:36:49:640] : 	Start Handle: 0x0050
+[16:36:49:640] : 	End Handle: 0x0050
+[16:36:49:640] : 'Command Status' event received
+[16:36:49:640] : 	Status: BLE_STATUS_OK
+[16:36:49:662] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:49:662] : 	Characteristic Descriptor 1:
+[16:36:49:662] : 	-------------------------------------
+[16:36:49:662] : 	Attribute Handle: 0x0050
+[16:36:49:662] : 	UUID: 0x2902
+[16:36:49:690] : 'Command Complete' event received
+[16:36:49:690] : 	Status: BLE_STATUS_OK
+[16:36:49:721] : 'Discover All Characteristic Descriptors' request sent
+[16:36:49:721] : 	Start Handle: 0x004D
+[16:36:49:721] : 	End Handle: 0x004D
+[16:36:49:722] : 'Command Status' event received
+[16:36:49:722] : 	Status: BLE_STATUS_OK
+[16:36:49:732] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:49:732] : 	Characteristic Descriptor 1:
+[16:36:49:732] : 	-------------------------------------
+[16:36:49:732] : 	Attribute Handle: 0x004D
+[16:36:49:732] : 	UUID: 0x2902
+[16:36:49:762] : 'Command Complete' event received
+[16:36:49:762] : 	Status: BLE_STATUS_OK
+[16:36:49:794] : 'Discover All Characteristic Descriptors' request sent
+[16:36:49:794] : 	Start Handle: 0x004A
+[16:36:49:794] : 	End Handle: 0x004A
+[16:36:49:795] : 'Command Status' event received
+[16:36:49:795] : 	Status: BLE_STATUS_OK
+[16:36:49:811] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:49:811] : 	Characteristic Descriptor 1:
+[16:36:49:811] : 	-------------------------------------
+[16:36:49:811] : 	Attribute Handle: 0x004A
+[16:36:49:811] : 	UUID: 0x2902
+[16:36:49:839] : 'Command Complete' event received
+[16:36:49:839] : 	Status: BLE_STATUS_OK
+[16:36:49:870] : 'Discover All Characteristic Descriptors' request sent
+[16:36:49:870] : 	Start Handle: 0x0041
+[16:36:49:870] : 	End Handle: 0x0041
+[16:36:49:871] : 'Command Status' event received
+[16:36:49:871] : 	Status: BLE_STATUS_OK
+[16:36:49:881] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:49:881] : 	Characteristic Descriptor 1:
+[16:36:49:881] : 	-------------------------------------
+[16:36:49:881] : 	Attribute Handle: 0x0041
+[16:36:49:881] : 	UUID: 0x2901
+[16:36:49:910] : 'Command Complete' event received
+[16:36:49:910] : 	Status: BLE_STATUS_OK
+[16:36:49:944] : 'Discover All Characteristic Descriptors' request sent
+[16:36:49:944] : 	Start Handle: 0x003D
+[16:36:49:944] : 	End Handle: 0x003E
+[16:36:49:945] : 'Command Status' event received
+[16:36:49:945] : 	Status: BLE_STATUS_OK
+[16:36:49:969] : 'Discover All Characteristic Descriptors Result Progress' event received
+[16:36:49:969] : 	Characteristic Descriptor 1:
+[16:36:49:969] : 	-------------------------------------
+[16:36:49:969] : 	Attribute Handle: 0x003D
+[16:36:49:969] : 	UUID: 0x2901
+[16:36:49:969] : 	Characteristic Descriptor 2:
+[16:36:49:969] : 	-------------------------------------
+[16:36:49:969] : 	Attribute Handle: 0x003E
+[16:36:49:969] : 	UUID: 0x2902
+[16:36:50:027] : 'Command Complete' event received
+[16:36:50:027] : 	Status: BLE_STATUS_OK
+[16:36:53:511] : 'Initiate Pairing' request sent
+[16:36:53:513] : 'Command Status' event received
+[16:36:53:513] : 	Status: BLE_STATUS_OK
+[16:36:53:538] : 'Negotiated pairing parameters' event received
+[16:36:53:538] : 	State: Pairing negotiated
+[16:36:53:538] : 	Security Level: 0x01
+[16:36:53:538] : 	Encryption Key Size: 16
+[16:36:53:538] : 	Bonding: 0x01
+[16:36:53:538] : 	Pairing properties: NONE
+[16:36:53:627] : 'Misc Event Notification' received
+[16:36:53:627] : 	Event Code: 0x0029 (GAP_ENCRYPT_CHANGE)
+[16:36:53:627] : 	Event Data: Encryption ON
+[16:36:53:627] : 	Event Data: [01]
+[16:36:53:669] : 'Misc Event Notification' received
+[16:36:53:669] : 	Event Code: 0x002C
+[16:36:53:669] : 	Event Data: [FE:BD:BD:C3:16:F8:56:41:17:63:AD:42:D0:C2:31:5D]
+[16:36:53:670] : 'Negotiated pairing parameters' event received
+[16:36:53:670] : 	State: Pairing completed
+[16:36:53:670] : 	Security Level: 0x01
+[16:36:53:670] : 	Encryption Key Size: 16
+[16:36:53:670] : 	Bonding: 0x01
+[16:36:53:670] : 	Pairing properties: NONE
+[16:36:53:671] : 'Command Complete' event received
+[16:36:53:671] : 	Status: BLE_STATUS_OK
+[16:36:53:671] : 'Get Bonded Devices List' request sent
+[16:36:53:682] : 'Command Status' event received
+[16:36:53:682] : 	Status: BLE_STATUS_OK
+[16:36:53:682] : 'Get Bonded Devices List Response' event received
+[16:36:53:682] : 	Bonded Device 1:
+[16:36:53:682] : 	------------------------
+[16:36:53:682] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:53:682] : 	BD Address: 91:F8:84:A2:16:DC:00:00
+[16:36:53:683] : 'Command Complete' event received
+[16:36:53:683] : 	Status: BLE_STATUS_OK
+[16:36:53:683] : 'Get Whitelist' request sent
+[16:36:53:693] : 'Command Status' event received
+[16:36:53:693] : 	Status: BLE_STATUS_OK
+[16:36:53:693] : 'Get Whitelist Response' event received
+[16:36:53:693] : 	Whitelist Item 1:
+[16:36:53:693] : 	------------------------
+[16:36:53:693] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:53:693] : 	BD Address: 91:F8:84:A2:16:DC:00:00
+[16:36:53:694] : 'Command Complete' event received
+[16:36:53:694] : 	Status: BLE_STATUS_OK
+[16:36:53:694] : 'Get Bonded Devices List' request sent
+[16:36:53:704] : 'Command Status' event received
+[16:36:53:704] : 	Status: BLE_STATUS_OK
+[16:36:53:704] : 'Get Bonded Devices List Response' event received
+[16:36:53:704] : 	Bonded Device 1:
+[16:36:53:704] : 	------------------------
+[16:36:53:704] : 	BD Address Type: PUBLIC_ADDRESS
+[16:36:53:704] : 	BD Address: 91:F8:84:A2:16:DC:00:00
+[16:36:53:704] : 'Command Complete' event received
+[16:36:53:704] : 	Status: BLE_STATUS_OK
+[16:36:53:705] : 'Get Peer Device Security Keys' request sent
+[16:36:53:705] : 	Device handle: 0x04
+[16:36:53:706] : 'Command Status' event received
+[16:36:53:706] : 	Status: BLE_STATUS_OK
+[16:36:53:707] : 'Get Peer Device Security Keys Response' event received
+[16:36:53:707] : 	Device handle: 0x04
+[16:36:53:707] : 	Key flags: INITIATOR_ENCRYPTION_INFORMATION, INITIATOR_IDENTITY_INFORMATION, INITIATOR_SIGNATURE_KEY
+[16:36:53:707] : 	Long Term Key (LTK): [0B:E3:43:05:27:73:29:98:99:DE:BE:AA:34:B1:1C:D4]
+[16:36:53:707] : 	Encrypted Diversifier (EDIV) and Random Number: [CA:56:F2:BF:70:44:98:27:0E:E9]
+[16:36:53:707] : 	Identity Resolving Key (IRK): [FE:BD:BD:C3:16:F8:56:41:17:63:AD:42:D0:C2:31:5D]
+[16:36:53:707] : 	Identification Address: [0xDC16A284F891, PUBLIC_ADDRESS]
+[16:36:53:707] : 	Connection Signature Resolving Key (CSRK): [81:FF:58:23:21:7A:EA:9B:26:8D:7A:58:4B:E1:74:B6]
+[16:36:53:709] : 'Command Complete' event received
+[16:36:53:709] : 	Status: BLE_STATUS_OK
+[16:36:53:709] : 'Get resolving list' request sent
+[16:36:53:710] : 'Command Status' event received
+[16:36:53:710] : 	Status: BLE_STATUS_OK
+[16:36:53:710] : 'Get resolving list response' event received
+[16:36:53:710] : 'Command Complete' event received
+[16:36:53:710] : 	Status: BLE_STATUS_OK
+Info: gpm.M1121: Pairing with CGM GT8714385M [DC:16:A2:84:F8:91] completed successfully. Do you want to add the device to the resolving list?
+ CyDesigner.Common.Base.CyStsMsgDisp+CyDialogResult
+[16:36:56:627] : 'Add device to resolving list' request sent
+[16:36:56:627] : 	Peer IRK: [FE:BD:BD:C3:16:F8:56:41:17:63:AD:42:D0:C2:31:5D]
+[16:36:56:627] : 	Local IRK: [0A:2D:F4:65:E3:BD:7B:49:1E:B4:C0:95:95:13:46:73]
+[16:36:56:627] : 	ID Address Type: PUBLIC_ADDRESS
+[16:36:56:627] : 	ID Address: 91:F8:84:A2:16:DC:00:00
+[16:36:56:631] : 'Command Status' event received
+[16:36:56:631] : 	Status: BLE_STATUS_OK
+[16:36:56:632] : 'Command Complete' event received
+[16:36:56:632] : 	Status: BLE_STATUS_OK
+[16:36:59:942] : 'Read Characteristic Value' request sent
+[16:36:59:942] : 	Attribute Handle: 0x0007
+[16:36:59:944] : 'Command Status' event received
+[16:36:59:944] : 	Status: BLE_STATUS_OK
+[16:36:59:961] : 'Read Characteristic Value Response' event received
+[16:36:59:961] : 	Value: [43:47:4D:20:54:72:61:6E:73:6D:69:74:74:65:72]
+[16:36:59:993] : 'Command Complete' event received
+[16:36:59:993] : 	Status: BLE_STATUS_OK
+[16:36:59:993] : 'Read Characteristic Value' request sent
+[16:36:59:993] : 	Attribute Handle: 0x0009
+[16:36:59:994] : 'Command Status' event received
+[16:36:59:994] : 	Status: BLE_STATUS_OK
+[16:37:00:005] : 'Read Characteristic Value Response' event received
+[16:37:00:005] : 	Value: [00:00]
+[16:37:00:037] : 'Command Complete' event received
+[16:37:00:037] : 	Status: BLE_STATUS_OK
+[16:37:00:037] : 'Read Characteristic Value' request sent
+[16:37:00:037] : 	Attribute Handle: 0x000B
+[16:37:00:038] : 'Command Status' event received
+[16:37:00:038] : 	Status: BLE_STATUS_OK
+[16:37:00:057] : 'Read Characteristic Value Response' event received
+[16:37:00:057] : 	Value: [10:00:20:00:00:00:58:02]
+[16:37:00:086] : 'Command Complete' event received
+[16:37:00:086] : 	Status: BLE_STATUS_OK
+[16:37:00:086] : 'Read Characteristic Value' request sent
+[16:37:00:086] : 	Attribute Handle: 0x000E
+[16:37:00:087] : 'Command Status' event received
+[16:37:00:087] : 	Status: BLE_STATUS_OK
+[16:37:00:109] : 'Read Characteristic Value Response' event received
+[16:37:00:109] : 	Value: [4D:65:64:74:72:6F:6E:69:63:00]
+[16:37:00:137] : 'Command Complete' event received
+[16:37:00:137] : 	Status: BLE_STATUS_OK
+[16:37:00:137] : 'Read Characteristic Value' request sent
+[16:37:00:137] : 	Attribute Handle: 0x0010
+[16:37:00:138] : 'Command Status' event received
+[16:37:00:138] : 	Status: BLE_STATUS_OK
+[16:37:00:154] : 'Read Characteristic Value Response' event received
+[16:37:00:154] : 	Value: [4D:4D:54:2D:37:39:31:31:57:57:00]
+[16:37:00:186] : 'Command Complete' event received
+[16:37:00:186] : 	Status: BLE_STATUS_OK
+[16:37:00:186] : 'Read Characteristic Value' request sent
+[16:37:00:186] : 	Attribute Handle: 0x0012
+[16:37:00:187] : 'Command Status' event received
+[16:37:00:187] : 	Status: BLE_STATUS_OK
+[16:37:00:214] : 'Read Characteristic Value Response' event received
+[16:37:00:214] : 	Value: [47:54:38:37:31:34:33:38:35:4D:00]
+[16:37:00:243] : 'Command Complete' event received
+[16:37:00:243] : 	Status: BLE_STATUS_OK
+[16:37:00:244] : 'Read Characteristic Value' request sent
+[16:37:00:244] : 	Attribute Handle: 0x0014
+[16:37:00:244] : 'Command Status' event received
+[16:37:00:244] : 	Status: BLE_STATUS_OK
+[16:37:00:258] : 'Read Characteristic Value Response' event received
+[16:37:00:258] : 	Value: [31:2E:31:41:00]
+[16:37:00:286] : 'Command Complete' event received
+[16:37:00:286] : 	Status: BLE_STATUS_OK
+[16:37:00:286] : 'Read Characteristic Value' request sent
+[16:37:00:286] : 	Attribute Handle: 0x0016
+[16:37:00:287] : 'Command Status' event received
+[16:37:00:287] : 	Status: BLE_STATUS_OK
+[16:37:00:310] : 'Read Characteristic Value Response' event received
+[16:37:00:310] : 	Value: [35:43:31:2E:30:00]
+[16:37:00:343] : 'Command Complete' event received
+[16:37:00:343] : 	Status: BLE_STATUS_OK
+[16:37:00:343] : 'Read Characteristic Value' request sent
+[16:37:00:343] : 	Attribute Handle: 0x0018
+[16:37:00:344] : 'Command Status' event received
+[16:37:00:344] : 	Status: BLE_STATUS_OK
+[16:37:00:355] : 'Read Characteristic Value Response' event received
+[16:37:00:355] : 	Value: [31:2E:30:41:2E:61:36:39:63:66:63:64:37:00]
+[16:37:00:384] : 'Command Complete' event received
+[16:37:00:384] : 	Status: BLE_STATUS_OK
+[16:37:00:384] : 'Read Characteristic Value' request sent
+[16:37:00:384] : 	Attribute Handle: 0x001A
+[16:37:00:385] : 'Command Status' event received
+[16:37:00:385] : 	Status: BLE_STATUS_OK
+[16:37:00:399] : 'Read Characteristic Value Response' event received
+[16:37:00:399] : 	Value: [00:00:00:00:00:DC:16:A2]
+[16:37:00:428] : 'Command Complete' event received
+[16:37:00:428] : 	Status: BLE_STATUS_OK
+[16:37:00:428] : 'Read Characteristic Value' request sent
+[16:37:00:428] : 	Attribute Handle: 0x001C
+[16:37:00:429] : 'Command Status' event received
+[16:37:00:429] : 	Status: BLE_STATUS_OK
+[16:37:00:442] : 'Read Characteristic Value Response' event received
+[16:37:00:442] : 	Value: []
+[16:37:00:473] : 'Command Complete' event received
+[16:37:00:473] : 	Status: BLE_STATUS_OK
+[16:37:00:473] : 'Read Characteristic Value' request sent
+[16:37:00:473] : 	Attribute Handle: 0x001E
+[16:37:00:474] : 'Command Status' event received
+[16:37:00:474] : 	Status: BLE_STATUS_OK
+[16:37:00:486] : 'Read Characteristic Value Response' event received
+[16:37:00:486] : 	Value: [01:F9:01:00:00:00:01]
+[16:37:00:521] : 'Command Complete' event received
+[16:37:00:521] : 	Status: BLE_STATUS_OK
+[16:37:00:521] : 'Read Characteristic Value' request sent
+[16:37:00:521] : 	Attribute Handle: 0x0021
+[16:37:00:522] : 'Command Status' event received
+[16:37:00:522] : 	Status: BLE_STATUS_OK
+[16:37:00:538] : 'Read Characteristic Value Response' event received
+[16:37:00:538] : 	Value: [1E]
+[16:37:00:567] : 'Command Complete' event received
+[16:37:00:567] : 	Status: BLE_STATUS_OK
+[16:37:00:568] : 'Read Characteristic Value' request sent
+[16:37:00:568] : 	Attribute Handle: 0x0028
+[16:37:00:569] : 'Command Status' event received
+[16:37:00:569] : 	Status: BLE_STATUS_OK
+[16:37:00:581] : 'GATT Error Notification' event received
+[16:37:00:581] : 	Error Code: BLE_GATT_ERR_READ_NOT_PERMITTED
+[16:37:00:583] : 'Read Characteristic Value' request sent
+[16:37:00:583] : 	Attribute Handle: 0x0040
+[16:37:00:584] : 'Command Status' event received
+[16:37:00:584] : 	Status: BLE_STATUS_OK
+[16:37:00:600] : 'Read Characteristic Value' request sent
+[16:37:00:600] : 	Attribute Handle: 0x0043
+[16:37:00:600] : 'Command Status' event received
+[16:37:00:600] : 	Status: BLE_STATUS_OK
+[16:37:00:616] : 'Read Characteristic Value' request sent
+[16:37:00:616] : 	Attribute Handle: 0x0045
+[16:37:00:617] : 'Command Status' event received
+[16:37:00:617] : 	Status: BLE_STATUS_OK
+[16:37:00:635] : 'Read Characteristic Value' request sent
+[16:37:00:635] : 	Attribute Handle: 0x0047
+[16:37:00:636] : 'Command Status' event received
+[16:37:00:636] : 	Status: BLE_STATUS_OK
+[16:37:00:651] : 'Read Characteristic Value' request sent
+[16:37:00:651] : 	Attribute Handle: 0x0049
+[16:37:00:652] : 'Command Status' event received
+[16:37:00:652] : 	Status: BLE_STATUS_OK
+[16:37:00:670] : 'Read Characteristic Value' request sent
+[16:37:00:670] : 	Attribute Handle: 0x0055
+[16:37:00:671] : 'Command Status' event received
+[16:37:00:671] : 	Status: BLE_STATUS_OK
+Error: gpm.M1003: Read characteristic value failed. Read not permitted.
+[16:40:02:270] : 'Write Characteristic Descriptor' request sent
+[16:40:02:270] : 	Attribute Handle: 0x0004
+[16:40:02:270] : 	Value: [02:00]
+[16:40:02:271] : 'Command Status' event received
+[16:40:02:271] : 	Status: BLE_STATUS_OK
+[16:40:02:284] : 'Command Complete' event received
+[16:40:02:284] : 	Status: BLE_STATUS_OK
+[16:40:02:288] : 'Read Characteristic Descriptor' request sent
+[16:40:02:288] : 	Attribute Handle: 0x0004
+[16:40:02:289] : 'Command Status' event received
+[16:40:02:289] : 	Status: BLE_STATUS_OK
+[16:40:02:302] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:302] : 	Value: [02:00]
+[16:40:02:331] : 'Command Complete' event received
+[16:40:02:331] : 	Status: BLE_STATUS_OK
+[16:40:02:331] : 'Write Characteristic Descriptor' request sent
+[16:40:02:331] : 	Attribute Handle: 0x0022
+[16:40:02:331] : 	Value: [01:00]
+[16:40:02:332] : 'Command Status' event received
+[16:40:02:332] : 	Status: BLE_STATUS_OK
+[16:40:02:354] : 'Command Complete' event received
+[16:40:02:354] : 	Status: BLE_STATUS_OK
+[16:40:02:355] : 'Read Characteristic Descriptor' request sent
+[16:40:02:355] : 	Attribute Handle: 0x0022
+[16:40:02:356] : 'Command Status' event received
+[16:40:02:356] : 	Status: BLE_STATUS_OK
+[16:40:02:372] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:372] : 	Value: [01:00]
+[16:40:02:400] : 'Command Complete' event received
+[16:40:02:400] : 	Status: BLE_STATUS_OK
+[16:40:02:400] : 'Write Characteristic Descriptor' request sent
+[16:40:02:400] : 	Attribute Handle: 0x0026
+[16:40:02:400] : 	Value: [02:00]
+[16:40:02:401] : 'Command Status' event received
+[16:40:02:401] : 	Status: BLE_STATUS_OK
+[16:40:02:424] : 'Command Complete' event received
+[16:40:02:424] : 	Status: BLE_STATUS_OK
+[16:40:02:426] : 'Read Characteristic Descriptor' request sent
+[16:40:02:426] : 	Attribute Handle: 0x0026
+[16:40:02:427] : 'Command Status' event received
+[16:40:02:427] : 	Status: BLE_STATUS_OK
+[16:40:02:442] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:442] : 	Value: [02:00]
+[16:40:02:470] : 'Command Complete' event received
+[16:40:02:470] : 	Status: BLE_STATUS_OK
+[16:40:02:470] : 'Write Characteristic Descriptor' request sent
+[16:40:02:470] : 	Attribute Handle: 0x002F
+[16:40:02:470] : 	Value: [01:00]
+[16:40:02:471] : 'Command Status' event received
+[16:40:02:471] : 	Status: BLE_STATUS_OK
+[16:40:02:486] : 'Command Complete' event received
+[16:40:02:486] : 	Status: BLE_STATUS_OK
+[16:40:02:489] : 'Read Characteristic Descriptor' request sent
+[16:40:02:489] : 	Attribute Handle: 0x002F
+[16:40:02:489] : 'Command Status' event received
+[16:40:02:489] : 	Status: BLE_STATUS_OK
+[16:40:02:503] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:503] : 	Value: [01:00]
+[16:40:02:535] : 'Command Complete' event received
+[16:40:02:535] : 	Status: BLE_STATUS_OK
+[16:40:02:535] : 'Write Characteristic Descriptor' request sent
+[16:40:02:535] : 	Attribute Handle: 0x0039
+[16:40:02:535] : 	Value: [01:00]
+[16:40:02:536] : 'Command Status' event received
+[16:40:02:536] : 	Status: BLE_STATUS_OK
+[16:40:02:547] : 'Command Complete' event received
+[16:40:02:547] : 	Status: BLE_STATUS_OK
+[16:40:02:552] : 'Read Characteristic Descriptor' request sent
+[16:40:02:552] : 	Attribute Handle: 0x0039
+[16:40:02:553] : 'Command Status' event received
+[16:40:02:553] : 	Status: BLE_STATUS_OK
+[16:40:02:565] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:565] : 	Value: [01:00]
+[16:40:02:594] : 'Command Complete' event received
+[16:40:02:594] : 	Status: BLE_STATUS_OK
+[16:40:02:594] : 'Write Characteristic Descriptor' request sent
+[16:40:02:594] : 	Attribute Handle: 0x0036
+[16:40:02:594] : 	Value: [02:00]
+[16:40:02:595] : 'Command Status' event received
+[16:40:02:595] : 	Status: BLE_STATUS_OK
+[16:40:02:608] : 'Command Complete' event received
+[16:40:02:608] : 	Status: BLE_STATUS_OK
+[16:40:02:612] : 'Read Characteristic Descriptor' request sent
+[16:40:02:612] : 	Attribute Handle: 0x0036
+[16:40:02:613] : 'Command Status' event received
+[16:40:02:613] : 	Status: BLE_STATUS_OK
+[16:40:02:625] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:625] : 	Value: [02:00]
+[16:40:02:658] : 'Command Complete' event received
+[16:40:02:658] : 	Status: BLE_STATUS_OK
+[16:40:02:658] : 'Write Characteristic Descriptor' request sent
+[16:40:02:658] : 	Attribute Handle: 0x0033
+[16:40:02:658] : 	Value: [02:00]
+[16:40:02:659] : 'Command Status' event received
+[16:40:02:659] : 	Status: BLE_STATUS_OK
+[16:40:02:678] : 'Command Complete' event received
+[16:40:02:678] : 	Status: BLE_STATUS_OK
+[16:40:02:679] : 'Read Characteristic Descriptor' request sent
+[16:40:02:679] : 	Attribute Handle: 0x0033
+[16:40:02:680] : 'Command Status' event received
+[16:40:02:680] : 	Status: BLE_STATUS_OK
+[16:40:02:696] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:696] : 	Value: [02:00]
+[16:40:02:724] : 'Command Complete' event received
+[16:40:02:724] : 	Status: BLE_STATUS_OK
+[16:40:02:724] : 'Write Characteristic Descriptor' request sent
+[16:40:02:724] : 	Attribute Handle: 0x0059
+[16:40:02:724] : 	Value: [02:00]
+[16:40:02:725] : 'Command Status' event received
+[16:40:02:725] : 	Status: BLE_STATUS_OK
+[16:40:02:739] : 'Command Complete' event received
+[16:40:02:739] : 	Status: BLE_STATUS_OK
+[16:40:02:741] : 'Read Characteristic Descriptor' request sent
+[16:40:02:741] : 	Attribute Handle: 0x0059
+[16:40:02:742] : 'Command Status' event received
+[16:40:02:742] : 	Status: BLE_STATUS_OK
+[16:40:02:765] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:765] : 	Value: [02:00]
+[16:40:02:794] : 'Command Complete' event received
+[16:40:02:794] : 	Status: BLE_STATUS_OK
+[16:40:02:794] : 'Write Characteristic Descriptor' request sent
+[16:40:02:794] : 	Attribute Handle: 0x0056
+[16:40:02:794] : 	Value: [02:00]
+[16:40:02:795] : 'Command Status' event received
+[16:40:02:795] : 	Status: BLE_STATUS_OK
+[16:40:02:809] : 'Command Complete' event received
+[16:40:02:809] : 	Status: BLE_STATUS_OK
+[16:40:02:813] : 'Read Characteristic Descriptor' request sent
+[16:40:02:813] : 	Attribute Handle: 0x0056
+[16:40:02:814] : 'Command Status' event received
+[16:40:02:814] : 	Status: BLE_STATUS_OK
+[16:40:02:826] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:826] : 	Value: [02:00]
+[16:40:02:858] : 'Command Complete' event received
+[16:40:02:858] : 	Status: BLE_STATUS_OK
+[16:40:02:858] : 'Write Characteristic Descriptor' request sent
+[16:40:02:858] : 	Attribute Handle: 0x0053
+[16:40:02:858] : 	Value: [02:00]
+[16:40:02:859] : 'Command Status' event received
+[16:40:02:859] : 	Status: BLE_STATUS_OK
+[16:40:02:870] : 'Command Complete' event received
+[16:40:02:870] : 	Status: BLE_STATUS_OK
+[16:40:02:874] : 'Read Characteristic Descriptor' request sent
+[16:40:02:874] : 	Attribute Handle: 0x0053
+[16:40:02:875] : 'Command Status' event received
+[16:40:02:875] : 	Status: BLE_STATUS_OK
+[16:40:02:888] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:888] : 	Value: [02:00]
+[16:40:02:917] : 'Command Complete' event received
+[16:40:02:917] : 	Status: BLE_STATUS_OK
+[16:40:02:917] : 'Write Characteristic Descriptor' request sent
+[16:40:02:917] : 	Attribute Handle: 0x0050
+[16:40:02:917] : 	Value: [02:00]
+[16:40:02:918] : 'Command Status' event received
+[16:40:02:918] : 	Status: BLE_STATUS_OK
+[16:40:02:931] : 'Command Complete' event received
+[16:40:02:931] : 	Status: BLE_STATUS_OK
+[16:40:02:932] : 'Read Characteristic Descriptor' request sent
+[16:40:02:932] : 	Attribute Handle: 0x0050
+[16:40:02:933] : 'Command Status' event received
+[16:40:02:933] : 	Status: BLE_STATUS_OK
+[16:40:02:948] : 'Read Characteristic Descriptor Response' event received
+[16:40:02:948] : 	Value: [02:00]
+[16:40:02:982] : 'Command Complete' event received
+[16:40:02:982] : 	Status: BLE_STATUS_OK
+[16:40:02:982] : 'Write Characteristic Descriptor' request sent
+[16:40:02:982] : 	Attribute Handle: 0x004D
+[16:40:02:982] : 	Value: [02:00]
+[16:40:02:983] : 'Command Status' event received
+[16:40:02:983] : 	Status: BLE_STATUS_OK
+[16:40:02:993] : 'Command Complete' event received
+[16:40:02:993] : 	Status: BLE_STATUS_OK
+[16:40:02:997] : 'Read Characteristic Descriptor' request sent
+[16:40:02:997] : 	Attribute Handle: 0x004D
+[16:40:02:998] : 'Command Status' event received
+[16:40:02:998] : 	Status: BLE_STATUS_OK
+[16:40:03:010] : 'Read Characteristic Descriptor Response' event received
+[16:40:03:010] : 	Value: [02:00]
+[16:40:03:039] : 'Command Complete' event received
+[16:40:03:039] : 	Status: BLE_STATUS_OK
+[16:40:03:040] : 'Write Characteristic Descriptor' request sent
+[16:40:03:040] : 	Attribute Handle: 0x004A
+[16:40:03:040] : 	Value: [02:00]
+[16:40:03:041] : 'Command Status' event received
+[16:40:03:041] : 	Status: BLE_STATUS_OK
+[16:40:03:054] : 'Command Complete' event received
+[16:40:03:054] : 	Status: BLE_STATUS_OK
+[16:40:03:057] : 'Read Characteristic Descriptor' request sent
+[16:40:03:057] : 	Attribute Handle: 0x004A
+[16:40:03:057] : 'Command Status' event received
+[16:40:03:057] : 	Status: BLE_STATUS_OK
+[16:40:03:072] : 'Read Characteristic Descriptor Response' event received
+[16:40:03:072] : 	Value: [02:00]
+[16:40:03:104] : 'Command Complete' event received
+[16:40:03:104] : 	Status: BLE_STATUS_OK
+[16:40:03:105] : 'Write Characteristic Descriptor' request sent
+[16:40:03:105] : 	Attribute Handle: 0x003E
+[16:40:03:105] : 	Value: [03:00]
+[16:40:03:106] : 'Command Status' event received
+[16:40:03:106] : 	Status: BLE_STATUS_OK
+[16:40:03:116] : 'Command Complete' event received
+[16:40:03:116] : 	Status: BLE_STATUS_OK
+[16:40:03:122] : 'Read Characteristic Descriptor' request sent
+[16:40:03:122] : 	Attribute Handle: 0x003E
+[16:40:03:123] : 'Command Status' event received
+[16:40:03:123] : 	Status: BLE_STATUS_OK
+[16:40:03:133] : 'Read Characteristic Descriptor Response' event received
+[16:40:03:133] : 	Value: [03:00]
+[16:40:03:161] : 'Command Complete' event received
+[16:40:03:161] : 	Status: BLE_STATUS_OK
+[16:40:07:965] : 'Read Characteristic Descriptor' request sent
+[16:40:07:965] : 	Attribute Handle: 0x0004
+[16:40:07:966] : 'Command Status' event received
+[16:40:07:966] : 	Status: BLE_STATUS_OK
+[16:40:07:998] : 'Read Characteristic Descriptor Response' event received
+[16:40:07:998] : 	Value: [02:00]
+[16:40:08:027] : 'Command Complete' event received
+[16:40:08:027] : 	Status: BLE_STATUS_OK
+[16:40:08:027] : 'Read Characteristic Descriptor' request sent
+[16:40:08:027] : 	Attribute Handle: 0x0022
+[16:40:08:028] : 'Command Status' event received
+[16:40:08:028] : 	Status: BLE_STATUS_OK
+[16:40:08:041] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:041] : 	Value: [01:00]
+[16:40:08:072] : 'Command Complete' event received
+[16:40:08:072] : 	Status: BLE_STATUS_OK
+[16:40:08:072] : 'Read Characteristic Descriptor' request sent
+[16:40:08:072] : 	Attribute Handle: 0x0026
+[16:40:08:073] : 'Command Status' event received
+[16:40:08:073] : 	Status: BLE_STATUS_OK
+[16:40:08:094] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:094] : 	Value: [02:00]
+[16:40:08:126] : 'Command Complete' event received
+[16:40:08:126] : 	Status: BLE_STATUS_OK
+[16:40:08:127] : 'Read Characteristic Descriptor' request sent
+[16:40:08:127] : 	Attribute Handle: 0x002E
+[16:40:08:128] : 'Command Status' event received
+[16:40:08:128] : 	Status: BLE_STATUS_OK
+[16:40:08:138] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:138] : 	Value: [57:72:69:74:65:50:6F:69:6E:74]
+[16:40:08:170] : 'Command Complete' event received
+[16:40:08:170] : 	Status: BLE_STATUS_OK
+[16:40:08:170] : 'Read Characteristic Descriptor' request sent
+[16:40:08:170] : 	Attribute Handle: 0x002F
+[16:40:08:171] : 'Command Status' event received
+[16:40:08:171] : 	Status: BLE_STATUS_OK
+[16:40:08:190] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:190] : 	Value: [01:00]
+[16:40:08:219] : 'Command Complete' event received
+[16:40:08:219] : 	Status: BLE_STATUS_OK
+[16:40:08:220] : 'Read Characteristic Descriptor' request sent
+[16:40:08:220] : 	Attribute Handle: 0x0033
+[16:40:08:220] : 'Command Status' event received
+[16:40:08:220] : 	Status: BLE_STATUS_OK
+[16:40:08:234] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:234] : 	Value: [02:00]
+[16:40:08:270] : 'Command Complete' event received
+[16:40:08:270] : 	Status: BLE_STATUS_OK
+[16:40:08:270] : 'Read Characteristic Descriptor' request sent
+[16:40:08:270] : 	Attribute Handle: 0x0036
+[16:40:08:270] : 'Command Status' event received
+[16:40:08:270] : 	Status: BLE_STATUS_OK
+[16:40:08:296] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:296] : 	Value: [02:00]
+[16:40:08:325] : 'Command Complete' event received
+[16:40:08:325] : 	Status: BLE_STATUS_OK
+[16:40:08:325] : 'Read Characteristic Descriptor' request sent
+[16:40:08:325] : 	Attribute Handle: 0x0039
+[16:40:08:326] : 'Command Status' event received
+[16:40:08:326] : 	Status: BLE_STATUS_OK
+[16:40:08:339] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:339] : 	Value: [01:00]
+[16:40:08:372] : 'Command Complete' event received
+[16:40:08:372] : 	Status: BLE_STATUS_OK
+[16:40:08:373] : 'Read Characteristic Descriptor' request sent
+[16:40:08:373] : 	Attribute Handle: 0x003D
+[16:40:08:374] : 'Command Status' event received
+[16:40:08:374] : 	Status: BLE_STATUS_OK
+[16:40:08:400] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:400] : 	Value: [4D:65:61:73:75:72:65:6D:65:6E:74:52:65:61:64:79]
+[16:40:08:428] : 'Command Complete' event received
+[16:40:08:428] : 	Status: BLE_STATUS_OK
+[16:40:08:428] : 'Read Characteristic Descriptor' request sent
+[16:40:08:428] : 	Attribute Handle: 0x003E
+[16:40:08:430] : 'Command Status' event received
+[16:40:08:430] : 	Status: BLE_STATUS_OK
+[16:40:08:444] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:444] : 	Value: [03:00]
+[16:40:08:473] : 'Command Complete' event received
+[16:40:08:473] : 	Status: BLE_STATUS_OK
+[16:40:08:474] : 'Read Characteristic Descriptor' request sent
+[16:40:08:474] : 	Attribute Handle: 0x0041
+[16:40:08:475] : 'Command Status' event received
+[16:40:08:475] : 	Status: BLE_STATUS_OK
+[16:40:08:497] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:497] : 	Value: [4D:65:61:73:75:72:65:6D:65:6E:74:44:61:74:61]
+[16:40:08:531] : 'Command Complete' event received
+[16:40:08:531] : 	Status: BLE_STATUS_OK
+[16:40:08:531] : 'Read Characteristic Descriptor' request sent
+[16:40:08:531] : 	Attribute Handle: 0x004A
+[16:40:08:532] : 'Command Status' event received
+[16:40:08:532] : 	Status: BLE_STATUS_OK
+[16:40:08:548] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:548] : 	Value: [02:00]
+[16:40:08:578] : 'Command Complete' event received
+[16:40:08:578] : 	Status: BLE_STATUS_OK
+[16:40:08:578] : 'Read Characteristic Descriptor' request sent
+[16:40:08:578] : 	Attribute Handle: 0x004D
+[16:40:08:579] : 'Command Status' event received
+[16:40:08:579] : 	Status: BLE_STATUS_OK
+[16:40:08:610] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:610] : 	Value: [02:00]
+[16:40:08:640] : 'Command Complete' event received
+[16:40:08:640] : 	Status: BLE_STATUS_OK
+[16:40:08:640] : 'Read Characteristic Descriptor' request sent
+[16:40:08:640] : 	Attribute Handle: 0x0050
+[16:40:08:641] : 'Command Status' event received
+[16:40:08:641] : 	Status: BLE_STATUS_OK
+[16:40:08:662] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:662] : 	Value: [02:00]
+[16:40:08:693] : 'Command Complete' event received
+[16:40:08:693] : 	Status: BLE_STATUS_OK
+[16:40:08:693] : 'Read Characteristic Descriptor' request sent
+[16:40:08:693] : 	Attribute Handle: 0x0053
+[16:40:08:694] : 'Command Status' event received
+[16:40:08:694] : 	Status: BLE_STATUS_OK
+[16:40:08:715] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:715] : 	Value: [02:00]
+[16:40:08:745] : 'Command Complete' event received
+[16:40:08:745] : 	Status: BLE_STATUS_OK
+[16:40:08:745] : 'Read Characteristic Descriptor' request sent
+[16:40:08:745] : 	Attribute Handle: 0x0056
+[16:40:08:746] : 'Command Status' event received
+[16:40:08:746] : 	Status: BLE_STATUS_OK
+[16:40:08:759] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:759] : 	Value: [02:00]
+[16:40:08:791] : 'Command Complete' event received
+[16:40:08:791] : 	Status: BLE_STATUS_OK
+[16:40:08:791] : 'Read Characteristic Descriptor' request sent
+[16:40:08:791] : 	Attribute Handle: 0x0059
+[16:40:08:796] : 'Command Status' event received
+[16:40:08:796] : 	Status: BLE_STATUS_OK
+[16:40:08:803] : 'Read Characteristic Descriptor Response' event received
+[16:40:08:803] : 	Value: [02:00]
+[16:40:08:840] : 'Command Complete' event received
+[16:40:08:840] : 	Status: BLE_STATUS_OK
+[16:40:12:002] : 'Read Characteristic Descriptor' request sent
+[16:40:12:002] : 	Attribute Handle: 0x0004
+[16:40:12:003] : 'Command Status' event received
+[16:40:12:003] : 	Status: BLE_STATUS_OK
+[16:40:12:014] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:014] : 	Value: [02:00]
+[16:40:12:042] : 'Command Complete' event received
+[16:40:12:042] : 	Status: BLE_STATUS_OK
+[16:40:12:042] : 'Read Characteristic Descriptor' request sent
+[16:40:12:042] : 	Attribute Handle: 0x0022
+[16:40:12:045] : 'Command Status' event received
+[16:40:12:045] : 	Status: BLE_STATUS_OK
+[16:40:12:057] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:057] : 	Value: [01:00]
+[16:40:12:091] : 'Command Complete' event received
+[16:40:12:091] : 	Status: BLE_STATUS_OK
+[16:40:12:091] : 'Read Characteristic Descriptor' request sent
+[16:40:12:091] : 	Attribute Handle: 0x0026
+[16:40:12:091] : 'Command Status' event received
+[16:40:12:091] : 	Status: BLE_STATUS_OK
+[16:40:12:101] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:101] : 	Value: [02:00]
+[16:40:12:135] : 'Command Complete' event received
+[16:40:12:135] : 	Status: BLE_STATUS_OK
+[16:40:12:135] : 'Read Characteristic Descriptor' request sent
+[16:40:12:135] : 	Attribute Handle: 0x002E
+[16:40:12:136] : 'Command Status' event received
+[16:40:12:136] : 	Status: BLE_STATUS_OK
+[16:40:12:154] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:154] : 	Value: [57:72:69:74:65:50:6F:69:6E:74]
+[16:40:12:187] : 'Command Complete' event received
+[16:40:12:187] : 	Status: BLE_STATUS_OK
+[16:40:12:188] : 'Read Characteristic Descriptor' request sent
+[16:40:12:188] : 	Attribute Handle: 0x002F
+[16:40:12:188] : 'Command Status' event received
+[16:40:12:188] : 	Status: BLE_STATUS_OK
+[16:40:12:206] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:206] : 	Value: [01:00]
+[16:40:12:235] : 'Command Complete' event received
+[16:40:12:235] : 	Status: BLE_STATUS_OK
+[16:40:12:236] : 'Read Characteristic Descriptor' request sent
+[16:40:12:236] : 	Attribute Handle: 0x0033
+[16:40:12:237] : 'Command Status' event received
+[16:40:12:237] : 	Status: BLE_STATUS_OK
+[16:40:12:250] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:250] : 	Value: [02:00]
+[16:40:12:280] : 'Command Complete' event received
+[16:40:12:280] : 	Status: BLE_STATUS_OK
+[16:40:12:280] : 'Read Characteristic Descriptor' request sent
+[16:40:12:280] : 	Attribute Handle: 0x0036
+[16:40:12:281] : 'Command Status' event received
+[16:40:12:281] : 	Status: BLE_STATUS_OK
+[16:40:12:294] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:294] : 	Value: [02:00]
+[16:40:12:330] : 'Command Complete' event received
+[16:40:12:330] : 	Status: BLE_STATUS_OK
+[16:40:12:330] : 'Read Characteristic Descriptor' request sent
+[16:40:12:330] : 	Attribute Handle: 0x0039
+[16:40:12:332] : 'Command Status' event received
+[16:40:12:332] : 	Status: BLE_STATUS_OK
+[16:40:12:346] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:346] : 	Value: [01:00]
+[16:40:12:376] : 'Command Complete' event received
+[16:40:12:376] : 	Status: BLE_STATUS_OK
+[16:40:12:376] : 'Read Characteristic Descriptor' request sent
+[16:40:12:376] : 	Attribute Handle: 0x003D
+[16:40:12:377] : 'Command Status' event received
+[16:40:12:377] : 	Status: BLE_STATUS_OK
+[16:40:12:391] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:391] : 	Value: [4D:65:61:73:75:72:65:6D:65:6E:74:52:65:61:64:79]
+[16:40:12:420] : 'Command Complete' event received
+[16:40:12:420] : 	Status: BLE_STATUS_OK
+[16:40:12:421] : 'Read Characteristic Descriptor' request sent
+[16:40:12:421] : 	Attribute Handle: 0x003E
+[16:40:12:422] : 'Command Status' event received
+[16:40:12:422] : 	Status: BLE_STATUS_OK
+[16:40:12:434] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:434] : 	Value: [03:00]
+[16:40:12:473] : 'Command Complete' event received
+[16:40:12:473] : 	Status: BLE_STATUS_OK
+[16:40:12:473] : 'Read Characteristic Descriptor' request sent
+[16:40:12:473] : 	Attribute Handle: 0x0041
+[16:40:12:474] : 'Command Status' event received
+[16:40:12:474] : 	Status: BLE_STATUS_OK
+[16:40:12:495] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:495] : 	Value: [4D:65:61:73:75:72:65:6D:65:6E:74:44:61:74:61]
+[16:40:12:524] : 'Command Complete' event received
+[16:40:12:524] : 	Status: BLE_STATUS_OK
+[16:40:12:525] : 'Read Characteristic Descriptor' request sent
+[16:40:12:525] : 	Attribute Handle: 0x004A
+[16:40:12:526] : 'Command Status' event received
+[16:40:12:526] : 	Status: BLE_STATUS_OK
+[16:40:12:539] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:539] : 	Value: [02:00]
+[16:40:12:571] : 'Command Complete' event received
+[16:40:12:571] : 	Status: BLE_STATUS_OK
+[16:40:12:571] : 'Read Characteristic Descriptor' request sent
+[16:40:12:571] : 	Attribute Handle: 0x004D
+[16:40:12:572] : 'Command Status' event received
+[16:40:12:572] : 	Status: BLE_STATUS_OK
+[16:40:12:582] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:582] : 	Value: [02:00]
+[16:40:12:623] : 'Command Complete' event received
+[16:40:12:623] : 	Status: BLE_STATUS_OK
+[16:40:12:623] : 'Read Characteristic Descriptor' request sent
+[16:40:12:623] : 	Attribute Handle: 0x0050
+[16:40:12:624] : 'Command Status' event received
+[16:40:12:624] : 	Status: BLE_STATUS_OK
+[16:40:12:635] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:635] : 	Value: [02:00]
+[16:40:12:669] : 'Command Complete' event received
+[16:40:12:669] : 	Status: BLE_STATUS_OK
+[16:40:12:669] : 'Read Characteristic Descriptor' request sent
+[16:40:12:669] : 	Attribute Handle: 0x0053
+[16:40:12:670] : 'Command Status' event received
+[16:40:12:670] : 	Status: BLE_STATUS_OK
+[16:40:12:696] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:696] : 	Value: [02:00]
+[16:40:12:727] : 'Command Complete' event received
+[16:40:12:727] : 	Status: BLE_STATUS_OK
+[16:40:12:727] : 'Read Characteristic Descriptor' request sent
+[16:40:12:727] : 	Attribute Handle: 0x0056
+[16:40:12:728] : 'Command Status' event received
+[16:40:12:728] : 	Status: BLE_STATUS_OK
+[16:40:12:740] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:740] : 	Value: [02:00]
+[16:40:12:780] : 'Command Complete' event received
+[16:40:12:780] : 	Status: BLE_STATUS_OK
+[16:40:12:780] : 'Read Characteristic Descriptor' request sent
+[16:40:12:780] : 	Attribute Handle: 0x0059
+[16:40:12:781] : 'Command Status' event received
+[16:40:12:781] : 	Status: BLE_STATUS_OK
+[16:40:12:801] : 'Read Characteristic Descriptor Response' event received
+[16:40:12:801] : 	Value: [02:00]
+[16:40:12:831] : 'Command Complete' event received
+[16:40:12:831] : 	Status: BLE_STATUS_OK
+[16:40:14:830] : 'Read Characteristic Value' request sent
+[16:40:14:830] : 	Attribute Handle: 0x0007
+[16:40:14:832] : 'Command Status' event received
+[16:40:14:832] : 	Status: BLE_STATUS_OK
+[16:40:14:849] : 'Read Characteristic Value Response' event received
+[16:40:14:849] : 	Value: [43:47:4D:20:54:72:61:6E:73:6D:69:74:74:65:72]
+[16:40:14:877] : 'Command Complete' event received
+[16:40:14:877] : 	Status: BLE_STATUS_OK
+[16:40:14:877] : 'Read Characteristic Value' request sent
+[16:40:14:877] : 	Attribute Handle: 0x0009
+[16:40:14:878] : 'Command Status' event received
+[16:40:14:878] : 	Status: BLE_STATUS_OK
+[16:40:14:893] : 'Read Characteristic Value Response' event received
+[16:40:14:893] : 	Value: [00:00]
+[16:40:14:923] : 'Command Complete' event received
+[16:40:14:923] : 	Status: BLE_STATUS_OK
+[16:40:14:923] : 'Read Characteristic Value' request sent
+[16:40:14:923] : 	Attribute Handle: 0x000B
+[16:40:14:924] : 'Command Status' event received
+[16:40:14:924] : 	Status: BLE_STATUS_OK
+[16:40:14:936] : 'Read Characteristic Value Response' event received
+[16:40:14:936] : 	Value: [10:00:20:00:00:00:58:02]
+[16:40:14:972] : 'Command Complete' event received
+[16:40:14:972] : 	Status: BLE_STATUS_OK
+[16:40:14:972] : 'Read Characteristic Value' request sent
+[16:40:14:972] : 	Attribute Handle: 0x000E
+[16:40:14:973] : 'Command Status' event received
+[16:40:14:973] : 	Status: BLE_STATUS_OK
+[16:40:14:989] : 'Read Characteristic Value Response' event received
+[16:40:14:989] : 	Value: [4D:65:64:74:72:6F:6E:69:63:00]
+[16:40:15:020] : 'Command Complete' event received
+[16:40:15:020] : 	Status: BLE_STATUS_OK
+[16:40:15:020] : 'Read Characteristic Value' request sent
+[16:40:15:020] : 	Attribute Handle: 0x0010
+[16:40:15:021] : 'Command Status' event received
+[16:40:15:021] : 	Status: BLE_STATUS_OK
+[16:40:15:033] : 'Read Characteristic Value Response' event received
+[16:40:15:033] : 	Value: [4D:4D:54:2D:37:39:31:31:57:57:00]
+[16:40:15:067] : 'Command Complete' event received
+[16:40:15:067] : 	Status: BLE_STATUS_OK
+[16:40:15:068] : 'Read Characteristic Value' request sent
+[16:40:15:068] : 	Attribute Handle: 0x0012
+[16:40:15:069] : 'Command Status' event received
+[16:40:15:069] : 	Status: BLE_STATUS_OK
+[16:40:15:087] : 'Read Characteristic Value Response' event received
+[16:40:15:087] : 	Value: [47:54:38:37:31:34:33:38:35:4D:00]
+[16:40:15:117] : 'Command Complete' event received
+[16:40:15:117] : 	Status: BLE_STATUS_OK
+[16:40:15:118] : 'Read Characteristic Value' request sent
+[16:40:15:118] : 	Attribute Handle: 0x0014
+[16:40:15:119] : 'Command Status' event received
+[16:40:15:119] : 	Status: BLE_STATUS_OK
+[16:40:15:129] : 'Read Characteristic Value Response' event received
+[16:40:15:129] : 	Value: [31:2E:31:41:00]
+[16:40:15:162] : 'Command Complete' event received
+[16:40:15:162] : 	Status: BLE_STATUS_OK
+[16:40:15:163] : 'Read Characteristic Value' request sent
+[16:40:15:163] : 	Attribute Handle: 0x0016
+[16:40:15:164] : 'Command Status' event received
+[16:40:15:164] : 	Status: BLE_STATUS_OK
+[16:40:15:181] : 'Read Characteristic Value Response' event received
+[16:40:15:181] : 	Value: [35:43:31:2E:30:00]
+[16:40:15:211] : 'Command Complete' event received
+[16:40:15:211] : 	Status: BLE_STATUS_OK
+[16:40:15:211] : 'Read Characteristic Value' request sent
+[16:40:15:211] : 	Attribute Handle: 0x0018
+[16:40:15:215] : 'Command Status' event received
+[16:40:15:215] : 	Status: BLE_STATUS_OK
+[16:40:15:225] : 'Read Characteristic Value Response' event received
+[16:40:15:225] : 	Value: [31:2E:30:41:2E:61:36:39:63:66:63:64:37:00]
+[16:40:15:258] : 'Command Complete' event received
+[16:40:15:258] : 	Status: BLE_STATUS_OK
+[16:40:15:258] : 'Read Characteristic Value' request sent
+[16:40:15:258] : 	Attribute Handle: 0x001A
+[16:40:15:259] : 'Command Status' event received
+[16:40:15:259] : 	Status: BLE_STATUS_OK
+[16:40:15:277] : 'Read Characteristic Value Response' event received
+[16:40:15:277] : 	Value: [00:00:00:00:00:DC:16:A2]
+[16:40:15:307] : 'Command Complete' event received
+[16:40:15:307] : 	Status: BLE_STATUS_OK
+[16:40:15:307] : 'Read Characteristic Value' request sent
+[16:40:15:307] : 	Attribute Handle: 0x001C
+[16:40:15:308] : 'Command Status' event received
+[16:40:15:308] : 	Status: BLE_STATUS_OK
+[16:40:15:320] : 'Read Characteristic Value Response' event received
+[16:40:15:320] : 	Value: []
+[16:40:15:356] : 'Command Complete' event received
+[16:40:15:356] : 	Status: BLE_STATUS_OK
+[16:40:15:356] : 'Read Characteristic Value' request sent
+[16:40:15:356] : 	Attribute Handle: 0x001E
+[16:40:15:357] : 'Command Status' event received
+[16:40:15:357] : 	Status: BLE_STATUS_OK
+[16:40:15:373] : 'Read Characteristic Value Response' event received
+[16:40:15:373] : 	Value: [01:F9:01:00:00:00:01]
+[16:40:15:403] : 'Command Complete' event received
+[16:40:15:403] : 	Status: BLE_STATUS_OK
+[16:40:15:403] : 'Read Characteristic Value' request sent
+[16:40:15:403] : 	Attribute Handle: 0x0021
+[16:40:15:404] : 'Command Status' event received
+[16:40:15:404] : 	Status: BLE_STATUS_OK
+[16:40:15:417] : 'Read Characteristic Value Response' event received
+[16:40:15:417] : 	Value: [1E]
+[16:40:15:451] : 'Command Complete' event received
+[16:40:15:451] : 	Status: BLE_STATUS_OK
+[16:40:15:451] : 'Read Characteristic Value' request sent
+[16:40:15:451] : 	Attribute Handle: 0x0028
+[16:40:15:451] : 'Command Status' event received
+[16:40:15:451] : 	Status: BLE_STATUS_OK
+[16:40:15:470] : 'GATT Error Notification' event received
+[16:40:15:470] : 	Error Code: BLE_GATT_ERR_READ_NOT_PERMITTED
+[16:40:15:470] : 'Read Characteristic Value' request sent
+[16:40:15:470] : 	Attribute Handle: 0x0040
+[16:40:15:471] : 'Command Status' event received
+[16:40:15:471] : 	Status: BLE_STATUS_OK
+[16:40:15:487] : 'Read Characteristic Value' request sent
+[16:40:15:487] : 	Attribute Handle: 0x0043
+[16:40:15:488] : 'Command Status' event received
+[16:40:15:488] : 	Status: BLE_STATUS_OK
+[16:40:15:505] : 'Read Characteristic Value' request sent
+[16:40:15:505] : 	Attribute Handle: 0x0045
+[16:40:15:506] : 'Command Status' event received
+[16:40:15:506] : 	Status: BLE_STATUS_OK
+[16:40:15:522] : 'Read Characteristic Value' request sent
+[16:40:15:522] : 	Attribute Handle: 0x0047
+[16:40:15:523] : 'Command Status' event received
+[16:40:15:523] : 	Status: BLE_STATUS_OK
+[16:40:15:540] : 'Read Characteristic Value' request sent
+[16:40:15:540] : 	Attribute Handle: 0x0049
+[16:40:15:541] : 'Command Status' event received
+[16:40:15:541] : 	Status: BLE_STATUS_OK
+[16:40:15:557] : 'Read Characteristic Value' request sent
+[16:40:15:557] : 	Attribute Handle: 0x0055
+[16:40:15:558] : 'Command Status' event received
+[16:40:15:558] : 	Status: BLE_STATUS_OK
+Error: gpm.M1003: Read characteristic value failed. Read not permitted.
+[16:40:18:866] : 'Write Characteristic Descriptor' request sent
+[16:40:18:866] : 	Attribute Handle: 0x0004
+[16:40:18:866] : 	Value: [02:00]
+[16:40:18:867] : 'Command Status' event received
+[16:40:18:867] : 	Status: BLE_STATUS_OK
+[16:40:18:882] : 'Command Complete' event received
+[16:40:18:882] : 	Status: BLE_STATUS_OK
+[16:40:18:883] : 'Read Characteristic Descriptor' request sent
+[16:40:18:883] : 	Attribute Handle: 0x0004
+[16:40:18:884] : 'Command Status' event received
+[16:40:18:884] : 	Status: BLE_STATUS_OK
+[16:40:18:900] : 'Read Characteristic Descriptor Response' event received
+[16:40:18:900] : 	Value: [02:00]
+[16:40:18:929] : 'Command Complete' event received
+[16:40:18:929] : 	Status: BLE_STATUS_OK
+[16:40:18:929] : 'Write Characteristic Descriptor' request sent
+[16:40:18:929] : 	Attribute Handle: 0x0022
+[16:40:18:929] : 	Value: [01:00]
+[16:40:18:930] : 'Command Status' event received
+[16:40:18:930] : 	Status: BLE_STATUS_OK
+[16:40:18:943] : 'Command Complete' event received
+[16:40:18:943] : 	Status: BLE_STATUS_OK
+[16:40:18:945] : 'Read Characteristic Descriptor' request sent
+[16:40:18:945] : 	Attribute Handle: 0x0022
+[16:40:18:946] : 'Command Status' event received
+[16:40:18:946] : 	Status: BLE_STATUS_OK
+[16:40:18:961] : 'Read Characteristic Descriptor Response' event received
+[16:40:18:961] : 	Value: [01:00]
+[16:40:18:990] : 'Command Complete' event received
+[16:40:18:990] : 	Status: BLE_STATUS_OK
+[16:40:18:990] : 'Write Characteristic Descriptor' request sent
+[16:40:18:990] : 	Attribute Handle: 0x0026
+[16:40:18:990] : 	Value: [02:00]
+[16:40:18:991] : 'Command Status' event received
+[16:40:18:991] : 	Status: BLE_STATUS_OK
+[16:40:19:005] : 'Command Complete' event received
+[16:40:19:005] : 	Status: BLE_STATUS_OK
+[16:40:19:008] : 'Read Characteristic Descriptor' request sent
+[16:40:19:008] : 	Attribute Handle: 0x0026
+[16:40:19:009] : 'Command Status' event received
+[16:40:19:009] : 	Status: BLE_STATUS_OK
+[16:40:19:022] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:022] : 	Value: [02:00]
+[16:40:19:052] : 'Command Complete' event received
+[16:40:19:052] : 	Status: BLE_STATUS_OK
+[16:40:19:052] : 'Write Characteristic Descriptor' request sent
+[16:40:19:052] : 	Attribute Handle: 0x002F
+[16:40:19:052] : 	Value: [01:00]
+[16:40:19:053] : 'Command Status' event received
+[16:40:19:053] : 	Status: BLE_STATUS_OK
+[16:40:19:066] : 'Command Complete' event received
+[16:40:19:066] : 	Status: BLE_STATUS_OK
+[16:40:19:068] : 'Read Characteristic Descriptor' request sent
+[16:40:19:068] : 	Attribute Handle: 0x002F
+[16:40:19:069] : 'Command Status' event received
+[16:40:19:069] : 	Status: BLE_STATUS_OK
+[16:40:19:083] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:083] : 	Value: [01:00]
+[16:40:19:116] : 'Command Complete' event received
+[16:40:19:116] : 	Status: BLE_STATUS_OK
+[16:40:19:117] : 'Write Characteristic Descriptor' request sent
+[16:40:19:117] : 	Attribute Handle: 0x0039
+[16:40:19:117] : 	Value: [01:00]
+[16:40:19:117] : 'Command Status' event received
+[16:40:19:117] : 	Status: BLE_STATUS_OK
+[16:40:19:127] : 'Command Complete' event received
+[16:40:19:127] : 	Status: BLE_STATUS_OK
+[16:40:19:132] : 'Read Characteristic Descriptor' request sent
+[16:40:19:132] : 	Attribute Handle: 0x0039
+[16:40:19:133] : 'Command Status' event received
+[16:40:19:133] : 	Status: BLE_STATUS_OK
+[16:40:19:144] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:144] : 	Value: [01:00]
+[16:40:19:173] : 'Command Complete' event received
+[16:40:19:173] : 	Status: BLE_STATUS_OK
+[16:40:19:173] : 'Write Characteristic Descriptor' request sent
+[16:40:19:173] : 	Attribute Handle: 0x0036
+[16:40:19:173] : 	Value: [02:00]
+[16:40:19:174] : 'Command Status' event received
+[16:40:19:174] : 	Status: BLE_STATUS_OK
+[16:40:19:189] : 'Command Complete' event received
+[16:40:19:189] : 	Status: BLE_STATUS_OK
+[16:40:19:191] : 'Read Characteristic Descriptor' request sent
+[16:40:19:191] : 	Attribute Handle: 0x0036
+[16:40:19:192] : 'Command Status' event received
+[16:40:19:192] : 	Status: BLE_STATUS_OK
+[16:40:19:206] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:206] : 	Value: [02:00]
+[16:40:19:235] : 'Command Complete' event received
+[16:40:19:235] : 	Status: BLE_STATUS_OK
+[16:40:19:235] : 'Write Characteristic Descriptor' request sent
+[16:40:19:235] : 	Attribute Handle: 0x0033
+[16:40:19:235] : 	Value: [02:00]
+[16:40:19:236] : 'Command Status' event received
+[16:40:19:236] : 	Status: BLE_STATUS_OK
+[16:40:19:259] : 'Command Complete' event received
+[16:40:19:259] : 	Status: BLE_STATUS_OK
+[16:40:19:260] : 'Read Characteristic Descriptor' request sent
+[16:40:19:260] : 	Attribute Handle: 0x0033
+[16:40:19:261] : 'Command Status' event received
+[16:40:19:261] : 	Status: BLE_STATUS_OK
+[16:40:19:276] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:276] : 	Value: [02:00]
+[16:40:19:305] : 'Command Complete' event received
+[16:40:19:305] : 	Status: BLE_STATUS_OK
+[16:40:19:305] : 'Write Characteristic Descriptor' request sent
+[16:40:19:305] : 	Attribute Handle: 0x0059
+[16:40:19:305] : 	Value: [02:00]
+[16:40:19:306] : 'Command Status' event received
+[16:40:19:306] : 	Status: BLE_STATUS_OK
+[16:40:19:320] : 'Command Complete' event received
+[16:40:19:320] : 	Status: BLE_STATUS_OK
+[16:40:19:322] : 'Read Characteristic Descriptor' request sent
+[16:40:19:322] : 	Attribute Handle: 0x0059
+[16:40:19:323] : 'Command Status' event received
+[16:40:19:323] : 	Status: BLE_STATUS_OK
+[16:40:19:337] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:337] : 	Value: [02:00]
+[16:40:19:366] : 'Command Complete' event received
+[16:40:19:366] : 	Status: BLE_STATUS_OK
+[16:40:19:366] : 'Write Characteristic Descriptor' request sent
+[16:40:19:366] : 	Attribute Handle: 0x0056
+[16:40:19:366] : 	Value: [02:00]
+[16:40:19:367] : 'Command Status' event received
+[16:40:19:367] : 	Status: BLE_STATUS_OK
+[16:40:19:383] : 'Command Complete' event received
+[16:40:19:383] : 	Status: BLE_STATUS_OK
+[16:40:19:386] : 'Read Characteristic Descriptor' request sent
+[16:40:19:386] : 	Attribute Handle: 0x0056
+[16:40:19:387] : 'Command Status' event received
+[16:40:19:387] : 	Status: BLE_STATUS_OK
+[16:40:19:398] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:398] : 	Value: [02:00]
+[16:40:19:428] : 'Command Complete' event received
+[16:40:19:428] : 	Status: BLE_STATUS_OK
+[16:40:19:428] : 'Write Characteristic Descriptor' request sent
+[16:40:19:428] : 	Attribute Handle: 0x0053
+[16:40:19:428] : 	Value: [02:00]
+[16:40:19:429] : 'Command Status' event received
+[16:40:19:429] : 	Status: BLE_STATUS_OK
+[16:40:19:442] : 'Command Complete' event received
+[16:40:19:442] : 	Status: BLE_STATUS_OK
+[16:40:19:444] : 'Read Characteristic Descriptor' request sent
+[16:40:19:444] : 	Attribute Handle: 0x0053
+[16:40:19:445] : 'Command Status' event received
+[16:40:19:445] : 	Status: BLE_STATUS_OK
+[16:40:19:460] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:460] : 	Value: [02:00]
+[16:40:19:492] : 'Command Complete' event received
+[16:40:19:492] : 	Status: BLE_STATUS_OK
+[16:40:19:493] : 'Write Characteristic Descriptor' request sent
+[16:40:19:493] : 	Attribute Handle: 0x0050
+[16:40:19:493] : 	Value: [02:00]
+[16:40:19:493] : 'Command Status' event received
+[16:40:19:493] : 	Status: BLE_STATUS_OK
+[16:40:19:504] : 'Command Complete' event received
+[16:40:19:504] : 	Status: BLE_STATUS_OK
+[16:40:19:508] : 'Read Characteristic Descriptor' request sent
+[16:40:19:508] : 	Attribute Handle: 0x0050
+[16:40:19:508] : 'Command Status' event received
+[16:40:19:508] : 	Status: BLE_STATUS_OK
+[16:40:19:521] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:521] : 	Value: [02:00]
+[16:40:19:555] : 'Command Complete' event received
+[16:40:19:555] : 	Status: BLE_STATUS_OK
+[16:40:19:555] : 'Write Characteristic Descriptor' request sent
+[16:40:19:555] : 	Attribute Handle: 0x004D
+[16:40:19:555] : 	Value: [02:00]
+[16:40:19:556] : 'Command Status' event received
+[16:40:19:556] : 	Status: BLE_STATUS_OK
+[16:40:19:574] : 'Command Complete' event received
+[16:40:19:574] : 	Status: BLE_STATUS_OK
+[16:40:19:575] : 'Read Characteristic Descriptor' request sent
+[16:40:19:575] : 	Attribute Handle: 0x004D
+[16:40:19:576] : 'Command Status' event received
+[16:40:19:576] : 	Status: BLE_STATUS_OK
+[16:40:19:591] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:591] : 	Value: [02:00]
+[16:40:19:621] : 'Command Complete' event received
+[16:40:19:621] : 	Status: BLE_STATUS_OK
+[16:40:19:621] : 'Write Characteristic Descriptor' request sent
+[16:40:19:621] : 	Attribute Handle: 0x004A
+[16:40:19:621] : 	Value: [02:00]
+[16:40:19:622] : 'Command Status' event received
+[16:40:19:622] : 	Status: BLE_STATUS_OK
+[16:40:19:635] : 'Command Complete' event received
+[16:40:19:635] : 	Status: BLE_STATUS_OK
+[16:40:19:636] : 'Read Characteristic Descriptor' request sent
+[16:40:19:636] : 	Attribute Handle: 0x004A
+[16:40:19:637] : 'Command Status' event received
+[16:40:19:637] : 	Status: BLE_STATUS_OK
+[16:40:19:652] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:652] : 	Value: [02:00]
+[16:40:19:685] : 'Command Complete' event received
+[16:40:19:685] : 	Status: BLE_STATUS_OK
+[16:40:19:686] : 'Write Characteristic Descriptor' request sent
+[16:40:19:686] : 	Attribute Handle: 0x003E
+[16:40:19:686] : 	Value: [03:00]
+[16:40:19:687] : 'Command Status' event received
+[16:40:19:687] : 	Status: BLE_STATUS_OK
+[16:40:19:705] : 'Command Complete' event received
+[16:40:19:705] : 	Status: BLE_STATUS_OK
+[16:40:19:706] : 'Read Characteristic Descriptor' request sent
+[16:40:19:706] : 	Attribute Handle: 0x003E
+[16:40:19:707] : 'Command Status' event received
+[16:40:19:707] : 	Status: BLE_STATUS_OK
+[16:40:19:722] : 'Read Characteristic Descriptor Response' event received
+[16:40:19:722] : 	Value: [03:00]
+[16:40:19:751] : 'Command Complete' event received
+[16:40:19:751] : 	Status: BLE_STATUS_OK
